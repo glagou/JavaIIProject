@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "422939319177",
+    "firebase_url": "https://programming-ii.firebaseio.com",
+    "project_id": "programming-ii",
+    "storage_bucket": "programming-ii.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422939319177:android:6f879c0f7d35e4f113df58",
+        "android_client_info": {
+          "package_name": "com.example.covidapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422939319177-scf85bjgkv4tdfiuhf25ktevnh7f73ca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7CZ1eBuxQ7vJuGCR5hsJ79R69LreYddk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422939319177-scf85bjgkv4tdfiuhf25ktevnh7f73ca.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
