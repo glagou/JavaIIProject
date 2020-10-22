@@ -13,7 +13,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -148,7 +147,7 @@ public class FirebaseFunctions {
 
     //Adds a new victim to FireStore using the parameters below.
     public static void addVictimToFirestore(final String firstName, final String lastName, final String phone, final String residenceRegion, final String dateOfDisease, final String[] closeContactWith,
-                                            final String[] phonesOfCloseContact, final String id, final boolean isSusceptible) {
+                                            final String[] phonesOfCloseContact, final String id, final int age, final boolean isSusceptible) {
         if(firebaseFirestore == null) {
             firebaseFirestore = FirebaseFirestore.getInstance();
         }
@@ -163,6 +162,7 @@ public class FirebaseFunctions {
                     victim.put("Phone", phone);
                     victim.put("Residence Region", residenceRegion);
                     victim.put("Date Of Disease", dateOfDisease);
+                    victim.put("Age", age);
                     int contactsLength = closeContactWith.length;
                     for(int i = 0; i < contactsLength; i ++) {
                         victim.put("Person" + i, closeContactWith[i]);
@@ -179,7 +179,8 @@ public class FirebaseFunctions {
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    Log.d(DEBUG_TAG, "Victim added successfully");
+                                    modifyAgeGroupValuesInDatabase(age, true);
+                                    modifyDatabaseValueByOne("TOTAL_CASES", true);
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
@@ -212,6 +213,27 @@ public class FirebaseFunctions {
                         }
                     }
                 });
+    }
+
+    //Modify the database variables based on age
+    private static void modifyAgeGroupValuesInDatabase(int age, boolean increase) {
+        if(age >= 0 && age <= 24) {
+            modifyDatabaseValueByOne("VICTIMS_0_24",increase);
+        } else if(age <= 34) {
+            modifyDatabaseValueByOne("VICTIMS_25_34", increase);
+        } else if(age <= 44) {
+            modifyDatabaseValueByOne("VICTIMS_35_44", increase);
+        } else if(age <= 54) {
+            modifyDatabaseValueByOne("VICTIMS_45_54", increase);
+        } else if(age <= 64) {
+            modifyDatabaseValueByOne("VICTIMS_55_64",increase);
+        } else if (age <= 74) {
+            modifyDatabaseValueByOne("VICTIMS_65_74", increase);
+        } else if(age <= 84) {
+            modifyDatabaseValueByOne("VICTIMS_75_84" ,increase);
+        } else {
+            modifyDatabaseValueByOne("VICTIMS_85_PLUS",increase);
+        }
     }
 
 }

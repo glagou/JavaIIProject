@@ -34,7 +34,5 @@ public class MainActivity extends AppCompatActivity {
         EditText nameEditText = findViewById(R.id.name_edit_text);
         String name = nameEditText.getText().toString();
         Log.i("NAME FROM EDIT TEXT", name);
-        FirebaseFunctions.addVictimToFirestore("Mixail", "Panigiris","2281909823", "Peiraias", "24/10/20",
-                new String[] {"Panos Vompirakis"}, new String[] {"6908997423"}, "004", true);
     }
 }
