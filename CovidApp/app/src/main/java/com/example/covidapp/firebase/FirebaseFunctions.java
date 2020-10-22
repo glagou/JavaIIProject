@@ -4,13 +4,21 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.example.covidapp.interfaces.FirebaseDatabaseReadListener;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class FirebaseFunctions {
 
@@ -18,7 +26,10 @@ public class FirebaseFunctions {
     private static final String DEBUG_TAG = "DATABASE UPDATE";
 
     //Firebase Database Instance
-    public static FirebaseDatabase firebaseDatabase;
+    private static FirebaseDatabase firebaseDatabase;
+
+    //Firebase Firestore Instance
+    private static FirebaseFirestore firebaseFirestore;
 
     //Used in getDatabaseValue(String fieldName)
     private static int valueReadFromDatabase;
@@ -36,7 +47,7 @@ public class FirebaseFunctions {
     }
 
     //Increases or Subtracts the value with name - databaseFieldName - in the database by one, according to the increase boolean (True to increase / False to decrease).
-    public static void incrementDatabaseValueByOne(final String databaseFieldName, final boolean increase) {
+    public static void modifyDatabaseValueByOne(final String databaseFieldName, final boolean increase) {
         if(firebaseDatabase == null)
         {
             firebaseDatabase = getFirebaseDatabaseInstance();
@@ -133,6 +144,74 @@ public class FirebaseFunctions {
             firebaseDatabaseReadListener.onFinish(valueReadFromDatabase);
             e.printStackTrace();
         }
+    }
+
+    //Adds a new victim to FireStore using the parameters below.
+    public static void addVictimToFirestore(final String firstName, final String lastName, final String phone, final String residenceRegion, final String dateOfDisease, final String[] closeContactWith,
+                                            final String[] phonesOfCloseContact, final String id, final boolean isSusceptible) {
+        if(firebaseFirestore == null) {
+            firebaseFirestore = FirebaseFirestore.getInstance();
+        }
+
+        getFirestoreDocumentExists("Victims", id, new FirebaseDocumentExistanceGetterListener() {
+            @Override
+            public void onFinish(boolean exists) {
+                if(!exists) {
+                    Map<String, Object> victim = new HashMap<>();
+                    victim.put("First Name", firstName);
+                    victim.put("Last Name", lastName);
+                    victim.put("Phone", phone);
+                    victim.put("Residence Region", residenceRegion);
+                    victim.put("Date Of Disease", dateOfDisease);
+                    int contactsLength = closeContactWith.length;
+                    for(int i = 0; i < contactsLength; i ++) {
+                        victim.put("Person" + i, closeContactWith[i]);
+                    }
+                    for(int i = 0; i < contactsLength; i++) {
+                        victim.put("Person Phone" + i, phonesOfCloseContact[i]);
+                    }
+                    victim.put("Is Susceptible", isSusceptible);
+                    victim.put("Contacts Length" , contactsLength);
+
+                    firebaseFirestore.collection("Victims")
+                            .document(id)
+                            .set(victim)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d(DEBUG_TAG, "Victim added successfully");
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d(DEBUG_TAG, "Victim was NOT added successfully: " + e.getMessage());
+                                }
+                            });
+                } else {
+                    Log.d(DEBUG_TAG, "Document with this ID already exists.");
+                }
+            }
+        });
+
+    }
+
+    //Returns true if the firestore document exists. In the other case returns false
+    private static void getFirestoreDocumentExists(String collection, String documentName, final FirebaseDocumentExistanceGetterListener firebaseDocumentExistanceGetterListener) {
+        firebaseFirestore.collection(collection)
+                .document(documentName)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if(task.getResult().exists()) {
+                            firebaseDocumentExistanceGetterListener.onFinish(true);
+                        } else
+                        {
+                            firebaseDocumentExistanceGetterListener.onFinish(false);
+                        }
+                    }
+                });
     }
 
 }
