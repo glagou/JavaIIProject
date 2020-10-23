@@ -147,12 +147,12 @@ public class FirebaseFunctions {
 
     //Adds a new victim to FireStore using the parameters below.
     public static void addVictimToFirestore(final String firstName, final String lastName, final String phone, final String residenceRegion, final String dateOfDisease, final String[] closeContactWith,
-                                            final String[] phonesOfCloseContact, final String id, final int age, final boolean isSusceptible) {
+                                            final String[] phonesOfCloseContact, final String id, final int age, final String gender, final boolean isSusceptible) {
         if(firebaseFirestore == null) {
             firebaseFirestore = FirebaseFirestore.getInstance();
         }
 
-        getFirestoreDocumentExists("Victims", id, new FirebaseDocumentExistanceGetterListener() {
+        getFirestoreDocumentExists("Cases", id, new FirebaseDocumentExistanceGetterListener() {
             @Override
             public void onFinish(boolean exists) {
                 if(!exists) {
@@ -163,6 +163,7 @@ public class FirebaseFunctions {
                     victim.put("Residence Region", residenceRegion);
                     victim.put("Date Of Disease", dateOfDisease);
                     victim.put("Age", age);
+                    victim.put("Gender", gender);
                     int contactsLength = closeContactWith.length;
                     for(int i = 0; i < contactsLength; i ++) {
                         victim.put("Person" + i, closeContactWith[i]);
@@ -173,7 +174,7 @@ public class FirebaseFunctions {
                     victim.put("Is Susceptible", isSusceptible);
                     victim.put("Contacts Length" , contactsLength);
 
-                    firebaseFirestore.collection("Victims")
+                    firebaseFirestore.collection("Cases")
                             .document(id)
                             .set(victim)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -181,6 +182,8 @@ public class FirebaseFunctions {
                                 public void onSuccess(Void aVoid) {
                                     modifyAgeGroupValuesInDatabase(age, true);
                                     modifyDatabaseValueByOne("TOTAL_CASES", true);
+                                    modifyGenderValuesInDatabase(gender, true);
+                                    modifyMonthGroupValuesInDatabase(dateOfDisease, true);
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
@@ -218,21 +221,80 @@ public class FirebaseFunctions {
     //Modify the database variables based on age
     private static void modifyAgeGroupValuesInDatabase(int age, boolean increase) {
         if(age >= 0 && age <= 24) {
-            modifyDatabaseValueByOne("VICTIMS_0_24",increase);
+            modifyDatabaseValueByOne("CASES_0_24",increase);
         } else if(age <= 34) {
-            modifyDatabaseValueByOne("VICTIMS_25_34", increase);
+            modifyDatabaseValueByOne("CASES_25_34", increase);
         } else if(age <= 44) {
-            modifyDatabaseValueByOne("VICTIMS_35_44", increase);
+            modifyDatabaseValueByOne("CASES_35_44", increase);
         } else if(age <= 54) {
-            modifyDatabaseValueByOne("VICTIMS_45_54", increase);
+            modifyDatabaseValueByOne("CASES_45_54", increase);
         } else if(age <= 64) {
-            modifyDatabaseValueByOne("VICTIMS_55_64",increase);
+            modifyDatabaseValueByOne("CASES_55_64",increase);
         } else if (age <= 74) {
-            modifyDatabaseValueByOne("VICTIMS_65_74", increase);
+            modifyDatabaseValueByOne("CASES_65_74", increase);
         } else if(age <= 84) {
-            modifyDatabaseValueByOne("VICTIMS_75_84" ,increase);
+            modifyDatabaseValueByOne("CASES_75_84" ,increase);
         } else {
-            modifyDatabaseValueByOne("VICTIMS_85_PLUS",increase);
+            modifyDatabaseValueByOne("CASES_85_PLUS",increase);
+        }
+    }
+
+    //Modify the database variables based on gender
+    private static void modifyGenderValuesInDatabase(String gender, boolean increase) {
+        switch (gender.toUpperCase()) {
+            case "MALE":
+                modifyDatabaseValueByOne("CASES_MALES", increase);
+                break;
+            case "FEMALE":
+                modifyDatabaseValueByOne("CASES_FEMALES", increase);
+                break;
+        }
+    }
+
+    //Modify the database variables based on month
+    private static void modifyMonthGroupValuesInDatabase(String dateOfDisease, boolean increase) {
+        try {
+            String month = dateOfDisease.split("/")[1];
+            switch (month) {
+                case "01":
+                    modifyDatabaseValueByOne("CASES_JANUARY", increase);
+                    break;
+                case "02":
+                    modifyDatabaseValueByOne("CASES_FEBRUARY", increase);
+                    break;
+                case "03":
+                    modifyDatabaseValueByOne("CASES_MARCH", increase);
+                    break;
+                case "04":
+                    modifyDatabaseValueByOne("CASES_APRIL", increase);
+                    break;
+                case "05":
+                    modifyDatabaseValueByOne("CASES_MAY", increase);
+                    break;
+                case "06":
+                    modifyDatabaseValueByOne("CASES_JUNE", increase);
+                    break;
+                case "07":
+                    modifyDatabaseValueByOne("CASES_JULY", increase);
+                    break;
+                case "08":
+                    modifyDatabaseValueByOne("CASES_AUGUST", increase);
+                    break;
+                case "09":
+                    modifyDatabaseValueByOne("CASES_SEPTEMBER", increase);
+                    break;
+                case "10":
+                    modifyDatabaseValueByOne("CASES_OCTOBER", increase);
+                    break;
+                case "11":
+                    modifyDatabaseValueByOne("CASES_NOVEMBER", increase);
+                    break;
+                case "12":
+                    modifyDatabaseValueByOne("CASES_DECEMBER", increase);
+                    break;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
