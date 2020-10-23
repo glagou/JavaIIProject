@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabIconTint="#2196F3"
@@ -14,18 +15,21 @@
         app:tabSelectedTextColor="#2196F3">
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/homeTab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Home"
             android:icon="@drawable/ic_baseline_home_24" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/addContactsTab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ADD CONTACTS"
             android:icon="@drawable/ic_baseline_import_contacts_24"/>
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/resultsTab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="RESULTS"
@@ -33,18 +37,13 @@
 
     </com.google.android.material.tabs.TabLayout>
 
-    <EditText
-        android:id="@+id/name_edit_text"
+    <RelativeLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"/>
+        android:layout_height="match_parent"
+        android:layout_below="@id/tab_layout">
 
-    <Button
-        android:id="@+id/add_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ADD"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/name_edit_text"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>
