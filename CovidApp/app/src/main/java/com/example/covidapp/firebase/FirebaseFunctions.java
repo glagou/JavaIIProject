@@ -34,19 +34,19 @@ public class FirebaseFunctions {
     private static int valueReadFromDatabase;
 
     //Returns the Firebase Database Instance
-    public static FirebaseDatabase getFirebaseDatabaseInstance() {
+    private static FirebaseDatabase getFirebaseDatabaseInstance() {
         final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         return  firebaseDatabase;
     }
 
     //Returns the Firebase Firestore Instance
-    public static FirebaseFirestore getFirestoreInstance() {
+    private static FirebaseFirestore getFirestoreInstance() {
         final FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
         return firebaseFirestore;
     }
 
     //Increases or Subtracts the value with name - databaseFieldName - in the database by one, according to the increase boolean (True to increase / False to decrease).
-    public static void modifyDatabaseValueByOne(final String databaseFieldName, final boolean increase) {
+    private static void modifyDatabaseValueByOne(final String databaseFieldName, final boolean increase) {
         if(firebaseDatabase == null)
         {
             firebaseDatabase = getFirebaseDatabaseInstance();
@@ -184,6 +184,7 @@ public class FirebaseFunctions {
                                     modifyDatabaseValueByOne("TOTAL_CASES", true);
                                     modifyGenderValuesInDatabase(gender, true);
                                     modifyMonthGroupValuesInDatabase(dateOfDisease, true);
+                                    Log.d(DEBUG_TAG, "Victim was added successfully)");
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
@@ -296,6 +297,58 @@ public class FirebaseFunctions {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    //Deletes victim with ID = id from firestore
+    public static void deleteVictimFromFirestore(final String id) {
+
+        if(firebaseFirestore == null) {
+            firebaseFirestore = FirebaseFirestore.getInstance();
+        }
+
+        getFirestoreDocumentExists("Cases", id, new FirebaseDocumentExistanceGetterListener() {
+            @Override
+            public void onFinish(boolean exists) {
+                if(!exists) {
+                    Log.d(DEBUG_TAG, "Victim with id = " + id + " does not exist.");
+                } else {
+                  firebaseFirestore.collection("Cases").document(id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                      @Override
+                      public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                          if(task.isSuccessful())
+                          {
+                                DocumentSnapshot snapshot = task.getResult();
+                                try {
+                                    int age =  Integer.parseInt(snapshot.getString("Age"));
+                                    modifyAgeGroupValuesInDatabase(age,false);
+                                    String dateOfDisease = snapshot.getString("Date Of Disease");
+                                    modifyMonthGroupValuesInDatabase(dateOfDisease,false);
+                                    String gender = snapshot.getString("Gender");
+                                    modifyGenderValuesInDatabase(gender, false);
+                                    modifyDatabaseValueByOne("TOTAL_CASES", false);
+                                    firebaseFirestore.collection("Cases").document(id).delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if(task.isSuccessful()) {
+                                                Log.d(DEBUG_TAG, "Victim Successfully deleted.");
+                                            } else
+                                            {
+                                                Log.d(DEBUG_TAG, "Victim was NOT deleted successfully.");
+                                            }
+                                        }
+                                    });
+                                } catch (NullPointerException e) {
+                                    Log.d(DEBUG_TAG, "Field was not found in victim.");
+                                }
+                          } else
+                          {
+                              Log.d(DEBUG_TAG, "Snapshot not retrieved successfully.");
+                          }
+                      }
+                  });
+                }
+            }
+        });
     }
 
 }

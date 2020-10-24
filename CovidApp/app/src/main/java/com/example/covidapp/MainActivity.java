@@ -6,10 +6,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 
+import com.example.covidapp.firebase.FirebaseFunctions;
 import com.example.covidapp.fragments.AddContactsFragment;
 import com.example.covidapp.fragments.HomeFragment;
 import com.example.covidapp.fragments.ResultsFragment;
