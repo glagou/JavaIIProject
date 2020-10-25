@@ -10,6 +10,7 @@ import android.util.Log;
 import com.example.covidapp.firebase.FirebaseFunctions;
 import com.example.covidapp.fragments.AddContactsFragment;
 import com.example.covidapp.fragments.HomeFragment;
+import com.example.covidapp.fragments.ManageContactsFragment;
 import com.example.covidapp.fragments.ResultsFragment;
 import com.google.android.material.tabs.TabLayout;
 
@@ -42,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
 
-                Log.d("FRAGMENT UPDATE", String.valueOf(tab.getPosition()));
             }
 
             @Override

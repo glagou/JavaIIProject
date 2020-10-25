@@ -19,13 +19,22 @@
         android:textSize="25sp"
         android:layout_below="@id/doctor"
         android:layout_centerHorizontal="true"
-        android:textColor="#00ff8f"/>
+        android:textColor="#FFFFFF"/>
 
-    <View android:layout_width="50dp"
+    <View
+        android:id="@+id/divider"
+        android:layout_width="50dp"
         android:layout_height="1dp"
-        android:background="#00ff8f"
+        android:background="#FFFFFF"
         android:layout_below="@id/simpleTextView"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/victims_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/divider"
         android:layout_marginTop="10dp"/>
 
 </RelativeLayout>
