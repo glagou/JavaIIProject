@@ -32,13 +32,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         fragmentView = inflater.inflate(R.layout.fragment_home, container, false);
-        Button testButton = fragmentView.findViewById(R.id.test_button);
-        testButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setUpRecyclerView();
-            }
-        });
+        setUpRecyclerView();
         return fragmentView;
     }
 
@@ -49,9 +43,14 @@ public class HomeFragment extends Fragment {
         victims_recycler_view.setLayoutManager(linearLayoutManager);
         CasesAdapter adapter = new CasesAdapter(getContext(),cases);
         victims_recycler_view.setAdapter(adapter);
+        Log.i("XD", String.valueOf(cases.size()));
     }
 
     public static void addToCases(ModelCase modelCase) {
         cases.add(modelCase);
+    }
+
+    public static boolean casesIsNull() {
+        return cases == null;
     }
 }

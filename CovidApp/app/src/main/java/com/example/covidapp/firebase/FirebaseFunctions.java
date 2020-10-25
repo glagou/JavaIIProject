@@ -4,6 +4,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.example.covidapp.StartingScreenActivity;
 import com.example.covidapp.fragments.HomeFragment;
 import com.example.covidapp.models.ModelCase;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -368,6 +369,7 @@ public class FirebaseFunctions {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if(task.isSuccessful()) {
                     List<DocumentSnapshot> documentSnapshots = task.getResult().getDocuments();
+                    StartingScreenActivity.addVictimsCountToDownloadAmount(documentSnapshots.size());
                     List<ModelCase> modelCases = new ArrayList<>();
                     for(int i = 0; i < documentSnapshots.size(); i++) {
                         DocumentSnapshot snapshot = documentSnapshots.get(i);
@@ -389,8 +391,12 @@ public class FirebaseFunctions {
                         }
                         HomeFragment.addToCases(new ModelCase(firstName,lastName,phone,residenceRegion,dateOfDisease,id,gender,closeContactWith,
                                 closeContactWithPhones,age,isSusceptible));
+
+                        StartingScreenActivity.setProgress();
                     }
+
                 } else {
+                    StartingScreenActivity.initializeItemsToDownloadAmountIfNoVictims();
                     Log.d(DEBUG_TAG, "Collection not retrieved successfully.");
                 }
             }
