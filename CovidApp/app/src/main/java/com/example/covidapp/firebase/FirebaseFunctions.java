@@ -4,6 +4,8 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.example.covidapp.fragments.HomeFragment;
+import com.example.covidapp.models.ModelCase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -15,8 +17,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import org.w3c.dom.Document;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class FirebaseFunctions {
@@ -346,6 +354,44 @@ public class FirebaseFunctions {
                           }
                       }
                   });
+                }
+            }
+        });
+    }
+
+    public static void getAllVictimsFromFirestore() {
+        if(firebaseFirestore == null) {
+            firebaseFirestore = FirebaseFirestore.getInstance();
+        }
+        firebaseFirestore.collection("Cases").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.isSuccessful()) {
+                    List<DocumentSnapshot> documentSnapshots = task.getResult().getDocuments();
+                    List<ModelCase> modelCases = new ArrayList<>();
+                    for(int i = 0; i < documentSnapshots.size(); i++) {
+                        DocumentSnapshot snapshot = documentSnapshots.get(i);
+                        String id = snapshot.getId();
+                        String firstName = snapshot.getString("First Name");
+                        String lastName = snapshot.getString("Last Name");
+                        String phone = snapshot.getString("Phone");
+                        String residenceRegion = snapshot.getString("Residence Region");
+                        String dateOfDisease = snapshot.getString("Date Of Disease");
+                        String gender = snapshot.getString("Gender");
+                        boolean isSusceptible = snapshot.getString("Is Susceptible").equals("true");
+                        int age = Integer.parseInt(snapshot.getString("Age"));
+                        int contactsLength = Integer.parseInt(snapshot.getString("Contacts Length"));
+                        String[] closeContactWith = new String[contactsLength];
+                        String[] closeContactWithPhones = new String[contactsLength];
+                        for(int j = 0; j < contactsLength; j++) {
+                            closeContactWith[j] = snapshot.getString("Person" + j);
+                            closeContactWithPhones[j] = snapshot.getString("Person Phone" + j);
+                        }
+                        HomeFragment.addToCases(new ModelCase(firstName,lastName,phone,residenceRegion,dateOfDisease,id,gender,closeContactWith,
+                                closeContactWithPhones,age,isSusceptible));
+                    }
+                } else {
+                    Log.d(DEBUG_TAG, "Collection not retrieved successfully.");
                 }
             }
         });
