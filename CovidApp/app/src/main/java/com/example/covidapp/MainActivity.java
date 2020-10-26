@@ -23,9 +23,6 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.tab_layout);
         setTabLayoutNavigationListener();
         setNewFragment(new HomeFragment(), "Home");
-        if(HomeFragment.casesIsNull()) {
-            FirebaseFunctions.getAllVictimsFromFirestore();
-        }
     }
 
     //Handles Tab Layout Clicks

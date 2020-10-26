@@ -49,8 +49,4 @@ public class HomeFragment extends Fragment {
     public static void addToCases(ModelCase modelCase) {
         cases.add(modelCase);
     }
-
-    public static boolean casesIsNull() {
-        return cases == null;
-    }
 }
