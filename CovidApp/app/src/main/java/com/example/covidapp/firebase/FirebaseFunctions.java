@@ -5,7 +5,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.example.covidapp.StartingScreenActivity;
-import com.example.covidapp.fragments.HomeFragment;
+import com.example.covidapp.fragments.CasesFragment;
 import com.example.covidapp.models.ModelCase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -20,9 +20,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import org.w3c.dom.Document;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -367,6 +364,7 @@ public class FirebaseFunctions {
         firebaseFirestore.collection("Cases").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                StartingScreenActivity.initializeItemsToDownloadAmount();
                 if(task.isSuccessful()) {
                     List<DocumentSnapshot> documentSnapshots = task.getResult().getDocuments();
                     StartingScreenActivity.addVictimsCountToDownloadAmount(documentSnapshots.size());
@@ -389,14 +387,13 @@ public class FirebaseFunctions {
                             closeContactWith[j] = snapshot.getString("Person" + j);
                             closeContactWithPhones[j] = snapshot.getString("Person Phone" + j);
                         }
-                        HomeFragment.addToCases(new ModelCase(firstName,lastName,phone,residenceRegion,dateOfDisease,id,gender,closeContactWith,
+                        CasesFragment.addToCases(new ModelCase(firstName,lastName,phone,residenceRegion,dateOfDisease,id,gender,closeContactWith,
                                 closeContactWithPhones,age,isSusceptible));
 
                         StartingScreenActivity.setProgress();
                     }
 
                 } else {
-                    StartingScreenActivity.initializeItemsToDownloadAmountIfNoVictims();
                     Log.d(DEBUG_TAG, "Collection not retrieved successfully.");
                 }
             }

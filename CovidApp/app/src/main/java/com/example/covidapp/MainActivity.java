@@ -5,13 +5,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.util.Log;
 
-import com.example.covidapp.firebase.FirebaseFunctions;
-import com.example.covidapp.fragments.AddContactsFragment;
+import com.example.covidapp.fragments.CasesFragment;
 import com.example.covidapp.fragments.HomeFragment;
-import com.example.covidapp.fragments.ManageContactsFragment;
-import com.example.covidapp.fragments.ResultsFragment;
+import com.example.covidapp.fragments.StatisticsFragment;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
                         setNewFragment(new HomeFragment(), "Home");
                         break;
                     case 1:
-                        setNewFragment(new AddContactsFragment(), "Add_Contacts");
+                        setNewFragment(new CasesFragment(), "Cases");
                         break;
                     case 2:
-                        setNewFragment(new ResultsFragment(), "Results");
+                        setNewFragment(new StatisticsFragment(), "Statistics");
                         break;
                 }
 
@@ -67,4 +64,5 @@ public class MainActivity extends AppCompatActivity {
         // Complete the changes added above
         ft.commit();
     }
+
 }

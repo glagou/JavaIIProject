@@ -23,8 +23,6 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private static List<ModelCase> cases = new ArrayList<>();
-
     private View fragmentView;
 
     @Override
@@ -32,21 +30,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         fragmentView = inflater.inflate(R.layout.fragment_home, container, false);
-        setUpRecyclerView();
         return fragmentView;
     }
 
-    private void setUpRecyclerView() {
-        RecyclerView victims_recycler_view = fragmentView.findViewById(R.id.victims_recycler_view);
-        victims_recycler_view.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        victims_recycler_view.setLayoutManager(linearLayoutManager);
-        CasesAdapter adapter = new CasesAdapter(getContext(),cases);
-        victims_recycler_view.setAdapter(adapter);
-        Log.i("XD", String.valueOf(cases.size()));
-    }
-
-    public static void addToCases(ModelCase modelCase) {
-        cases.add(modelCase);
-    }
 }

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartingScreenActivity"
-    android:background="@drawable/background">
+    tools:context=".StartingScreenActivity">
 
     <ImageView
         android:id="@+id/doctor"
@@ -19,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Covid App"
-        android:textColor="#FFFFFF"
+        android:textColor="#ED7548"
         android:textSize="20sp"
         android:layout_below="@id/doctor"
         android:layout_centerHorizontal="true"
@@ -31,8 +30,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:progressTint="#FFFFFF"
+        android:progressTint="#ED7548"
         android:progress="0"
-        android:scaleY="4" />
+        android:scaleY="5"
+        android:progressBackgroundTint="@android:color/transparent"/>
 
 </RelativeLayout>

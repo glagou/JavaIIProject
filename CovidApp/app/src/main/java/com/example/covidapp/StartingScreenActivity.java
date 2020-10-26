@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -21,6 +22,7 @@ public class StartingScreenActivity extends AppCompatActivity {
     private static int itemsToGetFromDatabase = 0;
     private static ProgressBar progressBar;
     private static Context context;
+    private static boolean hasAlreadyMovedToNextActivity = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,7 @@ public class StartingScreenActivity extends AppCompatActivity {
         if(progress == 100 && itemsToGetFromDatabase != 0) {
             moveToNextActivity();
         }
+        Log.i("CALLED", String.valueOf(progress));
     }
 
     private void getInfoFromDatabase() {
@@ -230,15 +233,28 @@ public class StartingScreenActivity extends AppCompatActivity {
     }
 
     private static void moveToNextActivity() {
+        hasAlreadyMovedToNextActivity = true;
         Intent intent = new Intent(context, MainActivity.class);
         context.startActivity(intent);
     }
 
-    public static void initializeItemsToDownloadAmountIfNoVictims() {
+    public static void initializeItemsToDownloadAmount() {
         StartingScreenActivity.itemsToGetFromDatabase = 23;
     }
 
     public static void addVictimsCountToDownloadAmount(int victimsCounts) {
         StartingScreenActivity.itemsToGetFromDatabase += victimsCounts;
+    }
+
+    private void moveToNextActivityOnRestart() {
+        if(hasAlreadyMovedToNextActivity) {
+            moveToNextActivity();
+        }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        moveToNextActivityOnRestart();
     }
 }
