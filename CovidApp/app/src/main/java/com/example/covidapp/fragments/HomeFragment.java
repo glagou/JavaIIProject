@@ -46,7 +46,7 @@ public class HomeFragment extends Fragment {
         });
 
 
-        text.setText("Total cases: "+CasesFragment.returnCases());
+        text.setText("Total cases: "+ CasesFragment.returnCases());
 
 
 
