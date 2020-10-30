@@ -74,4 +74,9 @@ public class CasesFragment extends Fragment {
         startActivity(intent);
     }
 
+    public static int returnCases()
+    {
+        return cases.size();
+    }
+
 }

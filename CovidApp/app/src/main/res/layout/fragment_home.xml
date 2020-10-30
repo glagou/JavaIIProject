@@ -31,6 +31,27 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"/>
 
+    <TextView android:id="@+id/simpleTextBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total cases: 0"
+        android:layout_marginTop="50dp"
+        android:textSize="25sp"
+        android:layout_below="@id/divider"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ED7548"/>
+
+    <Button
+        android:id="@+id/buttontoweb"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/simpleTextBottom"
+        android:layout_width="200dp"
+        android:background="#ff9933"
+        android:text="Tap me for more info"
+        android:layout_height="50dp"/>
+
+
 
 </RelativeLayout>
 

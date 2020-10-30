@@ -10,8 +10,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.covidapp.R;
 import com.example.covidapp.adapters.CasesAdapter;
@@ -30,6 +32,24 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         fragmentView = inflater.inflate(R.layout.fragment_home, container, false);
+
+        TextView text = fragmentView.findViewById(R.id.simpleTextBottom);
+        Button btn =  fragmentView.findViewById(R.id.buttontoweb);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WebView wb = new WebView(getContext());
+                wb.loadUrl("https://who.int/");
+
+            }
+        });
+
+
+        text.setText("Total cases: "+CasesFragment.returnCases());
+
+
+
         return fragmentView;
     }
 
