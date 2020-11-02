@@ -14,6 +14,8 @@ import com.google.android.material.textfield.TextInputEditText;
 public class AddCaseActivity extends AppCompatActivity {
 
     private boolean hasError = false ;
+    private String firstName;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,9 @@ public class AddCaseActivity extends AppCompatActivity {
             String firstName = firstNameEditText.getText().toString();
             if(TextUtils.isEmpty(firstName.trim())){
                 makeToast("First Name Is Empty");
+            }else {
+                this.firstName=firstName;
+                
             }
         }
     }
