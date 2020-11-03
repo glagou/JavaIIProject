@@ -5,10 +5,22 @@
     android:layout_height="match_parent"
     tools:context=".fragments.HomeFragment">
 
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/chart1"
+    <TextView
+        android:id="@+id/descriptionOne"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:text="Below you can see the months..."
+        android:textSize="15sp"
+        android:textColor="#ED7548"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/topBarChart"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_below="@id/descriptionOne"
+        android:layout_centerHorizontal="true"/>
 
 
 </RelativeLayout>
