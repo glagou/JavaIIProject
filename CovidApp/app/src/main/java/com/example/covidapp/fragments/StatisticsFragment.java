@@ -44,7 +44,6 @@ public class StatisticsFragment extends Fragment {
         // Inflate the layout for this fragment
         View fragmentView =  inflater.inflate(R.layout.fragment_statistics, container, false);
         setFragmentView(fragmentView);
-        handleBarChart();
         handlePieChart();
         handleLineChart();
         return fragmentView;
@@ -54,38 +53,6 @@ public class StatisticsFragment extends Fragment {
         this.fragmentView = fragmentView;
     }
 
-    private void handleBarChart() {
-        BarChart topBarChart = fragmentView.findViewById(R.id.topBarChart);
-        List<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(0f, StatsInfoHolder.getCases_january()));
-        entries.add(new BarEntry(1f, 20f));
-        entries.add(new BarEntry(2f, 10f));
-        entries.add(new BarEntry(3f, 50f));
-        entries.add(new BarEntry(4f, 5f));
-        entries.add(new BarEntry(5f, 43f));
-        entries.add(new BarEntry(6f, 25f));
-        entries.add(new BarEntry(7f, 5f));
-        entries.add(new BarEntry(8f, 15f));
-        entries.add(new BarEntry(9f, 55f));
-        entries.add(new BarEntry(10f, 11f));
-        entries.add(new BarEntry(11f, 8f));
-        BarDataSet barDataSet = new BarDataSet(entries, "Months");
-        BarData barData = new BarData(barDataSet);
-        topBarChart.setData(barData);
-        topBarChart.invalidate();
-        Description description = topBarChart.getDescription();
-        description.setText("");
-        barDataSet.setColors(ColorTemplate.VORDIPLOM_COLORS);
-
-        //final String[] labels = new String[] {"Jan", "Feb", "March", "April", "May",
-                //"June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"};
-        //XAxis xAxis = topBarChart.getXAxis();
-        //xAxis.setValueFormatter(new IndexAxisValueFormatter(labels));
-        //xAxis.setGranularity(1f);
-        //xAxis.setGranularityEnabled(true);
-        //topBarChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
-
-    }
 
     private void handlePieChart(){
         PieChart secondPieChart = fragmentView.findViewById(R.id.secondPieChart);
