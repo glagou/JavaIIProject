@@ -1,9 +1,7 @@
 package com.example.covidapp;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -12,11 +10,6 @@ import android.widget.Toast;
 
 import com.example.covidapp.firebase.FirebaseFunctions;
 import com.google.android.material.textfield.TextInputEditText;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
-import java.time.format.ResolverStyle;
 
 public class AddCaseActivity extends AppCompatActivity {
 
@@ -34,12 +27,13 @@ public class AddCaseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_case);
         setAddButtonListener();
     }
+
     private void setAddButtonListener(){
         final Button button = findViewById(R.id.addButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                hasError=false;
+                hasError = false;
                 handleFirstName();
                 handleLastName();
                 handlePhoneNumber();
@@ -60,50 +54,41 @@ public class AddCaseActivity extends AppCompatActivity {
         if(!hasError) {
             TextInputEditText firstNameEditText = findViewById(R.id.firstNameEditText);
             String firstName = firstNameEditText.getText().toString();
-            if(TextUtils.isEmpty(firstName.trim())){
+            if (TextUtils.isEmpty(firstName.trim())){
                 makeToast("First Name Is Empty");
-            }else {
-                this.firstName=firstName.toUpperCase();
-                
+            } else {
+                this.firstName = firstName.toUpperCase();
             }
         }
     }
+
     private void handleLastName() {
-        if(!hasError) {
+
+        if (!hasError) {
             TextInputEditText lastNameEditText = findViewById(R.id.lastNameEditText);
             String lastName = lastNameEditText.getText().toString();
             if (TextUtils.isEmpty(lastName.trim())) {
                 makeToast("Last Name Is Empty");
-            }else {
-                this.lastName=lastName.toUpperCase();
+            } else {
+                this.lastName = lastName.toUpperCase();
             }
         }
 
     }
-    private static boolean phoneCheck(String phoneNumber, int n){
-        for (int i = 0; i < n; i++) {
-            if (phoneNumber.charAt(i) >= '0'
-                    && phoneNumber.charAt(i) <= '9') {
-                return true;
-            }
-            else {
-                return false;
-            }
-        }
-        return false;
-    }
+
     private void handlePhoneNumber() {
+
         if(!hasError) {
             TextInputEditText phoneNumberEditText = findViewById(R.id.phoneNumberEditText);
             String phoneNumber = phoneNumberEditText.getText().toString();
             if (TextUtils.isEmpty(phoneNumber.trim())) {
                 makeToast("Phone Number Is Empty");
-            }else if(phoneNumber.length()!=10){
+            } else if (phoneNumber.length() != 10){
                 makeToast("A valid phone number contains 10 digits");
-            }else if(phoneCheck(phoneNumber, phoneNumber.length())==false){
+            } else if (!phoneIsValid(phoneNumber, phoneNumber.length())){
                 makeToast("Please fill a valid phone number");
-            }else{
-                this.phoneNumber=phoneNumber;
+            } else {
+                this.phoneNumber = phoneNumber;
             }
         }
     }
@@ -115,7 +100,7 @@ public class AddCaseActivity extends AppCompatActivity {
             if (TextUtils.isEmpty(residenceRegion.trim())) {
                 makeToast("ResidenceRegion Is Empty");
             }else{
-                this.residenceRegion=residenceRegion.toUpperCase();
+                this.residenceRegion = residenceRegion.toUpperCase();
             }
         }
 
@@ -137,9 +122,6 @@ public class AddCaseActivity extends AppCompatActivity {
        // }
         //return valid;
     //}
-
-
-
 
     private void handleDateOfDisease() {
         if(!hasError) {
@@ -213,8 +195,23 @@ public class AddCaseActivity extends AppCompatActivity {
             }
         }
     }
+
     private void makeToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         hasError = true;
     }
+
+    private boolean phoneIsValid(String phoneNumber, int n){
+        for (int i = 0; i < n; i++) {
+            if (phoneNumber.charAt(i) >= '0'
+                    && phoneNumber.charAt(i) <= '9') {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        return false;
+    }
+
 }
