@@ -19,6 +19,8 @@ public class AddCaseActivity extends AppCompatActivity {
     private String phoneNumber;
     private String residenceRegion;
     private String dateOfDisease;
+    private String id;
+
 
 
     @Override
@@ -57,7 +59,7 @@ public class AddCaseActivity extends AppCompatActivity {
             if (TextUtils.isEmpty(firstName.trim())){
                 makeToast("First Name Is Empty");
             } else {
-                this.firstName = firstName.toUpperCase();
+                this.firstName = firstName.trim().toUpperCase();
             }
         }
     }
@@ -70,7 +72,7 @@ public class AddCaseActivity extends AppCompatActivity {
             if (TextUtils.isEmpty(lastName.trim())) {
                 makeToast("Last Name Is Empty");
             } else {
-                this.lastName = lastName.toUpperCase();
+                this.lastName = lastName.trim().toUpperCase();
             }
         }
 
@@ -78,17 +80,20 @@ public class AddCaseActivity extends AppCompatActivity {
 
     private void handlePhoneNumber() {
 
-        if(!hasError) {
+        if (!hasError) {
             TextInputEditText phoneNumberEditText = findViewById(R.id.phoneNumberEditText);
             String phoneNumber = phoneNumberEditText.getText().toString();
             if (TextUtils.isEmpty(phoneNumber.trim())) {
                 makeToast("Phone Number Is Empty");
-            } else if (phoneNumber.length() != 10){
+            } else if (phoneNumber.trim().length() != 10) {
                 makeToast("A valid phone number contains 10 digits");
-            } else if (!phoneIsValid(phoneNumber, phoneNumber.length())){
-                makeToast("Please fill a valid phone number");
             } else {
-                this.phoneNumber = phoneNumber;
+                try {
+                    Integer.parseInt(phoneNumber.trim());
+                    this.phoneNumber = phoneNumber.trim();
+                } catch (NumberFormatException e) {
+                    makeToast("Please fill a valid phone number");
+                }
             }
         }
     }
@@ -100,28 +105,11 @@ public class AddCaseActivity extends AppCompatActivity {
             if (TextUtils.isEmpty(residenceRegion.trim())) {
                 makeToast("ResidenceRegion Is Empty");
             }else{
-                this.residenceRegion = residenceRegion.toUpperCase();
+                this.residenceRegion = residenceRegion.trim().toUpperCase();
             }
         }
 
     }
-
-    //@RequiresApi(api = Build.VERSION_CODES.O)
-    //public static boolean dateIsValid(final String dateOfDisease) {
-        //boolean valid = false;
-        //try {
-            // ResolverStyle.STRICT for 30, 31 days checking, and also leap year.
-            //LocalDate.parse(dateOfDisease,
-                    //DateTimeFormatter.ofPattern("dd-MM-uuuu")
-                            //.withResolverStyle(ResolverStyle.STRICT)
-            //);
-            //valid = true;
-        //} catch (DateTimeParseException e) {
-            //e.printStackTrace();
-            //valid = false;
-       // }
-        //return valid;
-    //}
 
     private void handleDateOfDisease() {
         if(!hasError) {
@@ -129,13 +117,31 @@ public class AddCaseActivity extends AppCompatActivity {
             String dateOfDisease = dateOfDiseaseEditText.getText().toString();
             if (TextUtils.isEmpty(dateOfDisease.trim())) {
                 makeToast("Date of Disease Is Empty");
-            //}else if(dateIsValid(dateOfDisease)==false){
-                //makeToast("Please enter a valid date");
-            }else{
-                this.dateOfDisease=dateOfDisease;
-            }
-        }
+            }else {
+                String[] parts = dateOfDisease.trim().split("/");
+                try {
+                    String part1 = parts[0];
+                    String part2 = parts[1];
+                    String part3 = parts[2];
+                    int day = Integer.parseInt(part1);
+                    int month = Integer.parseInt(part2);
+                    int year = Integer.parseInt(part3);
+                    if (day <= 0 || day >= 32) {
+                        makeToast("insert valid day");
+                    } else if (month >= 13 || month <= 0){
+                        makeToast("insert valid month");
+                    } else if (year < 2019) {
+                        makeToast("insert valid year");
+                    } else {
+                        this.dateOfDisease=dateOfDisease.trim();
+                    }
+                } catch (Exception e) {
+                    makeToast("Use format DD/MM/YYYY");
+                }
 
+            }
+
+        }
     }
     private void handleCloseContactWith() {
         if(!hasError) {
@@ -163,9 +169,32 @@ public class AddCaseActivity extends AppCompatActivity {
             String id = idEditText.getText().toString();
             if (TextUtils.isEmpty(id.trim())) {
                 makeToast("ID Is Empty");
+            } else if (id.trim().length() != 8) {
+                makeToast("A valid ID contains 8 digits");
+            } else {
+                char[] characters = new char[8];
+                for (int i = 0 ; i<characters.length ; i++) {
+                    characters[i] = id.charAt(i);
+                }
+                if (!Character.isLetter(characters[0])){
+                    makeToast("First character has to be a Letter");
+                } else if (!Character.isLetter(characters[1])){
+                    makeToast("Second character has to be a Letter");
+                } else {
+                    boolean foundError = false;
+                    for (int i = 2; i < characters.length; i++) {
+                        if (!Character.isDigit(characters[i])){
+                            makeToast( i+1 + " character has to be a Number");
+                            foundError = true;
+                            break;
+                        }
+                    }
+                    if (!foundError) {
+                        this.id = id;
+                    }
+                }
             }
         }
-
     }
     private void handleAge() {
         if(!hasError) {
