@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setNewFragment(new HomeFragment(), "Home");
     }
 
+
     //Handles Tab Layout Clicks
     private void setTabLayoutNavigationListener() {
         TabLayout tabLayout = findViewById(R.id.tab_layout);
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     private void setNewFragment(Fragment fragment, String fragmentTag) {
         // Begin the transaction
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.setCustomAnimations(R.anim.slide_in, R.anim.slide_out);
         // Replace the contents of the container with the new fragment
         ft.replace(R.id.fragment_container, fragment, fragmentTag);
         // or ft.add(R.id.your_placeholder, new FooFragment());

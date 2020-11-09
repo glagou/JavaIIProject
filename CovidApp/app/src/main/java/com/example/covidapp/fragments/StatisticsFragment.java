@@ -26,6 +26,7 @@ import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
@@ -46,6 +47,7 @@ public class StatisticsFragment extends Fragment {
         setFragmentView(fragmentView);
         handlePieChart();
         handleLineChart();
+        handleBarChart();
         return fragmentView;
     }
 
@@ -115,6 +117,59 @@ public class StatisticsFragment extends Fragment {
         Description description = firstLineChart.getDescription();
         description.setText("");
 
+    }
+
+    private void handleBarChart() {
+        BarChart topBarChart = fragmentView.findViewById(R.id.topBarChart);
+        List<BarEntry> entries = new ArrayList<>();
+        entries.add(new BarEntry(0f, StatsInfoHolder.getCases_january()));
+        entries.add(new BarEntry(1f, 20f));
+        entries.add(new BarEntry(2f, 10f));
+        entries.add(new BarEntry(3f, 50f));
+        entries.add(new BarEntry(4f, 5f));
+        entries.add(new BarEntry(5f, 43f));
+        entries.add(new BarEntry(6f, 25f));
+        entries.add(new BarEntry(7f, 5f));
+        entries.add(new BarEntry(8f, 15f));
+        entries.add(new BarEntry(9f, 55f));
+        entries.add(new BarEntry(10f, 11f));
+        entries.add(new BarEntry(11f, 8f));
+        topBarChart.setFitBars(true);
+        BarDataSet barDataSet = new BarDataSet(entries, "");
+        BarData barData = new BarData(barDataSet);
+        topBarChart.setData(barData);
+        topBarChart.animateXY(2000, 2000);
+        topBarChart.invalidate();
+
+        Description description = topBarChart.getDescription();
+        description.setText("");
+
+        barDataSet.setColors(ColorTemplate.VORDIPLOM_COLORS);
+
+        final ArrayList<String> xAxisLabel = new ArrayList<>();
+        xAxisLabel.add("Jan");
+        xAxisLabel.add("Feb");
+        xAxisLabel.add("Mar");
+        xAxisLabel.add("Apr");
+        xAxisLabel.add("May");
+        xAxisLabel.add("Jun");
+        xAxisLabel.add("Jul");
+        xAxisLabel.add("Aug");
+        xAxisLabel.add("Sep");
+        xAxisLabel.add("Oct");
+        xAxisLabel.add("Nov");
+        xAxisLabel.add("Dec");
+
+        XAxis xAxis = topBarChart.getXAxis();
+        xAxis.setTextSize(10f);
+
+        xAxis.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                return xAxisLabel.get((int) value);
+
+            }
+        });
     }
 
 }
