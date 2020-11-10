@@ -1,7 +1,9 @@
 package com.example.covidapp.fragments;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,11 +52,9 @@ public class StatisticsFragment extends Fragment {
         handleBarChart();
         return fragmentView;
     }
-
     private void setFragmentView(View fragmentView) {
         this.fragmentView = fragmentView;
     }
-
 
     private void handlePieChart(){
         PieChart secondPieChart = fragmentView.findViewById(R.id.secondPieChart);
@@ -70,8 +70,8 @@ public class StatisticsFragment extends Fragment {
         set.setColors(ColorTemplate.VORDIPLOM_COLORS);
         Description description = secondPieChart.getDescription();
         description.setText("% confirmed cases based on gender");
+        secondPieChart.animateXY(1300,1300);
     }
-
     private void handleLineChart(){
         LineChart firstLineChart = fragmentView.findViewById(R.id.firstLineChart);
         List<Entry> ageGroups = new ArrayList<Entry>();
@@ -94,6 +94,7 @@ public class StatisticsFragment extends Fragment {
 
         LineDataSet setComp1 = new LineDataSet(ageGroups, "Ages groups");
         setComp1.setAxisDependency(YAxis.AxisDependency.LEFT);
+        firstLineChart.animateXY(1300, 1300);
 
         // use the interface ILineDataSet
         List<ILineDataSet> dataSets = new ArrayList<ILineDataSet>();
@@ -116,34 +117,24 @@ public class StatisticsFragment extends Fragment {
         xAxis.setValueFormatter(formatter);
         Description description = firstLineChart.getDescription();
         description.setText("");
-
     }
-
     private void handleBarChart() {
         BarChart topBarChart = fragmentView.findViewById(R.id.topBarChart);
         List<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(0f, StatsInfoHolder.getCases_january()));
-        entries.add(new BarEntry(1f, 20f));
-        entries.add(new BarEntry(2f, 10f));
-        entries.add(new BarEntry(3f, 50f));
-        entries.add(new BarEntry(4f, 5f));
-        entries.add(new BarEntry(5f, 43f));
-        entries.add(new BarEntry(6f, 25f));
-        entries.add(new BarEntry(7f, 5f));
-        entries.add(new BarEntry(8f, 15f));
-        entries.add(new BarEntry(9f, 55f));
-        entries.add(new BarEntry(10f, 11f));
-        entries.add(new BarEntry(11f, 8f));
-        topBarChart.setFitBars(true);
+        entries.add(new BarEntry(0.5f, StatsInfoHolder.getCases_january()));
+        entries.add(new BarEntry(1.5f, 20f));
+        entries.add(new BarEntry(2.5f, 10f));
+        entries.add(new BarEntry(3.5f, 50f));
+        entries.add(new BarEntry(4.5f, 5f));
+        entries.add(new BarEntry(5.5f, 43f));
+        entries.add(new BarEntry(6.5f, 25f));
+        entries.add(new BarEntry(7.5f, 5f));
+        entries.add(new BarEntry(8.5f, 15f));
+        entries.add(new BarEntry(9.5f, 55f));
+        entries.add(new BarEntry(10.5f, 11f));
+        entries.add(new BarEntry(11.5f, 8f));
         BarDataSet barDataSet = new BarDataSet(entries, "");
         BarData barData = new BarData(barDataSet);
-        topBarChart.setData(barData);
-        topBarChart.animateXY(2000, 2000);
-        topBarChart.invalidate();
-
-        Description description = topBarChart.getDescription();
-        description.setText("");
-
         barDataSet.setColors(ColorTemplate.VORDIPLOM_COLORS);
 
         final ArrayList<String> xAxisLabel = new ArrayList<>();
@@ -161,15 +152,23 @@ public class StatisticsFragment extends Fragment {
         xAxisLabel.add("Dec");
 
         XAxis xAxis = topBarChart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.TOP);
         xAxis.setTextSize(10f);
+        xAxis.setDrawAxisLine(true);
+        xAxis.setDrawGridLines(false);
+        xAxis.setTextColor(Color.BLACK);
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(xAxisLabel));
+        xAxis.setGranularityEnabled(true);
+        xAxis.setGranularity(1f);
+        xAxis.setLabelCount(12);
 
-        xAxis.setValueFormatter(new ValueFormatter() {
-            @Override
-            public String getFormattedValue(float value, AxisBase axis) {
-                return xAxisLabel.get((int) value);
-
-            }
-        });
+        topBarChart.setData(barData);
+        topBarChart.animateXY(1300, 1300);
+        topBarChart.setFitBars(true);
+        topBarChart.setDescription(null);
+        topBarChart.getXAxis().setCenterAxisLabels(true);
+        topBarChart.setDrawGridBackground(false);
+        topBarChart.invalidate();
     }
 
 }
