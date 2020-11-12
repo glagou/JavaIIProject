@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#ED7548</item>
-        <item name="colorPrimaryDark">#ED7548</item>
-        <item name="colorAccent">#ED7548</item>
+        <item name="colorPrimary">#4485FD</item>
+        <item name="colorPrimaryDark">#4485FD</item>
+        <item name="colorAccent">#4485FD</item>
     </style>
 
 </resources>

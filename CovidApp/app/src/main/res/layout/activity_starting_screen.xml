@@ -11,28 +11,19 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/doctor" />
+        android:src="@drawable/vaccine_icon"
+        android:background="@android:color/transparent"/>
 
     <TextView
         android:id="@+id/covid_app_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Covid App"
-        android:textColor="#ED7548"
+        android:textColor="@color/textColor"
         android:textSize="20sp"
         android:layout_below="@id/doctor"
         android:layout_centerHorizontal="true"
         android:textStyle="bold"/>
 
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:progressTint="#ED7548"
-        android:progress="0"
-        android:scaleY="5"
-        android:progressBackgroundTint="@android:color/transparent"/>
 
 </RelativeLayout>

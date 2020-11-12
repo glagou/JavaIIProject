@@ -20,7 +20,6 @@ public class StartingScreenActivity extends AppCompatActivity {
 
     private static int itemsGottenFromDatabase = 0;
     private static int itemsToGetFromDatabase = 0;
-    private static ProgressBar progressBar;
     private static Context context;
     private static boolean hasAlreadyMovedToNextActivity = false;
 
@@ -30,7 +29,6 @@ public class StartingScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_starting_screen);
         setContext();
         setAnimations();
-        getProgressBar();
         FirebaseFunctions.getAllVictimsFromFirestore();
         getInfoFromDatabase();
     }
@@ -48,10 +46,6 @@ public class StartingScreenActivity extends AppCompatActivity {
         covidAppText.setAnimation(fromTopAnim);
         doctorImage.setAnimation(fromTopAnim);
     }
-
-    private void getProgressBar() {
-        progressBar = findViewById(R.id.progress_bar);
-    }
     
     public static void setProgress() {
         itemsGottenFromDatabase++;
@@ -59,7 +53,6 @@ public class StartingScreenActivity extends AppCompatActivity {
 
         if(itemsToGetFromDatabase != 0) {
             progress = (int) (((double) itemsGottenFromDatabase / itemsToGetFromDatabase) * 100);
-            progressBar.setProgress(progress);
         }
 
         if(progress == 100 && itemsToGetFromDatabase != 0) {

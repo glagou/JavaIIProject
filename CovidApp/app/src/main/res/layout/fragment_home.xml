@@ -4,50 +4,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.HomeFragment">
-
-    <ImageView
-        android:id="@+id/doctor"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/doctor"
+    <EditText
+        android:id = "@+id/editText1"
+        android:layout_marginTop="30dp"
+        android:width="400dp"
+        android:height="70dp"
+        android:layout_below="@id/simpleTextView"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Username"/>
+   <EditText
+       android:id = "@+id/editText2"
+       android:layout_width="400dp"
+       android:layout_height="70dp"
+       android:layout_marginLeft="20dp"
+       android:layout_marginRight="20dp"
+       android:layout_below="@+id/editText1"
+       android:inputType = "textPassword"
+       android:hint="Password"/>
+    <Button
+        android:id = "@+id/loginbutton"
+        android:layout_width = "200dp"
+        android:layout_height = "50dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"/>
+        android:layout_below="@id/editText2"
+        android:layout_marginTop="20dp"
+        android:background="@color/textColor"
+        android:text = "Login"
+        />
+
 
     <TextView android:id="@+id/simpleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome back"
         android:textSize="25sp"
-        android:layout_below="@id/doctor"
+        android:layout_marginTop="75dp"
         android:layout_centerHorizontal="true"
-        android:textColor="#ED7548"/>
+        android:textColor="@color/textColor"/>
 
     <View
         android:id="@+id/divider"
         android:layout_width="50dp"
         android:layout_height="1dp"
-        android:background="#ED7548"
-        android:layout_below="@id/simpleTextView"
+        android:background="@color/textColor"
+        android:layout_below="@id/loginbutton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="15dp"/>
 
     <TextView android:id="@+id/simpleTextBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Total cases: 0"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:textSize="25sp"
         android:layout_below="@id/divider"
         android:layout_centerHorizontal="true"
-        android:textColor="#ED7548"/>
+        android:textColor="@color/textColor"/>
 
     <Button
         android:id="@+id/buttontoweb"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/simpleTextBottom"
         android:layout_width="200dp"
-        android:background="#ff9933"
+        android:background="@color/textColor"
         android:text="Tap me for more info"
         android:layout_height="50dp"/>
 

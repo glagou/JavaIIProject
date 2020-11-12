@@ -10,10 +10,10 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabIconTint="#ED7548"
+        app:tabIconTint="#4485FD"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="#ED7548"
-        app:tabTextColor="#51ED7548">
+        app:tabSelectedTextColor="#4485FD"
+        app:tabTextColor="#6F4485FD">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/homeTab"
