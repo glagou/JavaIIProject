@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tips"
-            android:textSize="40sp"
+            android:textSize="35sp"
             android:textColor="#F4F6FA"
             android:layout_gravity="start"
             android:layout_marginStart="70dp"
@@ -77,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Important"
-            android:textSize="40sp"
+            android:textSize="35sp"
             android:textColor="#F4F6FA"
             android:layout_gravity="start"
             android:layout_marginStart="10dp"
@@ -99,6 +99,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/gradient_backround"/>
+        <ImageView
+            android:id="@+id/coughingPerson"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/coughing_person_with_coronavirus_23_2148485525"/>
+
+        <TextView
+            android:id="@+id/coughingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="20dp"
+            android:text="Cough"
+            android:textColor="#F4F6FA"
+            android:textSize="20sp" />
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:id="@+id/bottomM"
@@ -114,6 +129,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/gradient_backround"/>
+        <ImageView
+            android:id="@+id/girlWithCold"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/illustrated_girl_with_cold_23_2148482191"/>
+
+        <TextView
+            android:id="@+id/FatigueText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textSize="20sp"
+            android:layout_marginStart="15dp"
+            android:text="Fatigue"
+            android:textColor="#F4F6FA"/>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:id="@+id/bottomR"
@@ -129,6 +159,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/gradient_backround"/>
+        <ImageView
+            android:id="@+id/personWithCold"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/illustration_person_with_cold_23_2148403857"/>
+
+        <TextView
+            android:id="@+id/dryNeckText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textSize="20sp"
+            android:layout_marginStart="5dp"
+            android:text="Dry Neck"
+            android:textColor="#F4F6FA"/>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:id="@+id/MiddleL"
@@ -143,6 +188,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/gradient_backround"/>
+        <ImageView
+            android:id="@+id/rush"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/person_suffering_from_rush_74855_6623"/>
+
+        <TextView
+            android:id="@+id/rashText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textSize="20sp"
+            android:layout_marginStart="25dp"
+            android:text="Rash"
+            android:textColor="#F4F6FA"/>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:id="@+id/MiddleM"
@@ -158,6 +218,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/gradient_backround"/>
+        <ImageView
+            android:id="@+id/fever"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/person_with_cold_having_fever_23_2148487476"/>
+
+        <TextView
+            android:id="@+id/feverText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textSize="20sp"
+            android:layout_marginStart="25dp"
+            android:text="Fever"
+            android:textColor="#F4F6FA"/>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:id="@+id/MiddleR"
@@ -173,6 +248,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/gradient_backround"/>
+        <ImageView
+            android:id="@+id/stress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/stress_concept_illustration_114360_2031"/>
+
+        <TextView
+            android:id="@+id/stressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textSize="20sp"
+            android:layout_marginStart="20dp"
+            android:text="Stress"
+            android:textColor="#F4F6FA"/>
     </androidx.cardview.widget.CardView>
     <TextView
         android:id="@+id/symptomsText"
