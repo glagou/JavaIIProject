@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     private void setNewFragment(Fragment fragment, String fragmentTag) {
         // Begin the transaction 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-	// Setting the fragment animation
+	    // Setting the fragment animation
         ft.setCustomAnimations(R.anim.slide_in, R.anim.slide_out);
         // Replace the contents of the container with the new fragment
         ft.replace(R.id.fragment_container, fragment, fragmentTag);
