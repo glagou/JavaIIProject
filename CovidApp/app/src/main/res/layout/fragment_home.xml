@@ -3,38 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.HomeFragment">
-    <EditText
-        android:id = "@+id/editText1"
-        android:layout_marginTop="30dp"
-        android:width="400dp"
-        android:height="70dp"
-        android:layout_below="@id/simpleTextView"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Username"/>
-   <EditText
-       android:id = "@+id/editText2"
-       android:layout_width="400dp"
-       android:layout_height="70dp"
-       android:layout_marginLeft="20dp"
-       android:layout_marginRight="20dp"
-       android:layout_below="@+id/editText1"
-       android:inputType = "textPassword"
-       android:hint="Password"/>
-    <Button
-        android:id = "@+id/loginbutton"
-        android:layout_width = "200dp"
-        android:layout_height = "50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/editText2"
-        android:layout_marginTop="20dp"
-        android:background="@color/textColor"
-        android:text = "Login"
-        />
-
 
     <TextView android:id="@+id/simpleTextView"
         android:layout_width="wrap_content"
@@ -50,9 +20,9 @@
         android:layout_width="50dp"
         android:layout_height="1dp"
         android:background="@color/textColor"
-        android:layout_below="@id/loginbutton"
+        android:layout_below="@id/simpleTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="50dp"/>
 
     <TextView android:id="@+id/simpleTextBottom"
         android:layout_width="wrap_content"
@@ -68,13 +38,54 @@
         android:id="@+id/buttontoweb"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/simpleTextBottom"
+        android:layout_below="@id/divider"
         android:layout_width="200dp"
         android:background="@color/textColor"
         android:text="Tap me for more info"
         android:layout_height="50dp"/>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottomCardView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="15dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_backround"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/masked_peopleicon"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="end"
+            android:layout_marginStart="170dp"/>
+       </androidx.cardview.widget.CardView>
 
-
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottomL"
+        android:layout_width="110dp"
+        android:layout_height="100dp"
+        android:layout_above="@id/bottomCardView"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="15dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_backround"/>
+    </androidx.cardview.widget.CardView>
+    />
 </RelativeLayout>
+
+
+
+
+
+
 
