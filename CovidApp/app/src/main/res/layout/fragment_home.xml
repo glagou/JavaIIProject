@@ -64,11 +64,31 @@
             android:layout_marginTop="10dp"
             android:layout_gravity="end"
             android:layout_marginStart="170dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tips"
+            android:textSize="40sp"
+            android:textColor="#F4F6FA"
+            android:layout_gravity="start"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="40dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Important"
+            android:textSize="40sp"
+            android:textColor="#F4F6FA"
+            android:layout_gravity="start"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"/>
+
+
        </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/bottomL"
-        android:layout_width="110dp"
+        android:layout_width="95dp"
         android:layout_height="100dp"
         android:layout_above="@id/bottomCardView"
         android:layout_marginStart="30dp"
@@ -80,7 +100,99 @@
             android:layout_height="match_parent"
             android:background="@drawable/gradient_backround"/>
     </androidx.cardview.widget.CardView>
-    />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottomM"
+        android:layout_width="95dp"
+        android:layout_height="100dp"
+        android:layout_toEndOf="@id/bottomL"
+        android:layout_above="@id/bottomCardView"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="15dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_backround"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottomR"
+        android:layout_width="95dp"
+        android:layout_height="100dp"
+        android:layout_above="@id/bottomCardView"
+        android:layout_toEndOf="@id/bottomM"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="15dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_backround"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/MiddleL"
+        android:layout_width="95dp"
+        android:layout_height="100dp"
+        android:layout_above="@id/bottomL"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="15dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_backround"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/MiddleM"
+        android:layout_width="95dp"
+        android:layout_height="100dp"
+        android:layout_above="@id/bottomM"
+        android:layout_toEndOf="@id/MiddleL"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="15dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_backround"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/MiddleR"
+        android:layout_width="95dp"
+        android:layout_height="100dp"
+        android:layout_above="@id/bottomR"
+        android:layout_toEndOf="@id/MiddleM"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="15dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_backround"/>
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/symptomsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/MiddleM"
+        android:layout_marginBottom="20dp"
+        android:text="Symptoms"
+        android:textColor="@color/textColor"
+        android:textSize="25sp"
+        android:layout_centerHorizontal="true"
+        />
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="50dp"
+        android:layout_height="1dp"
+        android:background="@color/textColor"
+        android:layout_above="@id/symptomsText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
 </RelativeLayout>
 
 
