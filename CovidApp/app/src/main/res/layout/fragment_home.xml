@@ -6,33 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.HomeFragment">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/bottomCardBottomGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.97" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/bottomCardTopGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.84"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/bottomCardStartGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.09"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/bottomCardEndGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.91"/>
     
     <TextView android:id="@+id/simpleTextView"
         android:layout_width="wrap_content"
@@ -71,6 +45,33 @@
         android:background="@color/textColor"
         android:text="Tap me for more info"
         android:layout_height="50dp"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomCardBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.97" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomCardTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.84"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomCardStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.09"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomCardEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.91"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/bottomCardView"
@@ -172,95 +173,375 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
        </androidx.cardview.widget.CardView>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomLtStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.09"/>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomLEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.30"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomLTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.67"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomLBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8"/>
     <androidx.cardview.widget.CardView
         android:id="@+id/bottomL"
-        android:layout_width="95dp"
-        android:layout_height="100dp"
-        android:layout_above="@id/bottomCardView"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/bottomLtStartGuideline"
+        app:layout_constraintEnd_toStartOf="@id/bottomLEndGuideline"
+        app:layout_constraintTop_toBottomOf="@id/bottomLTopGuideline"
+        app:layout_constraintBottom_toTopOf="@id/bottomLBottomGuideline"
         app:cardCornerRadius="15dp">
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/gradient_backround"/>
-        <ImageView
-            android:id="@+id/coughingPerson"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/coughing_person_with_coronavirus_23_2148485525"/>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/coughImageStartGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/coughImageEndGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/coughImageTopGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/coughImageBottomGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1"/>
+
+            <ImageView
+                android:id="@+id/coughingPerson"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/coughing_person_with_coronavirus_23_2148485525"
+                app:layout_constraintBottom_toTopOf="@id/coughImageBottomGuideline"
+                app:layout_constraintEnd_toStartOf="@id/coughImageEndGuideline"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/coughImageStartGuideline"
+                app:layout_constraintTop_toBottomOf="@id/coughImageTopGuideline"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/coughTextBottomGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/coughTextTopGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/coughTextStartGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/coughTextEndGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8"/>
         <TextView
             android:id="@+id/coughingText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginStart="20dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/coughTextStartGuideline"
+            app:layout_constraintEnd_toStartOf="@id/coughTextEndGuideline"
+            app:layout_constraintTop_toBottomOf="@id/coughTextTopGuideline"
+            app:layout_constraintBottom_toTopOf="@id/coughTextBottomGuideline"
+            app:autoSizeTextType="uniform"
+            android:textAlignment="center"
             android:text="Cough"
-            android:textColor="#F4F6FA"
-            android:textSize="20sp" />
+            android:textColor="#F4F6FA" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomMtStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.39"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomMEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.60"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomMTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.67"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomMBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8"/>
     <androidx.cardview.widget.CardView
         android:id="@+id/bottomM"
-        android:layout_width="95dp"
-        android:layout_height="100dp"
-        android:layout_toEndOf="@id/bottomL"
-        android:layout_above="@id/bottomCardView"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/bottomMtStartGuideline"
+        app:layout_constraintEnd_toStartOf="@id/bottomMEndGuideline"
+        app:layout_constraintTop_toBottomOf="@id/bottomMTopGuideline"
+        app:layout_constraintBottom_toTopOf="@id/bottomMBottomGuideline"
         app:cardCornerRadius="15dp">
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/gradient_backround"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fatigueImageStartGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fatigueImageEndGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fatigueImageTopGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fatigueImageBottomGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1"/>
         <ImageView
             android:id="@+id/girlWithCold"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/fatigueImageStartGuideline"
+            app:layout_constraintEnd_toStartOf="@id/fatigueImageEndGuideline"
+            app:layout_constraintTop_toBottomOf="@id/fatigueImageTopGuideline"
+            app:layout_constraintBottom_toTopOf="@id/fatigueImageBottomGuideline"
+            android:scaleType="fitCenter"
             android:src="@drawable/illustrated_girl_with_cold_23_2148482191"/>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/fatigueTextBottomGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="1" />
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/fatigueTextTopGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.7"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/fatigueTextStartGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.2"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/fatigueTextEndGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.8"/>
         <TextView
             android:id="@+id/FatigueText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:textSize="20sp"
-            android:layout_marginStart="15dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/fatigueTextStartGuideline"
+            app:layout_constraintEnd_toStartOf="@id/fatigueTextEndGuideline"
+            app:layout_constraintTop_toBottomOf="@id/fatigueTextTopGuideline"
+            app:layout_constraintBottom_toTopOf="@id/fatigueTextBottomGuideline"
+            app:autoSizeTextType="uniform"
+            android:textAlignment="center"
             android:text="Fatigue"
             android:textColor="#F4F6FA"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomRtStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.69"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomREndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.91"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomRTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.67"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomRBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8"/>
     <androidx.cardview.widget.CardView
         android:id="@+id/bottomR"
-        android:layout_width="95dp"
-        android:layout_height="100dp"
-        android:layout_above="@id/bottomCardView"
-        android:layout_toEndOf="@id/bottomM"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/bottomRtStartGuideline"
+        app:layout_constraintEnd_toStartOf="@id/bottomREndGuideline"
+        app:layout_constraintTop_toBottomOf="@id/bottomRTopGuideline"
+        app:layout_constraintBottom_toTopOf="@id/bottomRBottomGuideline"
         app:cardCornerRadius="15dp">
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/gradient_backround"/>
-        <ImageView
-            android:id="@+id/personWithCold"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/illustration_person_with_cold_23_2148403857"/>
-
-        <TextView
-            android:id="@+id/dryNeckText"
+            android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/dryNeckImageStartGuideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:textSize="20sp"
-            android:layout_marginStart="5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/dryNeckImageEndGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/dryNeckImageTopGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/dryNeckImageBottomGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9"/>
+        <ImageView
+            android:id="@+id/personWithCold"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/dryNeckImageStartGuideline"
+            app:layout_constraintEnd_toStartOf="@id/dryNeckImageEndGuideline"
+            app:layout_constraintTop_toBottomOf="@id/dryNeckImageTopGuideline"
+            app:layout_constraintBottom_toTopOf="@id/dryNeckImageBottomGuideline"
+            android:scaleType="fitCenter"
+            android:src="@drawable/illustration_person_with_cold_23_2148403857"/>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/dryNeckTextBottomGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="1" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/dryNeckTextTopGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.7"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/dryNeckTextStartGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.2"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/dryNeckTextEndGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.8"/>
+        <TextView
+            android:id="@+id/dryNeckText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/dryNeckTextStartGuideline"
+            app:layout_constraintEnd_toStartOf="@id/dryNeckTextEndGuideline"
+            app:layout_constraintTop_toBottomOf="@id/dryNeckTextTopGuideline"
+            app:layout_constraintBottom_toTopOf="@id/dryNeckTextBottomGuideline"
+            app:autoSizeTextType="uniform"
+            android:textAlignment="center"
             android:text="Dry Neck"
             android:textColor="#F4F6FA"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:id="@+id/MiddleL"
