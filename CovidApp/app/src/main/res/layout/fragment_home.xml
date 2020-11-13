@@ -149,7 +149,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.1"/>
+                app:layout_constraintGuide_begin="10dp" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/tipsBottomGuideline"
@@ -168,7 +168,8 @@
                 app:layout_constraintTop_toBottomOf="@id/tipsTopGuideline"
                 app:layout_constraintBottom_toTopOf="@id/tipsBottomGuideline"
                 app:autoSizeTextType="uniform"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:textStyle="bold"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -253,10 +254,8 @@
                 android:src="@drawable/coughing_person_with_coronavirus_23_2148485525"
                 app:layout_constraintBottom_toTopOf="@id/coughImageBottomGuideline"
                 app:layout_constraintEnd_toStartOf="@id/coughImageEndGuideline"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@id/coughImageStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/coughImageTopGuideline"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintTop_toBottomOf="@id/coughImageTopGuideline" />
 
             <androidx.constraintlayout.widget.Guideline
             android:id="@+id/coughTextBottomGuideline"
@@ -296,7 +295,8 @@
             app:autoSizeTextType="uniform"
             android:textAlignment="center"
             android:text="Cough"
-            android:textColor="#F4F6FA" />
+            android:textColor="#F4F6FA"
+            android:textStyle="bold"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -418,7 +418,8 @@
             app:autoSizeTextType="uniform"
             android:textAlignment="center"
             android:text="Fatigue"
-            android:textColor="#F4F6FA"/>
+            android:textColor="#F4F6FA"
+            android:textStyle="bold"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
     <androidx.constraintlayout.widget.Guideline
@@ -539,120 +540,455 @@
             app:autoSizeTextType="uniform"
             android:textAlignment="center"
             android:text="Dry Neck"
-            android:textColor="#F4F6FA"/>
+            android:textColor="#F4F6FA"
+            android:textStyle="bold"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:id="@+id/MiddleL"
-        android:layout_width="95dp"
-        android:layout_height="100dp"
-        android:layout_above="@id/bottomL"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="20dp"
-        app:cardCornerRadius="15dp">
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/gradient_backround"/>
-        <ImageView
-            android:id="@+id/rush"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/person_suffering_from_rush_74855_6623"/>
-
-        <TextView
-            android:id="@+id/rashText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:textSize="20sp"
-            android:layout_marginStart="25dp"
-            android:text="Rash"
-            android:textColor="#F4F6FA"/>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/MiddleM"
-        android:layout_width="95dp"
-        android:layout_height="100dp"
-        android:layout_above="@id/bottomM"
-        android:layout_toEndOf="@id/MiddleL"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="20dp"
-        app:cardCornerRadius="15dp">
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/gradient_backround"/>
-        <ImageView
-            android:id="@+id/fever"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/person_with_cold_having_fever_23_2148487476"/>
-
-        <TextView
-            android:id="@+id/feverText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:textSize="20sp"
-            android:layout_marginStart="25dp"
-            android:text="Fever"
-            android:textColor="#F4F6FA"/>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/MiddleR"
-        android:layout_width="95dp"
-        android:layout_height="100dp"
-        android:layout_above="@id/bottomR"
-        android:layout_toEndOf="@id/MiddleM"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="20dp"
-        app:cardCornerRadius="15dp">
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/gradient_backround"/>
-        <ImageView
-            android:id="@+id/stress"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/stress_concept_illustration_114360_2031"/>
-
-        <TextView
-            android:id="@+id/stressText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:textSize="20sp"
-            android:layout_marginStart="20dp"
-            android:text="Stress"
-            android:textColor="#F4F6FA"/>
-    </androidx.cardview.widget.CardView>
-    <TextView
-        android:id="@+id/symptomsText"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middleLtStartGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/MiddleM"
-        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.09"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middleLEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middleLTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middleLBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.63"/>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/MiddleL"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/middleLtStartGuideline"
+        app:layout_constraintEnd_toStartOf="@id/middleLEndGuideline"
+        app:layout_constraintTop_toBottomOf="@id/middleLTopGuideline"
+        app:layout_constraintBottom_toTopOf="@id/middleLBottomGuideline"
+        app:cardCornerRadius="15dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_backround"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rashImageStartGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rashImageEndGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rashImageTopGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rashImageBottomGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9"/>
+        <ImageView
+            android:id="@+id/rush"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/rashImageStartGuideline"
+            app:layout_constraintEnd_toStartOf="@id/rashImageEndGuideline"
+            app:layout_constraintTop_toBottomOf="@id/rashImageTopGuideline"
+            app:layout_constraintBottom_toTopOf="@id/rashImageBottomGuideline"
+            android:scaleType="fitCenter"
+            android:src="@drawable/person_suffering_from_rush_74855_6623"/>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/rashTextBottomGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="1" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/rashTextTopGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.7"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/rashTextStartGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.2"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/rashTextEndGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.8"/>
+        <TextView
+            android:id="@+id/rashText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/rashTextStartGuideline"
+            app:layout_constraintEnd_toStartOf="@id/rashTextEndGuideline"
+            app:layout_constraintTop_toBottomOf="@id/rashTextTopGuideline"
+            app:layout_constraintBottom_toTopOf="@id/rashTextBottomGuideline"
+            app:autoSizeTextType="uniform"
+            android:textAlignment="center"
+            android:text="Rash"
+            android:textColor="#F4F6FA"
+            android:textStyle="bold"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middleMtStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.39"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middleMEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middleMTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middleMBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.63"/>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/MiddleM"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_above="@id/bottomM"
+        app:layout_constraintStart_toEndOf="@id/middleMtStartGuideline"
+        app:layout_constraintEnd_toStartOf="@id/middleMEndGuideline"
+        app:layout_constraintTop_toBottomOf="@id/middleMTopGuideline"
+        app:layout_constraintBottom_toTopOf="@id/middleMBottomGuideline"
+        app:cardCornerRadius="15dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_backround"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feverImageStartGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feverImageEndGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feverImageTopGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feverImageBottomGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9"/>
+        <ImageView
+            android:id="@+id/fever"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/feverImageStartGuideline"
+            app:layout_constraintEnd_toStartOf="@id/feverImageEndGuideline"
+            app:layout_constraintTop_toBottomOf="@id/feverImageTopGuideline"
+            app:layout_constraintBottom_toTopOf="@id/feverImageBottomGuideline"
+            android:scaleType="fitCenter"
+            android:src="@drawable/person_with_cold_having_fever_23_2148487476"/>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/feverTextBottomGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="1" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/feverTextTopGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.7"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/feverTextStartGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.2"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/feverTextEndGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.8"/>
+        <TextView
+            android:id="@+id/feverText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/feverTextStartGuideline"
+            app:layout_constraintEnd_toStartOf="@id/feverTextEndGuideline"
+            app:layout_constraintTop_toBottomOf="@id/feverTextTopGuideline"
+            app:layout_constraintBottom_toTopOf="@id/feverTextBottomGuideline"
+            app:autoSizeTextType="uniform"
+            android:textAlignment="center"
+            android:text="Fever"
+            android:textColor="#F4F6FA"
+            android:textStyle="bold"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middleRtStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.69"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middleREndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middleRTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middleRBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.63"/>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/MiddleR"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_above="@id/bottomM"
+        app:layout_constraintStart_toEndOf="@id/middleRtStartGuideline"
+        app:layout_constraintEnd_toStartOf="@id/middleREndGuideline"
+        app:layout_constraintTop_toBottomOf="@id/middleRTopGuideline"
+        app:layout_constraintBottom_toTopOf="@id/middleRBottomGuideline"
+        app:cardCornerRadius="15dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_backround"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/stressImageStartGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/stressImageEndGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/stressImageTopGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/stressImageBottomGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9"/>
+        <ImageView
+            android:id="@+id/stress"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/stressImageStartGuideline"
+            app:layout_constraintEnd_toStartOf="@id/stressImageEndGuideline"
+            app:layout_constraintTop_toBottomOf="@id/stressImageTopGuideline"
+            app:layout_constraintBottom_toTopOf="@id/stressImageBottomGuideline"
+            android:scaleType="fitCenter"
+            android:src="@drawable/stress_concept_illustration_114360_2031"/>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/stressTextBottomGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="1" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/stressTextTopGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.7"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/stressTextStartGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.2"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/stressTextEndGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.8"/>
+        <TextView
+            android:id="@+id/stressText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/stressTextStartGuideline"
+            app:layout_constraintEnd_toStartOf="@id/stressTextEndGuideline"
+            app:layout_constraintTop_toBottomOf="@id/stressTextTopGuideline"
+            app:layout_constraintBottom_toTopOf="@id/stressTextBottomGuideline"
+            app:autoSizeTextType="uniform"
+            android:textAlignment="center"
+            android:text="Stress"
+            android:textColor="#F4F6FA"
+            android:textStyle="bold" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/symptomsTextBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.48" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/symptomsTextTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.44"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/symptomsTextStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/symptomsTextEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.69"/>
+    <TextView
+        android:id="@+id/symptomsText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/symptomsTextStartGuideline"
+        app:layout_constraintEnd_toStartOf="@id/symptomsTextEndGuideline"
+        app:layout_constraintTop_toBottomOf="@id/symptomsTextTopGuideline"
+        app:layout_constraintBottom_toTopOf="@id/symptomsTextBottomGuideline"
+        app:autoSizeTextType="uniform"
+        android:textAlignment="center"
         android:text="Symptoms"
         android:textColor="@color/textColor"
-        android:textSize="25sp"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_centerHorizontal="true" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/divider2TextBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/divider2TextTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.41"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/divider2TextStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/divider2TextEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.69"/>
     <View
         android:id="@+id/divider2"
-        android:layout_width="50dp"
-        android:layout_height="1dp"
-        android:background="@color/textColor"
-        android:layout_above="@id/symptomsText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"/>
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/divider2TextStartGuideline"
+        app:layout_constraintEnd_toStartOf="@id/divider2TextEndGuideline"
+        app:layout_constraintTop_toBottomOf="@id/divider2TextTopGuideline"
+        app:layout_constraintBottom_toTopOf="@id/divider2TextBottomGuideline"
+        android:background="@color/textColor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
