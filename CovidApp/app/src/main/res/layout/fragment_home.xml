@@ -592,7 +592,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.9" />
+                app:layout_constraintGuide_percent="1" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/dryNeckTextTopGuideline"
@@ -606,14 +606,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.1"/>
+                app:layout_constraintGuide_percent="0.15"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/dryNeckTextEndGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.9"/>
+                app:layout_constraintGuide_percent="0.85"/>
         <TextView
             android:id="@+id/dryNeckText"
             android:layout_width="0dp"

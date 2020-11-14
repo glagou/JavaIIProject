@@ -65,8 +65,6 @@ public class StatisticsFragment extends Fragment {
         PieData data = new PieData(set);
         secondPieChart.setData(data);
         secondPieChart.invalidate();
-        //set.setColor(new int[]{ R.color.colorPrimary}, Context);
-        //set2.setColor(new int[]{ R.color.material_on_surface_disabled}, Context);
         set.setColors(ColorTemplate.VORDIPLOM_COLORS);
         Description description = secondPieChart.getDescription();
         description.setText("% confirmed cases based on gender");
