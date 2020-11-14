@@ -171,7 +171,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/gradient_backround"/>
+            android:background="@color/textColor"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -298,7 +298,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/gradient_backround"/>
+            android:background="@color/textColor"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -424,7 +424,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/gradient_backround"/>
+            android:background="@color/textColor"/>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -546,7 +546,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/gradient_backround"/>
+            android:background="@color/textColor"/>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -669,7 +669,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/gradient_backround"/>
+            android:background="@color/textColor"/>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -792,7 +792,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/gradient_backround"/>
+            android:background="@color/textColor"/>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -915,7 +915,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/gradient_backround"/>
+            android:background="@color/textColor"/>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -1074,6 +1074,53 @@
         app:layout_constraintTop_toBottomOf="@id/divider2TextTopGuideline"
         app:layout_constraintBottom_toTopOf="@id/divider2TextBottomGuideline"
         android:background="@color/textColor" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topTipsBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.41" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topTipsTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topTipsStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.09"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topTipsEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.91"/>
+    <TextView
+       android:id="@+id/topTips"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/topTipsStartGuideline"
+        app:layout_constraintEnd_toStartOf="@id/topTipsEndGuideline"
+        app:layout_constraintTop_toBottomOf="@id/topTipsTopGuideline"
+        app:layout_constraintBottom_toTopOf="@id/topTipsBottomGuideline"
+        app:autoSizeTextType="uniform"
+        android:textAlignment="center"
+       android:textStyle="bold"
+        android:textColor="#FF4485FD"
+        android:text="To prevent the spread of COVID-19:
+Clean your hands often. Use soap and water, or an alcohol-based hand rub.
+Maintain a safe distance from anyone who is coughing or sneezing.
+Wear a mask when physical distancing is not possible.
+Don’t touch your eyes, nose or mouth.
+Cover your nose and mouth with your bent elbow or a tissue when you cough or sneeze.
+Stay home if you feel unwell.
+If you have a fever, cough and difficulty breathing, seek medical attention."/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
