@@ -7,44 +7,129 @@
     tools:context=".fragments.HomeFragment">
 
 
-    
-    <TextView android:id="@+id/simpleTextView"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/welcomeTextBottomGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.075" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/welcomeTextTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.025"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/welcomeTextStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/welcomeTextEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.69"/>
+    <TextView android:id="@+id/simpleTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/welcomeTextStartGuideline"
+        app:layout_constraintEnd_toStartOf="@id/welcomeTextEndGuideline"
+        app:layout_constraintTop_toBottomOf="@id/welcomeTextTopGuideline"
+        app:layout_constraintBottom_toTopOf="@id/welcomeTextBottomGuideline"
+        app:autoSizeTextType="uniform"
+        android:textAlignment="center"
         android:text="Welcome back"
-        android:textSize="25sp"
-        android:layout_marginTop="75dp"
-        android:layout_centerHorizontal="true"
         android:textColor="@color/textColor"/>
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="50dp"
-        android:layout_height="1dp"
-        android:background="@color/textColor"
-        android:layout_below="@id/simpleTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"/>
-
-    <TextView android:id="@+id/simpleTextBottom"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/dividerTextBottomGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.146" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/dividerTextTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.145"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/dividerTextStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.39"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/dividerTextEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6"/>
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/textColor"
+        app:layout_constraintStart_toEndOf="@id/dividerTextStartGuideline"
+        app:layout_constraintEnd_toStartOf="@id/dividerTextEndGuideline"
+        app:layout_constraintTop_toBottomOf="@id/dividerTextTopGuideline"
+        app:layout_constraintBottom_toTopOf="@id/dividerTextBottomGuideline"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/casesTextBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.125" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/casesTextTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.075"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/casesTextStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/casesTextEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.69"/>
+    <TextView android:id="@+id/simpleTextBottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/casesTextStartGuideline"
+        app:layout_constraintEnd_toStartOf="@id/casesTextEndGuideline"
+        app:layout_constraintTop_toBottomOf="@id/casesTextTopGuideline"
+        app:layout_constraintBottom_toTopOf="@id/casesTextBottomGuideline"
+        app:autoSizeTextType="uniform"
+        android:textAlignment="center"
         android:text="Total cases: 0"
-        android:layout_marginTop="25dp"
-        android:textSize="25sp"
-        android:layout_below="@id/divider"
-        android:layout_centerHorizontal="true"
         android:textColor="@color/textColor"/>
 
     <Button
         android:id="@+id/buttontoweb"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="0dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/divider"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:background="@color/textColor"
         android:text="Tap me for more info"
-        android:layout_height="50dp"/>
+        android:layout_height="0dp"/>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bottomCardBottomGuideline"
         android:layout_width="wrap_content"
@@ -507,7 +592,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="1" />
+                app:layout_constraintGuide_percent="0.9" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/dryNeckTextTopGuideline"
@@ -521,14 +606,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.2"/>
+                app:layout_constraintGuide_percent="0.1"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/dryNeckTextEndGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.8"/>
+                app:layout_constraintGuide_percent="0.9"/>
         <TextView
             android:id="@+id/dryNeckText"
             android:layout_width="0dp"
@@ -958,28 +1043,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_percent="0.421" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/divider2TextTopGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.41"/>
+        app:layout_constraintGuide_percent="0.42"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/divider2TextStartGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.3"/>
+        app:layout_constraintGuide_percent="0.39"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/divider2TextEndGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.69"/>
+        app:layout_constraintGuide_percent="0.6"/>
     <View
         android:id="@+id/divider2"
         android:layout_width="0dp"
