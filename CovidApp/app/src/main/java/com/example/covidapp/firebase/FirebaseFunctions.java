@@ -380,9 +380,9 @@ public class FirebaseFunctions {
                         String residenceRegion = snapshot.getString("Residence Region");
                         String dateOfDisease = snapshot.getString("Date Of Disease");
                         String gender = snapshot.getString("Gender");
-                        boolean isSusceptible = snapshot.getString("Is Susceptible").equals("true");
-                        int age = Integer.parseInt(snapshot.getString("Age"));
-                        int contactsLength = Integer.parseInt(snapshot.getString("Contacts Length"));
+                        boolean isSusceptible = snapshot.getBoolean("Is Susceptible");
+                        int age = snapshot.getDouble("Age").intValue();
+                        int contactsLength = snapshot.getDouble("Contacts Length").intValue();
                         String[] closeContactWith = new String[contactsLength];
                         String[] closeContactWithPhones = new String[contactsLength];
                         for(int j = 0; j < contactsLength; j++) {
