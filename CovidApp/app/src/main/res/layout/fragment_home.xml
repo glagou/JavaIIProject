@@ -588,43 +588,43 @@
             android:scaleType="fitCenter"
             android:src="@drawable/illustration_person_with_cold_23_2148403857"/>
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/dryNeckTextBottomGuideline"
+                android:id="@+id/dryThroatTextBottomGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="1" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/dryNeckTextTopGuideline"
+                android:id="@+id/dryThroatTextTopGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.7"/>
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/dryNeckTextStartGuideline"
+                android:id="@+id/dryThroatTextStartGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.15"/>
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/dryNeckTextEndGuideline"
+                android:id="@+id/dryThroatTextEndGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.85"/>
         <TextView
-            android:id="@+id/dryNeckText"
+            android:id="@+id/dryThroatText"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintStart_toEndOf="@id/dryNeckTextStartGuideline"
-            app:layout_constraintEnd_toStartOf="@id/dryNeckTextEndGuideline"
-            app:layout_constraintTop_toBottomOf="@id/dryNeckTextTopGuideline"
-            app:layout_constraintBottom_toTopOf="@id/dryNeckTextBottomGuideline"
+            app:layout_constraintStart_toEndOf="@id/dryThroatTextStartGuideline"
+            app:layout_constraintEnd_toStartOf="@id/dryThroatTextEndGuideline"
+            app:layout_constraintTop_toBottomOf="@id/dryThroatTextTopGuideline"
+            app:layout_constraintBottom_toTopOf="@id/dryThroatTextBottomGuideline"
             app:autoSizeTextType="uniform"
             android:textAlignment="center"
-            android:text="Dry Neck"
+            android:text="Dry Throat"
             android:textColor="#F4F6FA"
             android:textStyle="bold"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -1086,7 +1086,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25"/>
+        app:layout_constraintGuide_percent="0.15"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/topTipsStartGuideline"
