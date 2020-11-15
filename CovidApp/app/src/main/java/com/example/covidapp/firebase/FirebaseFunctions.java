@@ -190,6 +190,8 @@ public class FirebaseFunctions {
                                     modifyDatabaseValueByOne("TOTAL_CASES", true);
                                     modifyGenderValuesInDatabase(gender, true);
                                     modifyMonthGroupValuesInDatabase(dateOfDisease, true);
+                                    CasesFragment.addToCases(new ModelCase(firstName,lastName,phone,residenceRegion,dateOfDisease,
+                                            id,gender,closeContactWith,phonesOfCloseContact,age,isSusceptible));
                                     Log.d(DEBUG_TAG, "Victim was added successfully)");
                                 }
                             })
