@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditCaseActivity"/>
+        <activity android:name=".activity_view_contact"></activity>
+        <activity android:name=".EditCaseActivity" />
         <activity android:name=".AddCaseActivity" />
-        <activity android:name=".StartingScreenActivity"
+        <activity
+            android:name=".StartingScreenActivity"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
