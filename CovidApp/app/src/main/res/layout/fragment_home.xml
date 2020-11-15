@@ -121,15 +121,6 @@
         android:text="Total cases: 0"
         android:textColor="@color/textColor"/>
 
-    <Button
-        android:id="@+id/buttontoweb"
-        android:layout_marginTop="0dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/divider"
-        android:layout_width="0dp"
-        android:background="@color/textColor"
-        android:text="Tap me for more info"
-        android:layout_height="0dp"/>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bottomCardBottomGuideline"
         android:layout_width="wrap_content"
@@ -208,7 +199,7 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:src="@drawable/masked_peopleicon"
+                android:src="@drawable/people_wearing_medical_mask_52683_35468"
                 app:layout_constraintStart_toEndOf="@id/imageStartGuideline"
                 app:layout_constraintEnd_toStartOf="@id/imageEndGuideline"
                 app:layout_constraintTop_toBottomOf="@id/imageTopGuideline"

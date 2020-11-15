@@ -34,22 +34,7 @@ public class HomeFragment extends Fragment {
         fragmentView = inflater.inflate(R.layout.fragment_home, container, false);
 
         TextView text = fragmentView.findViewById(R.id.simpleTextBottom);
-        Button btn =  fragmentView.findViewById(R.id.buttontoweb);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                WebView wb = new WebView(getContext());
-                wb.loadUrl("https://who.int/");
-
-            }
-        });
-
-
         text.setText("Total cases: "+ CasesFragment.returnCases());
-
-
-
         return fragmentView;
     }
 

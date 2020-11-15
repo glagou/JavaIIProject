@@ -6,5 +6,9 @@
         <item name="colorPrimaryDark">#4485FD</item>
         <item name="colorAccent">#4485FD</item>
     </style>
+    <style name="circleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 
 </resources>
