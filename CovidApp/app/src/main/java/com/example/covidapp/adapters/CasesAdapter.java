@@ -38,18 +38,18 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
         ModelCase modelCase = cases.get(position);
         TextView nameTextView = holder.nameText;
         TextView idTextView = holder.idText;
-        TextView phoneTextView = holder.phoneText;
+        /*TextView phoneTextView = holder.phoneText;
         TextView residenceTextView = holder.residenceText;
         TextView dateOfDiseaseTextView = holder.dateOfDiseaseText;
         TextView genderTextView = holder.genderText;
         TextView closeContactsWithTextView = holder.closeContactWithText;
         TextView phoneOfCloseContactsTextView = holder.phonesOfCloseContactsText;
         TextView ageTextView = holder.ageText;
-        TextView susceptibleTextView = holder.susceptibleText;
+        TextView susceptibleTextView = holder.susceptibleText;*/
 
         idTextView.setText("ID: " + modelCase.getId());
         nameTextView.setText("Full Name: " + modelCase.getFirstName() + " " + modelCase.getLastName());
-        phoneTextView.setText("Phone: " + modelCase.getPhone());
+        /*phoneTextView.setText("Phone: " + modelCase.getPhone());
         residenceTextView.setText("Residence Region: " + modelCase.getResidenceRegion());
         dateOfDiseaseTextView.setText("Date Of Disease: " + modelCase.getDateOfDisease());
         genderTextView.setText("Gender: " + modelCase.getGender());
@@ -69,7 +69,7 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
                 closeContactsWithTextView.setText(closeContactsWithTextView.getText() + ", " + modelCase.getCloseContactWith()[i]);
                 phoneOfCloseContactsTextView.setText(phoneOfCloseContactsTextView.getText() + ", " + modelCase.getPhonesOfCloseContact());
             }
-        }
+        }*/
 
     }
 
@@ -80,8 +80,7 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
 
     public class CasesViewHolder extends RecyclerView.ViewHolder {
 
-        TextView idText, nameText, phoneText, residenceText, dateOfDiseaseText,
-        genderText, closeContactWithText, phonesOfCloseContactsText, ageText, susceptibleText;
+        TextView idText, nameText;
 
         public CasesViewHolder(@NonNull View itemView) {
             super(itemView);
