@@ -87,15 +87,6 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
             super(itemView);
             idText = itemView.findViewById(R.id.id_text);
             nameText = itemView.findViewById(R.id.name_text);
-            phoneText = itemView.findViewById(R.id.phone_text);
-            residenceText = itemView.findViewById(R.id.residence_text);
-            dateOfDiseaseText = itemView.findViewById(R.id.date_of_disease_text);
-            genderText = itemView.findViewById(R.id.gender_text);
-            closeContactWithText = itemView.findViewById(R.id.close_contact_with_text);
-            phonesOfCloseContactsText = itemView.findViewById(R.id.phones_of_close_contacts_text);
-            ageText = itemView.findViewById(R.id.age_text);
-            susceptibleText = itemView.findViewById(R.id.susceptible_text);
-
         }
     }
 }

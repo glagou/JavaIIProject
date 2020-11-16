@@ -1,116 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginStart="5dp"
-    android:layout_marginEnd="5dp">
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-   <RelativeLayout
+   <androidx.constraintlayout.widget.ConstraintLayout
        android:layout_width="match_parent"
        android:layout_height="match_parent">
 
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/iconBottomGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="0.9" />
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/iconTopGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="0.1"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/iconStartGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.05"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/iconEndGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.25"/>
        <com.google.android.material.imageview.ShapeableImageView
           app:shapeAppearanceOverlay="@style/circleImageView"
            android:adjustViewBounds="true"
            android:id="@+id/item_image"
-           android:layout_width="100dp"
-           android:layout_height="150dp"
-          app:srcCompat="@drawable/man_with_mask"
-           android:layout_centerVertical="true"
-           android:scaleType="fitCenter"
-           android:layout_marginStart="15dp"/>
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+          app:srcCompat="@drawable/red_man_with_mask"
+           app:layout_constraintBottom_toTopOf="@id/iconBottomGuideline"
+           app:layout_constraintEnd_toStartOf="@id/iconEndGuideline"
+           app:layout_constraintStart_toEndOf="@id/iconStartGuideline"
+           app:layout_constraintTop_toBottomOf="@id/iconTopGuideline"
+           android:scaleType="fitCenter" />
 
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/name1TextBottomGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="0.25" />
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/name1TextTopGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="0.05"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/name1TextStartGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.27"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/name1TextEndGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.5" />
+       <TextView
+           android:id="@+id/topNameText"
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           android:text="Name"
+           app:autoSizeTextType="uniform"
+           android:textAlignment="center"
+           app:layout_constraintBottom_toTopOf="@id/name1TextBottomGuideline"
+           app:layout_constraintEnd_toStartOf="@id/name1TextEndGuideline"
+           app:layout_constraintStart_toEndOf="@id/name1TextStartGuideline"
+           app:layout_constraintTop_toBottomOf="@id/name1TextTopGuideline"
+           android:textColor="#FF4485FD"
+           android:textStyle="bold"/>
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/topIdTextBottomGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="0.7" />
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/topIdTextTopGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="0.5"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/topIdTextStartGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.2"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/topIdTextEndGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.575" />
+       <TextView
+           android:id="@+id/topIdText"
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           android:text="ID"
+           app:autoSizeTextType="uniform"
+           android:textAlignment="center"
+           app:layout_constraintBottom_toTopOf="@id/topIdTextBottomGuideline"
+           app:layout_constraintEnd_toStartOf="@id/topIdTextEndGuideline"
+           app:layout_constraintStart_toEndOf="@id/topIdTextStartGuideline"
+           app:layout_constraintTop_toBottomOf="@id/topIdTextTopGuideline"
+           android:textColor="#FF4485FD"
+           android:textStyle="bold"/>
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/dividerTextBottomGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="0.46" />
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/dividerTextTopGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="0.45"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/dividerTextStartGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.4"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/dividerTextEndGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.85"/>
+       <View
+           android:id="@+id/divider"
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           android:background="@color/textColor"
+           app:layout_constraintStart_toEndOf="@id/dividerTextStartGuideline"
+           app:layout_constraintEnd_toStartOf="@id/dividerTextEndGuideline"
+           app:layout_constraintTop_toBottomOf="@id/dividerTextTopGuideline"
+           app:layout_constraintBottom_toTopOf="@id/dividerTextBottomGuideline"/>
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/idTextBottomGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="0.9" />
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/idTextTopGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="0.7"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/idTextStartGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.1"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/idTextEndGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.5" />
        <TextView
            android:id="@+id/id_text"
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:autoSizeTextType="uniform"
+           android:textAlignment="center"
+           app:layout_constraintBottom_toTopOf="@id/idTextBottomGuideline"
+           app:layout_constraintEnd_toStartOf="@id/idTextEndGuideline"
+           app:layout_constraintStart_toEndOf="@id/idTextStartGuideline"
+           app:layout_constraintTop_toBottomOf="@id/idTextTopGuideline"
+           android:text="Id: " />
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/nameTextBottomGuideline"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="Id: "
-           android:layout_toEndOf="@id/item_image"
-           android:layout_marginTop="10dp"
-           android:layout_marginStart="15dp" />
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="0.44" />
 
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/nameTextTopGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="0.27"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/nameTextStartGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.2"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/nameTextEndGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.5" />
        <TextView
            android:id="@+id/name_text"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
+           android:layout_width="0dp"
+           android:layout_height="0dp"
            android:text="Full Name: "
-           android:layout_toEndOf="@id/item_image"
-           android:layout_below="@id/id_text"
-           android:layout_alignStart="@id/id_text"/>
+           app:autoSizeTextType="uniform"
+           android:textAlignment="center"
+           app:layout_constraintBottom_toTopOf="@id/nameTextBottomGuideline"
+           app:layout_constraintEnd_toStartOf="@id/nameTextEndGuideline"
+           app:layout_constraintStart_toEndOf="@id/nameTextStartGuideline"
+           app:layout_constraintTop_toBottomOf="@id/nameTextTopGuideline"/>
 
-       <TextView
-           android:id="@+id/phone_text"
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/deleteBottomGuideline"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="Phone:"
-           android:layout_toEndOf="@id/item_image"
-           android:layout_below="@id/name_text"
-           android:layout_alignStart="@id/id_text"/>
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="0.45" />
 
-       <TextView
-           android:id="@+id/residence_text"
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/deleteTopGuideline"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="Residence: "
-           android:layout_toEndOf="@id/item_image"
-           android:layout_below="@id/phone_text"
-           android:layout_alignStart="@id/id_text"/>
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="0.03"/>
 
-       <TextView
-           android:id="@+id/date_of_disease_text"
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/deleteStartGuideline"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="Date Of Disease: "
-           android:layout_toEndOf="@id/item_image"
-           android:layout_below="@id/residence_text"
-           android:layout_alignStart="@id/id_text"/>
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.87"/>
 
-       <TextView
-           android:id="@+id/gender_text"
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/deleteEndGuideline"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="Gender: "
-           android:layout_toEndOf="@id/item_image"
-           android:layout_below="@id/date_of_disease_text"
-           android:layout_alignStart="@id/id_text"/>
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.98"/>
+<ImageButton
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:src="@drawable/ic_baseline_delete_24"
+    app:layout_constraintBottom_toTopOf="@id/deleteBottomGuideline"
+    app:layout_constraintEnd_toStartOf="@id/deleteEndGuideline"
+    app:layout_constraintStart_toEndOf="@id/deleteStartGuideline"
+    app:layout_constraintTop_toBottomOf="@id/deleteTopGuideline"
+    android:scaleType="fitCenter"/>
 
-       <TextView
-           android:id="@+id/close_contact_with_text"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Close Contact With: "
-           android:layout_toEndOf="@id/item_image"
-           android:layout_below="@id/gender_text"
-           android:layout_alignStart="@id/id_text"/>
-
-       <TextView
-           android:id="@+id/phones_of_close_contacts_text"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Phones Of Close Contacts: "
-           android:layout_toEndOf="@id/item_image"
-           android:layout_below="@id/close_contact_with_text"
-           android:layout_alignStart="@id/id_text"/>
-
-       <TextView
-           android:id="@+id/age_text"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Age: "
-           android:layout_toEndOf="@id/item_image"
-           android:layout_below="@id/phones_of_close_contacts_text"
-           android:layout_alignStart="@id/id_text"/>
-
-       <TextView
-           android:id="@+id/susceptible_text"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Susceptible: "
-           android:layout_toEndOf="@id/item_image"
-           android:layout_below="@id/age_text"
-           android:layout_alignStart="@id/id_text"
-           android:layout_marginBottom="10dp"/>
-   </RelativeLayout>
+   </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
