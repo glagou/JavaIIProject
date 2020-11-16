@@ -47,8 +47,8 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
         TextView ageTextView = holder.ageText;
         TextView susceptibleTextView = holder.susceptibleText;*/
 
-        idTextView.setText("ID: " + modelCase.getId());
-        nameTextView.setText("Full Name: " + modelCase.getFirstName() + " " + modelCase.getLastName());
+        idTextView.setText( modelCase.getId());
+        nameTextView.setText( modelCase.getFirstName() + " " + modelCase.getLastName());
         /*phoneTextView.setText("Phone: " + modelCase.getPhone());
         residenceTextView.setText("Residence Region: " + modelCase.getResidenceRegion());
         dateOfDiseaseTextView.setText("Date Of Disease: " + modelCase.getDateOfDisease());

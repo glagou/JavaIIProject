@@ -53,35 +53,35 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_percent="0.25" />
+           app:layout_constraintGuide_percent="0.3" />
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/name1TextTopGuideline"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_percent="0.05"/>
+           app:layout_constraintGuide_percent="0.1"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/name1TextStartGuideline"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="vertical"
-           app:layout_constraintGuide_percent="0.27"/>
+           app:layout_constraintGuide_percent="0.3"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/name1TextEndGuideline"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="vertical"
-           app:layout_constraintGuide_percent="0.5" />
+           app:layout_constraintGuide_percent="0.85" />
        <TextView
            android:id="@+id/topNameText"
            android:layout_width="0dp"
            android:layout_height="0dp"
            android:text="Name"
            app:autoSizeTextType="uniform"
-           android:textAlignment="center"
+           android:gravity="start"
            app:layout_constraintBottom_toTopOf="@id/name1TextBottomGuideline"
            app:layout_constraintEnd_toStartOf="@id/name1TextEndGuideline"
            app:layout_constraintStart_toEndOf="@id/name1TextStartGuideline"
@@ -107,63 +107,28 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="vertical"
-           app:layout_constraintGuide_percent="0.2"/>
+           app:layout_constraintGuide_percent="0.3"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/topIdTextEndGuideline"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="vertical"
-           app:layout_constraintGuide_percent="0.575" />
+           app:layout_constraintGuide_percent="0.85" />
        <TextView
            android:id="@+id/topIdText"
            android:layout_width="0dp"
            android:layout_height="0dp"
            android:text="ID"
            app:autoSizeTextType="uniform"
-           android:textAlignment="center"
+           android:gravity="start"
            app:layout_constraintBottom_toTopOf="@id/topIdTextBottomGuideline"
            app:layout_constraintEnd_toStartOf="@id/topIdTextEndGuideline"
            app:layout_constraintStart_toEndOf="@id/topIdTextStartGuideline"
            app:layout_constraintTop_toBottomOf="@id/topIdTextTopGuideline"
            android:textColor="#FF4485FD"
            android:textStyle="bold"/>
-       <androidx.constraintlayout.widget.Guideline
-           android:id="@+id/dividerTextBottomGuideline"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:orientation="horizontal"
-           app:layout_constraintGuide_percent="0.48" />
 
-       <androidx.constraintlayout.widget.Guideline
-           android:id="@+id/dividerTextTopGuideline"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:orientation="horizontal"
-           app:layout_constraintGuide_percent="0.47"/>
-
-       <androidx.constraintlayout.widget.Guideline
-           android:id="@+id/dividerTextStartGuideline"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:orientation="vertical"
-           app:layout_constraintGuide_percent="0.3"/>
-
-       <androidx.constraintlayout.widget.Guideline
-           android:id="@+id/dividerTextEndGuideline"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:orientation="vertical"
-           app:layout_constraintGuide_percent="0.5"/>
-       <View
-           android:id="@+id/divider"
-           android:layout_width="0dp"
-           android:layout_height="0dp"
-           android:background="@color/textColor"
-           app:layout_constraintStart_toEndOf="@id/dividerTextStartGuideline"
-           app:layout_constraintEnd_toStartOf="@id/dividerTextEndGuideline"
-           app:layout_constraintTop_toBottomOf="@id/dividerTextTopGuideline"
-           app:layout_constraintBottom_toTopOf="@id/dividerTextBottomGuideline"/>
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/idTextBottomGuideline"
            android:layout_width="wrap_content"
@@ -183,14 +148,14 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="vertical"
-           app:layout_constraintGuide_percent="0.25" />
+           app:layout_constraintGuide_percent="0.35" />
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/idTextEndGuideline"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="vertical"
-           app:layout_constraintGuide_percent="0.5" />
+           app:layout_constraintGuide_percent="0.85" />
        <TextView
            android:gravity="start"
            android:id="@+id/id_text"
@@ -207,28 +172,28 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_percent="0.44" />
+           app:layout_constraintGuide_percent="0.5" />
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/nameTextTopGuideline"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_percent="0.27"/>
+           app:layout_constraintGuide_percent="0.3"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/nameTextStartGuideline"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="vertical"
-           app:layout_constraintGuide_percent="0.25"/>
+           app:layout_constraintGuide_percent="0.35"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/nameTextEndGuideline"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="vertical"
-           app:layout_constraintGuide_percent="0.5" />
+           app:layout_constraintGuide_percent="0.85" />
        <TextView
            android:gravity="start"
            android:id="@+id/name_text"
@@ -246,21 +211,21 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_percent="0.45" />
+           app:layout_constraintGuide_percent="0.3" />
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/deleteTopGuideline"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_percent="0.03"/>
+           app:layout_constraintGuide_percent="0.08"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/deleteStartGuideline"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="vertical"
-           app:layout_constraintGuide_percent="0.87"/>
+           app:layout_constraintGuide_percent="0.88" />
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/deleteEndGuideline"
@@ -268,15 +233,39 @@
            android:layout_height="wrap_content"
            android:orientation="vertical"
            app:layout_constraintGuide_percent="0.98"/>
-<ImageButton
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:src="@drawable/ic_baseline_delete_24"
-    app:layout_constraintBottom_toTopOf="@id/deleteBottomGuideline"
-    app:layout_constraintEnd_toStartOf="@id/deleteEndGuideline"
-    app:layout_constraintStart_toEndOf="@id/deleteStartGuideline"
-    app:layout_constraintTop_toBottomOf="@id/deleteTopGuideline"
-    android:scaleType="fitCenter"/>
+       <ImageButton
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           android:src="@drawable/ic_baseline_delete_24"
+           app:layout_constraintBottom_toTopOf="@id/deleteBottomGuideline"
+           app:layout_constraintEnd_toStartOf="@id/deleteEndGuideline"
+           app:layout_constraintStart_toEndOf="@id/deleteStartGuideline"
+           app:layout_constraintTop_toBottomOf="@id/deleteTopGuideline"
+           android:scaleType="fitCenter"
+           android:background="@android:color/transparent"
+           android:tint="#FF4485FD"/>
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/dividerTopGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="0.985"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/dividerBottomGuideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="1"/>
+
+       <View
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           android:background="#FF4485FD"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/dividerTopGuideline"
+           app:layout_constraintBottom_toTopOf="@id/dividerBottomGuideline"/>
 
    </androidx.constraintlayout.widget.ConstraintLayout>
 
