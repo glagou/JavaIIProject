@@ -13,6 +13,8 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TabLayout tabLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,10 +24,9 @@ public class MainActivity extends AppCompatActivity {
         setNewFragment(new HomeFragment(), "Home");
     }
 
-
     //Handles Tab Layout Clicks
     private void setTabLayoutNavigationListener() {
-        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        tabLayout = findViewById(R.id.tab_layout);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -68,4 +69,21 @@ public class MainActivity extends AppCompatActivity {
         ft.commit();
     }
 
+    @Override
+    public void onBackPressed() {
+         if(isFragmentEnabled("Cases") || isFragmentEnabled("Statistics")) {
+             tabLayout.getTabAt(0).select();
+         } else {
+             super.onBackPressed();
+         }
+    }
+
+    private boolean isFragmentEnabled(String fragmentTag) {
+        Fragment fragment = getSupportFragmentManager().findFragmentByTag(fragmentTag);
+        if (fragment != null && fragment.isVisible()) {
+            return true;
+        } else {
+            return  false;
+        }
+    }
 }

@@ -170,7 +170,10 @@ public class FirebaseFunctions {
                     victim.put("Date Of Disease", dateOfDisease);
                     victim.put("Age", age);
                     victim.put("Gender", gender);
-                    int contactsLength = closeContactWith.length;
+                    int contactsLength = 0;
+                    if(closeContactWith != null) {
+                        contactsLength = closeContactWith.length;
+                    }
                     for(int i = 0; i < contactsLength; i ++) {
                         victim.put("Person" + i, closeContactWith[i]);
                     }
@@ -363,6 +366,7 @@ public class FirebaseFunctions {
         if(firebaseFirestore == null) {
             firebaseFirestore = FirebaseFirestore.getInstance();
         }
+
         firebaseFirestore.collection("Cases").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -370,7 +374,6 @@ public class FirebaseFunctions {
                 if(task.isSuccessful()) {
                     List<DocumentSnapshot> documentSnapshots = task.getResult().getDocuments();
                     StartingScreenActivity.addVictimsCountToDownloadAmount(documentSnapshots.size());
-                    List<ModelCase> modelCases = new ArrayList<>();
                     for(int i = 0; i < documentSnapshots.size(); i++) {
                         DocumentSnapshot snapshot = documentSnapshots.get(i);
                         String id = snapshot.getId();
@@ -383,15 +386,18 @@ public class FirebaseFunctions {
                         boolean isSusceptible = snapshot.getBoolean("Is Susceptible");
                         int age = snapshot.getDouble("Age").intValue();
                         int contactsLength = snapshot.getDouble("Contacts Length").intValue();
-                        String[] closeContactWith = new String[contactsLength];
-                        String[] closeContactWithPhones = new String[contactsLength];
+                        String[] closeContactWith = null;
+                        String[] closeContactWithPhones = null;
+                        if(contactsLength != 0) {
+                            closeContactWith = new String[contactsLength];
+                             closeContactWithPhones = new String[contactsLength];
+                        }
                         for(int j = 0; j < contactsLength; j++) {
                             closeContactWith[j] = snapshot.getString("Person" + j);
                             closeContactWithPhones[j] = snapshot.getString("Person Phone" + j);
                         }
                         CasesFragment.addToCases(new ModelCase(firstName,lastName,phone,residenceRegion,dateOfDisease,id,gender,closeContactWith,
                                 closeContactWithPhones,age,isSusceptible));
-
                         StartingScreenActivity.setProgress();
                     }
 

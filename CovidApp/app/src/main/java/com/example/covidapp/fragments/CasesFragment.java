@@ -47,7 +47,6 @@ public class CasesFragment extends Fragment {
 
     private void setButtonListeners() {
         ImageButton addCaseButton = fragmentView.findViewById(R.id.add_case_button);
-        ImageButton editCaseButton = fragmentView.findViewById(R.id.edit_case_button);
 
         addCaseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,12 +55,6 @@ public class CasesFragment extends Fragment {
             }
         });
 
-        editCaseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                loadNewActivity(EditCaseActivity.class);
-            }
-        });
     }
 
     private void setUpRecyclerView() {

@@ -21,12 +21,15 @@ public class StartingScreenActivity extends AppCompatActivity {
     private static int itemsGottenFromDatabase = 0;
     private static int itemsToGetFromDatabase = 0;
     private static Context context;
-    private static boolean hasAlreadyMovedToNextActivity = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_starting_screen);
+        if (!isTaskRoot()) {
+            finish();
+            return;
+        }
         setContext();
         setAnimations();
         FirebaseFunctions.getAllVictimsFromFirestore();
@@ -55,7 +58,7 @@ public class StartingScreenActivity extends AppCompatActivity {
             progress = (int) (((double) itemsGottenFromDatabase / itemsToGetFromDatabase) * 100);
         }
 
-        if(progress == 100 && itemsToGetFromDatabase != 0) {
+        if(progress == 100) {
             moveToNextActivity();
         }
         Log.i("CALLED", String.valueOf(progress));
@@ -226,7 +229,6 @@ public class StartingScreenActivity extends AppCompatActivity {
     }
 
     private static void moveToNextActivity() {
-        hasAlreadyMovedToNextActivity = true;
         Intent intent = new Intent(context, MainActivity.class);
         context.startActivity(intent);
     }
@@ -239,15 +241,4 @@ public class StartingScreenActivity extends AppCompatActivity {
         StartingScreenActivity.itemsToGetFromDatabase += victimsCounts;
     }
 
-    private void moveToNextActivityOnRestart() {
-        if(hasAlreadyMovedToNextActivity) {
-            moveToNextActivity();
-        }
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        moveToNextActivityOnRestart();
-    }
 }

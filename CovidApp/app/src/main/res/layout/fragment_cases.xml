@@ -1,37 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.HomeFragment">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/recyclerViewTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/victims_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerViewTopGuideline"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/addButtonTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/addButtonBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/addButtonStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.84"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/addButtonEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
 
     <ImageButton
         android:id="@+id/add_case_button"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/rounded_button"
         android:src="@drawable/ic_baseline_add_24"
-        android:tint="#ED7548"
-        android:layout_above="@id/edit_case_button"
-        android:layout_alignStart="@id/edit_case_button"
-        android:layout_marginBottom="5dp"/>
+        android:tint="#FF4485FD"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toBottomOf="@id/addButtonTopGuideline"
+        app:layout_constraintBottom_toTopOf="@id/addButtonBottomGuideline"
+        app:layout_constraintStart_toEndOf="@id/addButtonStartGuideline"
+        app:layout_constraintEnd_toStartOf="@id/addButtonEndGuideline" />
 
-    <ImageButton
-        android:id="@+id/edit_case_button"
-        android:layout_height="35dp"
-        android:layout_width="35dp"
-        android:background="@drawable/rounded_button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:src="@drawable/ic_baseline_edit_24"
-        android:tint="#ED7548"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"/>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
