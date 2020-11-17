@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,179 +8,333 @@
     tools:context=".AddCaseActivity">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
+            android:layout_height="wrap_content">
+            <Space
+                android:id="@+id/spaceZero"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="10:0.3"/>
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/firstTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:hint="First Name"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spaceZero"
+                app:layout_constraintDimensionRatio="10:2"
+                app:layout_constraintWidth_percent="0.8">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/firstNameEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <Space
+                android:id="@+id/spaceOne"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/firstTextInputLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="10:0.3"/>
+
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/secondTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:hint="Last Name"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spaceOne"
+                app:layout_constraintDimensionRatio="10:2"
+                app:layout_constraintWidth_percent="0.8">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/lastNameEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <Space
+                android:id="@+id/spaceTwo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/secondTextInputLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="10:0.3"/>
+
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/thirdTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:hint="Phone Number"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spaceTwo"
+                app:layout_constraintDimensionRatio="10:2"
+                app:layout_constraintWidth_percent="0.8">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phoneNumberEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <Space
+                android:id="@+id/spaceThree"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/thirdTextInputLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="10:0.3"/>
+
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/fourthTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:hint="Residence Region"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spaceThree"
+                app:layout_constraintDimensionRatio="10:2"
+                app:layout_constraintWidth_percent="0.8">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/residenceRegionEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <Space
+                android:id="@+id/spaceFour"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/fourthTextInputLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="10:0.3"/>
+
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/fifthTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:hint="Date of Disease"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spaceFour"
+                app:layout_constraintDimensionRatio="10:2"
+                app:layout_constraintWidth_percent="0.8">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/dateOfDiseaseEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <Space
+                android:id="@+id/spaceFive"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/fifthTextInputLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="10:0.3"/>
+
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/sixthTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:hint="Close Contact With"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spaceFive"
+                app:layout_constraintDimensionRatio="10:2"
+                app:layout_constraintWidth_percent="0.8">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/closeContactWithEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <Space
+                android:id="@+id/spaceSix"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/sixthTextInputLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="10:0.3"/>
+
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/seventhTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:hint="Phone of Close Contact"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spaceSix"
+                app:layout_constraintDimensionRatio="10:2"
+                app:layout_constraintWidth_percent="0.8">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phoneOfCloseContactEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <Space
+                android:id="@+id/spaceSeven"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/seventhTextInputLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="10:0.3"/>
+
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/eighthTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:hint="ID"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spaceSeven"
+                app:layout_constraintDimensionRatio="10:2"
+                app:layout_constraintWidth_percent="0.8">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/idEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Age"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="10dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ageEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            </com.google.android.material.textfield.TextInputLayout>
+            <Space
+                android:id="@+id/spaceEight"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/eighthTextInputLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="10:0.3"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/ninthTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:hint="Age"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spaceEight"
+                app:layout_constraintDimensionRatio="10:2"
+                app:layout_constraintWidth_percent="0.8">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ageEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:id="@+id/spaceNine"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/ninthTextInputLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="10:0.3"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tenthTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:hint="Gender"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spaceNine"
+                app:layout_constraintDimensionRatio="10:2"
+                app:layout_constraintWidth_percent="0.8">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/genderEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <Space
+                android:id="@+id/spaceTen"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/tenthTextInputLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="10:0.3"/>
+
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/eleventhTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:hint="Is Susceptible"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spaceTen"
+                app:layout_constraintDimensionRatio="10:2"
+                app:layout_constraintWidth_percent="0.8">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/isSusceptibleEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:id="@+id/spaceEleven"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/tenthTextInputLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="10:0.3"/>
 
             <Button
                 android:id="@+id/addButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="10dp"
-                android:text="add"/>
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/spaceEleven"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintDimensionRatio="10:2"
+                app:layout_constraintWidth_percent="0.8"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="add"
+                android:textAlignment="center" />
 
-        </LinearLayout>
+            <Space
+                android:id="@+id/spaceTwelve"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/addButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="10:0.3"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
 
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
