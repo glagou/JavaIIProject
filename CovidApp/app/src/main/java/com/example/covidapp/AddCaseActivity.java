@@ -28,6 +28,9 @@ public class AddCaseActivity extends AppCompatActivity {
     private String[] people;
     private int peopleLength;
     private String[] phones;
+    private boolean noContacts = false;
+    private String phoneOfCloseContact;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,8 @@ public class AddCaseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_case);
         setAddButtonListener();
     }
+
+
 
     private void setAddButtonListener() {
         final Button button = findViewById(R.id.addButton);
@@ -174,8 +179,12 @@ public class AddCaseActivity extends AppCompatActivity {
         if (!hasError) {
             TextInputEditText closeContactWithEditText = findViewById(R.id.closeContactWithEditText);
             String closeContactWith = closeContactWithEditText.getText().toString();
+            noContacts = false;
             if (TextUtils.isEmpty(closeContactWith.trim())) {
                 makeToast("Close Contact With Is Empty");
+            }else if (closeContactWith.trim().equals("-")){
+                this.people = null;
+                noContacts = true;
             } else {
                 String[] people = closeContactWith.trim().split(",");
                 this.peopleLength = people.length;
@@ -188,7 +197,7 @@ public class AddCaseActivity extends AppCompatActivity {
                             break;
                         }
                     }
-                    if (containsDigit == true) {
+                    if (containsDigit) {
                         makeToast((i+1) + " Name  contains number");
                         break;
                     }
@@ -206,10 +215,12 @@ public class AddCaseActivity extends AppCompatActivity {
             String phoneOfCloseContact = phoneOfCloseContactEditText.getText().toString();
             if (TextUtils.isEmpty(phoneOfCloseContact.trim())) {
                 makeToast("Phone of Close Contact Is Empty");
+            }else if (noContacts && phoneOfCloseContact.trim().equals("-")){
+                this.phoneOfCloseContact = null;
             }else {
                 String[] peoplePhones = phoneOfCloseContact.trim().split(",");
-                if(peoplePhones.length != this.peopleLength){
-                    makeToast("Phones dont match people");
+                if((peoplePhones.length != this.peopleLength) || (noContacts && !phoneOfCloseContact.trim().equals("-")) ){
+                    makeToast("Phones don't match people");
                 } else {
                     boolean phoneIsInvalid = false;
                     boolean phoneNoTenDigits = false;

@@ -7,6 +7,45 @@
     tools:context=".fragments.HomeFragment">
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/searchTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/searchBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.09"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/searchStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/searchEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <EditText
+        android:id="@+id/searchBar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/searchStartGuideline"
+        app:layout_constraintEnd_toStartOf="@id/searchEndGuideline"
+        app:layout_constraintTop_toBottomOf="@id/searchTopGuideline"
+        app:layout_constraintBottom_toTopOf="@id/searchBottomGuideline"
+        app:autoSizeTextType="uniform"
+        android:hint="Search here"/>
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/recyclerViewTopGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +60,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/recyclerViewTopGuideline"
         app:layout_constraintBottom_toBottomOf="parent"/>
-
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/addButtonTopGuideline"

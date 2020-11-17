@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.covidapp.R;
 import com.example.covidapp.models.ModelCase;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,6 +72,16 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
             }
         }*/
 
+    }
+
+    public void modifyList(List<ModelCase> newList) {
+        cases = new ArrayList<>(newList);
+        notifyDataSetChanged();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
     @Override
