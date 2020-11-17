@@ -1,12 +1,14 @@
 package com.example.covidapp.firebase;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
 import com.example.covidapp.StartingScreenActivity;
 import com.example.covidapp.fragments.CasesFragment;
 import com.example.covidapp.models.ModelCase;
+import com.example.covidapp.stats.StatsInfoHolder;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -195,6 +197,7 @@ public class FirebaseFunctions {
                                     modifyMonthGroupValuesInDatabase(dateOfDisease, true);
                                     CasesFragment.addToCases(new ModelCase(firstName,lastName,phone,residenceRegion,dateOfDisease,
                                             id,gender,closeContactWith,phonesOfCloseContact,age,isSusceptible));
+                                    StatsInfoHolder.setTotal_cases(StatsInfoHolder.getTotal_cases() + 1);
                                     Log.d(DEBUG_TAG, "Victim was added successfully)");
                                 }
                             })
@@ -232,77 +235,111 @@ public class FirebaseFunctions {
 
     //Modify the database variables based on age
     private static void modifyAgeGroupValuesInDatabase(int age, boolean increase) {
+        int increment = 1;
+        if(!increase) {
+            increment = -1;
+        }
         if(age >= 0 && age <= 24) {
             modifyDatabaseValueByOne("CASES_0_24",increase);
+            StatsInfoHolder.setCases_0_24(StatsInfoHolder.getCases_0_24() + increment);
         } else if(age <= 34) {
             modifyDatabaseValueByOne("CASES_25_34", increase);
+            StatsInfoHolder.setCases_25_34(StatsInfoHolder.getCases_25_34() + increment);
         } else if(age <= 44) {
             modifyDatabaseValueByOne("CASES_35_44", increase);
+            StatsInfoHolder.setCases_35_44(StatsInfoHolder.getCases_35_44() + increment);
         } else if(age <= 54) {
             modifyDatabaseValueByOne("CASES_45_54", increase);
+            StatsInfoHolder.setCases_45_54(StatsInfoHolder.getCases_45_54() + increment);
         } else if(age <= 64) {
             modifyDatabaseValueByOne("CASES_55_64",increase);
+            StatsInfoHolder.setCases_55_64(StatsInfoHolder.getCases_55_64() + increment);
         } else if (age <= 74) {
             modifyDatabaseValueByOne("CASES_65_74", increase);
+            StatsInfoHolder.setCases_65_74(StatsInfoHolder.getCases_65_74() + increment);
         } else if(age <= 84) {
             modifyDatabaseValueByOne("CASES_75_84" ,increase);
+            StatsInfoHolder.setCases_75_84(StatsInfoHolder.getCases_75_84() + increment);
         } else {
             modifyDatabaseValueByOne("CASES_85_PLUS",increase);
+            StatsInfoHolder.setCases_85_plus(StatsInfoHolder.getCases_85_plus() + increment);
         }
     }
 
     //Modify the database variables based on gender
     private static void modifyGenderValuesInDatabase(String gender, boolean increase) {
+        int increment = 1;
+        if(!increase) {
+            increment = -1;
+        }
         switch (gender.toUpperCase()) {
             case "MALE":
                 modifyDatabaseValueByOne("CASES_MALES", increase);
+                StatsInfoHolder.setCases_males(StatsInfoHolder.getCases_males() + increment);
                 break;
             case "FEMALE":
                 modifyDatabaseValueByOne("CASES_FEMALES", increase);
+                StatsInfoHolder.setCases_females(StatsInfoHolder.getCases_females() + increment);
                 break;
         }
     }
 
     //Modify the database variables based on month
     private static void modifyMonthGroupValuesInDatabase(String dateOfDisease, boolean increase) {
+        int increment = 1;
+        if(!increase) {
+            increment = -1;
+        }
         try {
             String month = dateOfDisease.split("/")[1];
             switch (month) {
                 case "01":
                     modifyDatabaseValueByOne("CASES_JANUARY", increase);
+                    StatsInfoHolder.setCases_january(StatsInfoHolder.getCases_january() + increment);
                     break;
                 case "02":
                     modifyDatabaseValueByOne("CASES_FEBRUARY", increase);
+                    StatsInfoHolder.setCases_february(StatsInfoHolder.getCases_february() + increment);
                     break;
                 case "03":
                     modifyDatabaseValueByOne("CASES_MARCH", increase);
+                    StatsInfoHolder.setCases_march(StatsInfoHolder.getCases_march() + increment);
                     break;
                 case "04":
                     modifyDatabaseValueByOne("CASES_APRIL", increase);
+                    StatsInfoHolder.setCases_april(StatsInfoHolder.getCases_april() + increment);
                     break;
                 case "05":
                     modifyDatabaseValueByOne("CASES_MAY", increase);
+                    StatsInfoHolder.setCases_may(StatsInfoHolder.getCases_may() + increment);
                     break;
                 case "06":
                     modifyDatabaseValueByOne("CASES_JUNE", increase);
+                    StatsInfoHolder.setCases_june(StatsInfoHolder.getCases_june() + increment);
                     break;
                 case "07":
                     modifyDatabaseValueByOne("CASES_JULY", increase);
+                    StatsInfoHolder.setCases_july(StatsInfoHolder.getCases_july() + increment);
                     break;
                 case "08":
                     modifyDatabaseValueByOne("CASES_AUGUST", increase);
+                    StatsInfoHolder.setCases_august(StatsInfoHolder.getCases_august() + increment);
                     break;
                 case "09":
                     modifyDatabaseValueByOne("CASES_SEPTEMBER", increase);
+                    StatsInfoHolder.setCases_september(StatsInfoHolder.getCases_september() + increment);
                     break;
                 case "10":
                     modifyDatabaseValueByOne("CASES_OCTOBER", increase);
+                    StatsInfoHolder.setCases_october(StatsInfoHolder.getCases_october() + increment);
                     break;
                 case "11":
                     modifyDatabaseValueByOne("CASES_NOVEMBER", increase);
+                    StatsInfoHolder.setCases_november(StatsInfoHolder.getCases_november() + increment);
                     break;
                 case "12":
                     modifyDatabaseValueByOne("CASES_DECEMBER", increase);
+                    StatsInfoHolder.setCases_december(StatsInfoHolder.getCases_december() + increment);
                     break;
             }
         } catch (Exception e) {
@@ -337,6 +374,7 @@ public class FirebaseFunctions {
                                     String gender = snapshot.getString("Gender");
                                     modifyGenderValuesInDatabase(gender, false);
                                     modifyDatabaseValueByOne("TOTAL_CASES", false);
+                                    StatsInfoHolder.setTotal_cases(StatsInfoHolder.getTotal_cases() - 1);
                                     firebaseFirestore.collection("Cases").document(id).delete().addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
@@ -362,6 +400,7 @@ public class FirebaseFunctions {
         });
     }
 
+    //Gets all the victims from the firestore
     public static void getAllVictimsFromFirestore() {
         if(firebaseFirestore == null) {
             firebaseFirestore = FirebaseFirestore.getInstance();
