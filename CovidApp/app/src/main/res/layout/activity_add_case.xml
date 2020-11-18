@@ -307,10 +307,11 @@
                 android:id="@+id/spaceEleven"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintTop_toBottomOf="@+id/tenthTextInputLayout"
+                app:layout_constraintTop_toBottomOf="@+id/eleventhTextInputLayout"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintDimensionRatio="10:0.3"/>
+
 
             <Button
                 android:id="@+id/addButton"
@@ -318,20 +319,12 @@
                 android:layout_height="0dp"
                 app:layout_constraintTop_toBottomOf="@id/spaceEleven"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintDimensionRatio="10:2"
-                app:layout_constraintWidth_percent="0.8"
+                app:layout_constraintDimensionRatio="10:3"
+                app:layout_constraintWidth_percent="0.5"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:text="add"
                 android:textAlignment="center" />
 
-            <Space
-                android:id="@+id/spaceTwelve"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toBottomOf="@+id/addButton"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="10:0.3"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

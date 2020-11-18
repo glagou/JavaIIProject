@@ -772,7 +772,8 @@
         app:layout_constraintBottom_toTopOf="@id/list8BottomGuideline"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp"
-        app:autoSizeTextType="uniform" />
+        app:autoSizeTextType="uniform"
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/list9TopGuideline"

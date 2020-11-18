@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.covidapp.firebase.FirebaseDatabaseReadListener;
 import com.example.covidapp.firebase.FirebaseFunctions;

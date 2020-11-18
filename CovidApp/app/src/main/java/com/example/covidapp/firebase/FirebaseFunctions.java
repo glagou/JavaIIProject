@@ -130,12 +130,13 @@ public class FirebaseFunctions {
                             Log.w(DEBUG_TAG, "Failed To Get Value" + e.getMessage());
                         }
 
-                        Log.d(DEBUG_TAG, "Value Read Is: " + readValue);
+                        Log.d(DEBUG_TAG, "Value Read Is: " + readValue + " - " + databaseFieldName);
 
                         valueReadFromDatabase = readValue;
                     } else
                     {
-                        Log.d(DEBUG_TAG, "Field " + databaseFieldName + " Does Not Exist");
+                        valueReadFromDatabase = 0;
+                        Log.d(DEBUG_TAG, "Field " + databaseFieldName + " Does Not Exist" + " - " + valueReadFromDatabase);
                     }
                     firebaseDatabaseReadListener.onFinish(valueReadFromDatabase);
                 }
