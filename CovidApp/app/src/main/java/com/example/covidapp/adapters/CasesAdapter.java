@@ -49,10 +49,7 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDeleteDialog(modelCase.getId());
-                CasesFragment.removeFromCases(modelCase);
-                cases.remove(position);
-                notifyItemRemoved(position);
+                showDeleteDialog(modelCase.getId(), modelCase, position);
             }
         });
 
@@ -70,7 +67,7 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
         return position;
     }
 
-    private void showDeleteDialog(final String victimId) {
+    private void showDeleteDialog(final String victimId, final ModelCase modelCase, final  int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Are you sure that you want to delete this case?");
         builder.setMessage("Deleting this case will remove anything related to it in the database.");
@@ -81,6 +78,9 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         FirebaseFunctions.deleteVictimFromFirestore(victimId);
+                        CasesFragment.removeFromCases(modelCase);
+                        cases.remove(position);
+                        notifyItemRemoved(position);
                     }
                 });
 
