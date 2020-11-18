@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,6 +40,7 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
         ModelCase modelCase = cases.get(position);
         TextView nameTextView = holder.nameText;
         TextView idTextView = holder.idText;
+        ImageButton deleteButton = holder.deleteButton;
         /*TextView phoneTextView = holder.phoneText;
         TextView residenceTextView = holder.residenceText;
         TextView dateOfDiseaseTextView = holder.dateOfDiseaseText;
@@ -47,6 +49,11 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
         TextView phoneOfCloseContactsTextView = holder.phonesOfCloseContactsText;
         TextView ageTextView = holder.ageText;
         TextView susceptibleTextView = holder.susceptibleText;*/
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, nameTextView.getText(), Toast.LENGTH_SHORT).show();
+            }
 
         idTextView.setText( modelCase.getId());
         nameTextView.setText( modelCase.getFirstName() + " " + modelCase.getLastName());
@@ -92,11 +99,13 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
     public class CasesViewHolder extends RecyclerView.ViewHolder {
 
         TextView idText, nameText;
+        ImageButton deleteButton;
 
         public CasesViewHolder(@NonNull View itemView) {
             super(itemView);
             idText = itemView.findViewById(R.id.id_text);
             nameText = itemView.findViewById(R.id.name_text);
+            deleteButton = itemView.findViewById(R.id.deleteButton);
         }
     }
 }
