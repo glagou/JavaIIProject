@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="textColor">#4485FD</color>
+    <color name="topBarActiveText">#4485FD</color>
+    <color name="topBarInctiveText">#6F4485FD</color>
 </resources>

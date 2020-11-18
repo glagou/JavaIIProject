@@ -6,9 +6,14 @@
         <item name="colorPrimaryDark">#4485FD</item>
         <item name="colorAccent">#4485FD</item>
     </style>
+
     <style name="circleImageView" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
 
+    <style name="MainActivityTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">@dimen/topBarTextSize</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
 </resources>

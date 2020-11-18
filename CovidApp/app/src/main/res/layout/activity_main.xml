@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,43 +8,38 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:tabIconTint="#4485FD"
         app:tabMode="fixed"
         app:tabSelectedTextColor="#4485FD"
-        app:tabTextColor="#6F4485FD">
+        app:tabTextColor="#6F4485FD"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabTextAppearance="@style/MainActivityTabLayoutTextAppearance"
+        app:layout_constraintBottom_toTopOf="@id/tabLayoutBottomGuideline">
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/homeTab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Home"
-            android:icon="@drawable/ic_baseline_home_24" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/addContactsTab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cases"
-            android:icon="@drawable/ic_baseline_import_contacts_24" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/resultsTab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Statistics"
-            android:icon="@drawable/ic_baseline_equalizer_24"/>
 
     </com.google.android.material.tabs.TabLayout>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/tabLayoutBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"/>
+
     <RelativeLayout
         android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/tab_layout">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout"
+        app:layout_constraintBottom_toBottomOf="parent">
 
 
     </RelativeLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

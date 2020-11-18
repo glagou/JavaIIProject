@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="topBarTextSize">15sp</dimen>
+    <dimen name="cases_card_size">100dp</dimen>
+    <dimen name="tab_icon_size">24dp</dimen>
+</resources>
