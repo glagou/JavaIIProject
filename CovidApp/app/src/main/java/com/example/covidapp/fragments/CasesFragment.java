@@ -113,6 +113,10 @@ public class CasesFragment extends Fragment {
         startActivity(intent);
     }
 
+    public static void removeFromCases(ModelCase modelCase) {
+        cases.remove(modelCase);
+    }
+
     public static int returnCases()
     {
         return cases.size();

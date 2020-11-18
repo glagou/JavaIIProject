@@ -368,7 +368,7 @@ public class FirebaseFunctions {
                           {
                                 DocumentSnapshot snapshot = task.getResult();
                                 try {
-                                    int age =  Integer.parseInt(snapshot.getString("Age"));
+                                    int age = snapshot.getDouble("Age").intValue();
                                     modifyAgeGroupValuesInDatabase(age,false);
                                     String dateOfDisease = snapshot.getString("Date Of Disease");
                                     modifyMonthGroupValuesInDatabase(dateOfDisease,false);
