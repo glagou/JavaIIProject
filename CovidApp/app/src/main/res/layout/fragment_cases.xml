@@ -42,8 +42,9 @@
         app:layout_constraintEnd_toStartOf="@id/searchEndGuideline"
         app:layout_constraintTop_toBottomOf="@id/searchTopGuideline"
         app:layout_constraintBottom_toTopOf="@id/searchBottomGuideline"
-        app:autoSizeTextType="uniform"
-        android:hint="Search here"/>
+        android:textSize="@dimen/edit_text_text_size"
+        android:hint="Search by ID"
+        android:backgroundTint="@color/textColor" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/recyclerViewTopGuideline"

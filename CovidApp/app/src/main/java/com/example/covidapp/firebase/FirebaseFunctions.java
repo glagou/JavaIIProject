@@ -1,7 +1,6 @@
 package com.example.covidapp.firebase;
 
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -9,6 +8,7 @@ import com.example.covidapp.StartingScreenActivity;
 import com.example.covidapp.fragments.CasesFragment;
 import com.example.covidapp.models.ModelCase;
 import com.example.covidapp.stats.StatsInfoHolder;
+import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -22,7 +22,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -410,7 +409,7 @@ public class FirebaseFunctions {
         firebaseFirestore.collection("Cases").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                StartingScreenActivity.initializeItemsToDownloadAmount();
+                StartingScreenActivity.setCasesHaveBeenGotten(true);
                 if(task.isSuccessful()) {
                     List<DocumentSnapshot> documentSnapshots = task.getResult().getDocuments();
                     StartingScreenActivity.addVictimsCountToDownloadAmount(documentSnapshots.size());
@@ -438,12 +437,24 @@ public class FirebaseFunctions {
                         }
                         CasesFragment.addToCases(new ModelCase(firstName,lastName,phone,residenceRegion,dateOfDisease,id,gender,closeContactWith,
                                 closeContactWithPhones,age,isSusceptible));
-                        StartingScreenActivity.setProgress();
+                        StartingScreenActivity.checkOnProgress();
                     }
-
+                    if(documentSnapshots.size() == 0) {
+                        StartingScreenActivity.checkOnProgress();
+                    }
                 } else {
                     Log.d(DEBUG_TAG, "Collection not retrieved successfully.");
                 }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d(DEBUG_TAG, e.getMessage());
+            }
+        }).addOnCanceledListener(new OnCanceledListener() {
+            @Override
+            public void onCanceled() {
+                Log.d(DEBUG_TAG, "CANCELED");
             }
         });
     }

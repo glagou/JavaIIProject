@@ -9,9 +9,7 @@ import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.covidapp.firebase.FirebaseDatabaseReadListener;
 import com.example.covidapp.firebase.FirebaseFunctions;
@@ -19,9 +17,13 @@ import com.example.covidapp.stats.StatsInfoHolder;
 
 public class StartingScreenActivity extends AppCompatActivity {
 
+    private static int REALTIME_DATABASE_VARIABLES = 23;
+
     private static int itemsGottenFromDatabase = 0;
     private static int itemsToGetFromDatabase = 0;
     private static Context context;
+
+    private static boolean casesHaveBeenGotten = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,7 @@ public class StartingScreenActivity extends AppCompatActivity {
         }
         setContext();
         setAnimations();
-        FirebaseFunctions.getAllVictimsFromFirestore();
+        initializeItemsToDownloadAmount();
         getInfoFromDatabase();
     }
 
@@ -51,18 +53,14 @@ public class StartingScreenActivity extends AppCompatActivity {
         doctorImage.setAnimation(fromTopAnim);
     }
     
-    public static void setProgress() {
+    public static void checkOnProgress() {
         itemsGottenFromDatabase++;
-        int progress = 0;
-
-        if(itemsToGetFromDatabase != 0) {
-            progress = (int) (((double) itemsGottenFromDatabase / itemsToGetFromDatabase) * 100);
-        }
-
-        if(progress == 100) {
+        if((itemsGottenFromDatabase >= itemsToGetFromDatabase) && casesHaveBeenGotten) {
             moveToNextActivity();
+        } else if(itemsGottenFromDatabase == REALTIME_DATABASE_VARIABLES) {
+            FirebaseFunctions.getAllVictimsFromFirestore();
         }
-        Log.i("CALLED", String.valueOf(progress));
+        Log.i("PROGRESS", itemsGottenFromDatabase + "/" + itemsToGetFromDatabase + "/" + casesHaveBeenGotten);
     }
 
     private void getInfoFromDatabase() {
@@ -70,161 +68,161 @@ public class StartingScreenActivity extends AppCompatActivity {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setTotal_cases(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_JANUARY", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_january(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_FEBRUARY", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_february(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_MARCH", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_march(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_APRIL", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_april(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_MAY", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_may(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_JUNE", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_june(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_JULY", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_july(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_AUGUST", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_august(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_SEPTEMBER", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_september(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_OCTOBER", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_october(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_NOVEMBER", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_november(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_DECEMBER", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_december(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_MALES", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_males(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_FEMALES", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_females(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_0_24", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_0_24(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_25_34", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_25_34(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_35_44", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_35_44(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_45_54", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_45_54(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_55_64", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_55_64(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_65_74", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_65_74(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_75_84", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_75_84(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
         FirebaseFunctions.getDatabaseValue("CASES_85_PLUS", new FirebaseDatabaseReadListener() {
             @Override
             public void onFinish(int valueRead) {
                 StatsInfoHolder.setCases_85_plus(valueRead);
-                setProgress();
+                checkOnProgress();
             }
         });
     }
@@ -234,8 +232,12 @@ public class StartingScreenActivity extends AppCompatActivity {
         context.startActivity(intent);
     }
 
+    public static void setCasesHaveBeenGotten(boolean casesHaveBeenGotten) {
+        StartingScreenActivity.casesHaveBeenGotten = casesHaveBeenGotten;
+    }
+
     public static void initializeItemsToDownloadAmount() {
-        StartingScreenActivity.itemsToGetFromDatabase = 23;
+        StartingScreenActivity.itemsToGetFromDatabase = REALTIME_DATABASE_VARIABLES;
     }
 
     public static void addVictimsCountToDownloadAmount(int victimsCounts) {
