@@ -66,14 +66,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.2" />
+                app:layout_constraintGuide_percent="0.15" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/textEndGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.8" />
+                app:layout_constraintGuide_percent="0.85" />
 
             <TextView
                 android:id="@+id/textOne"
@@ -86,7 +86,7 @@
                 app:autoSizeTextType="uniform"
                 android:textAlignment="center"
                 android:text="Full name"
-                android:textColor="@color/textColor"/>
+                android:textColor="#000000"/>
 
             <TextView
                 android:id="@+id/textTwo"
@@ -95,7 +95,9 @@
                 app:layout_constraintDimensionRatio="10:1.4"
                 app:layout_constraintEnd_toStartOf="@id/textEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textOne" />
+                app:layout_constraintTop_toBottomOf="@id/textOne"
+                android:textColor="#000000"
+                app:autoSizeTextType="uniform" />
 
 
 
@@ -140,7 +142,7 @@
                 android:id="@+id/textThree"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
+                app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textThreeEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textThreeStartGuideline"
                 app:layout_constraintTop_toBottomOf="@id/textTwo"
@@ -152,10 +154,12 @@
                 android:id="@+id/textFour"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
+                app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textFourEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textFourStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textThree" />
+                app:layout_constraintTop_toBottomOf="@id/textThree"
+                android:textColor="#000000"
+                app:autoSizeTextType="uniform" />
 
 
 
@@ -201,7 +205,7 @@
                 android:id="@+id/textFive"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
+                app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textFiveEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textFiveStartGuideline"
                 app:layout_constraintTop_toBottomOf="@id/textFour"
@@ -213,10 +217,12 @@
                 android:id="@+id/textSix"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
+                app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textSixEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textSixStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textFive" />
+                app:layout_constraintTop_toBottomOf="@id/textFive"
+                android:textColor="#000000"
+                app:autoSizeTextType="uniform" />
 
 
             <Space
@@ -261,7 +267,7 @@
                 android:id="@+id/textSeven"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
+                app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textSevenEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textSevenStartGuideline"
                 app:layout_constraintTop_toBottomOf="@id/textSix"
@@ -273,10 +279,12 @@
                 android:id="@+id/textEight"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
+                app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textEightEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textEightStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textSeven" />
+                app:layout_constraintTop_toBottomOf="@id/textSeven"
+                android:textColor="#000000"
+                app:autoSizeTextType="uniform" />
 
 
 
@@ -322,7 +330,7 @@
                 android:id="@+id/textNine"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
+                app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textSevenEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textSevenStartGuideline"
                 app:layout_constraintTop_toBottomOf="@id/textEight"
@@ -334,10 +342,12 @@
                 android:id="@+id/textTen"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
+                app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textEightEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textEightStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textNine" />
+                app:layout_constraintTop_toBottomOf="@id/textNine"
+                android:textColor="#000000"
+                app:autoSizeTextType="uniform" />
 
 
 
@@ -383,7 +393,7 @@
                 android:id="@+id/textEleven"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
+                app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textElevenEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textElevenStartGuideline"
                 app:layout_constraintTop_toBottomOf="@id/textTen"
@@ -395,10 +405,12 @@
                 android:id="@+id/textTwelve"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
+                app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textTwelveEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textTwelveStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textEleven" />
+                app:layout_constraintTop_toBottomOf="@id/textEleven"
+                android:textColor="#000000"
+                app:autoSizeTextType="uniform" />
 
 
 
@@ -444,22 +456,24 @@
                 android:id="@+id/textThirteen"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
+                app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textThirteenEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textThirteenStartGuideline"
                 app:layout_constraintTop_toBottomOf="@id/textTwelve"
                 app:autoSizeTextType="uniform"
-                android:text="Close Contact With:"
+                android:text="Age:"
                 android:textColor="@color/textColor"/>
 
             <TextView
                 android:id="@+id/textFourteen"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
+                app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textFourteenEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textFourteenStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textThirteen" />
+                app:layout_constraintTop_toBottomOf="@id/textThirteen"
+                android:textColor="#000000"
+                app:autoSizeTextType="uniform" />
 
 
 
@@ -505,23 +519,24 @@
                 android:id="@+id/textFifteen"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
+                app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textFifteenEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textFifteenStartGuideline"
                 app:layout_constraintTop_toBottomOf="@id/textFourteen"
                 app:autoSizeTextType="uniform"
-                android:text="Close Contact With Phones:"
+                android:text="Susceptible:"
                 android:textColor="@color/textColor"/>
 
             <TextView
                 android:id="@+id/textSixteen"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
+                app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textSixteenEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textSixteenStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textFifteen" />
-
+                app:layout_constraintTop_toBottomOf="@id/textFifteen"
+                android:textColor="#000000"
+                app:autoSizeTextType="uniform" />
 
 
             <Space
@@ -566,83 +581,24 @@
                 android:id="@+id/textSeventeen"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
+                app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textSeventeenEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textSeventeenStartGuideline"
                 app:layout_constraintTop_toBottomOf="@id/textSixteen"
                 app:autoSizeTextType="uniform"
-                android:text="Age:"
+                android:text="Close Contact With:"
                 android:textColor="@color/textColor"/>
 
             <TextView
                 android:id="@+id/textEighteen"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
+                app:layout_constraintDimensionRatio="10:8"
                 app:layout_constraintEnd_toStartOf="@id/textEighteenEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textEighteenStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textSeventeen" />
-
-
-
-            <Space
-                android:id="@+id/spaceTen"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:0.2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/image" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/textNineteenStartGuideline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.08" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/textNineteenEndGuideline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.8" />
-
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/textTwentyStartGuideline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.2" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/textTwentyEndGuideline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.9" />
-
-            <TextView
-                android:id="@+id/textNineteen"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
-                app:layout_constraintEnd_toStartOf="@id/textNineteenEndGuideline"
-                app:layout_constraintStart_toEndOf="@id/textNineteenStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textEighteen"
-                app:autoSizeTextType="uniform"
-                android:text="Susceptible:"
-                android:textColor="@color/textColor"/>
-
-            <TextView
-                android:id="@+id/textTwenty"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1"
-                app:layout_constraintEnd_toStartOf="@id/textTwentyEndGuideline"
-                app:layout_constraintStart_toEndOf="@id/textTwentyStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textNineteen" />
+                app:layout_constraintTop_toBottomOf="@id/textSeventeen"
+                android:textColor="#000000"
+                app:autoSizeTextType="uniform" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
