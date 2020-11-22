@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">CovidApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="doctor_suggestions">Already have an account? <font color='#01C6DB'>Login</font></string>
 </resources>
