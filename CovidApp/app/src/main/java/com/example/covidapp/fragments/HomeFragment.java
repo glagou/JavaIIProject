@@ -32,9 +32,6 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         fragmentView = inflater.inflate(R.layout.fragment_home, container, false);
-
-        TextView text = fragmentView.findViewById(R.id.simpleTextBottom);
-        text.setText("Total cases: "+ CasesFragment.returnCases());
         return fragmentView;
     }
 
