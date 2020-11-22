@@ -1,29 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StartingScreenActivity">
 
-    <ImageView
-        android:id="@+id/doctor"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_centerInParent="true"
-        android:src="@drawable/vaccine_icon"
-        android:background="@android:color/transparent"/>
-
-    <TextView
-        android:id="@+id/covid_app_textView"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imageTopGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Covid App"
-        android:textColor="@color/textColor"
-        android:textSize="20sp"
-        android:layout_below="@id/doctor"
-        android:layout_centerHorizontal="true"
-        android:textStyle="bold"/>
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.32"/>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imageBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.68"/>
 
-</RelativeLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imageStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.18"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imageEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.82"/>
+
+    <ImageView
+        android:id="@+id/doctor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/vaccine_icon"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@id/imageStartGuideline"
+        app:layout_constraintEnd_toStartOf="@id/imageEndGuideline"
+        app:layout_constraintTop_toBottomOf="@id/imageTopGuideline"
+        app:layout_constraintBottom_toTopOf="@id/imageBottomGuideline"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

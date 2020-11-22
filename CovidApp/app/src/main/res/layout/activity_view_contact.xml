@@ -10,10 +10,8 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -76,7 +74,7 @@
                 app:layout_constraintGuide_percent="0.85" />
 
             <TextView
-                android:id="@+id/textOne"
+                android:id="@+id/fullNameText"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintDimensionRatio="10:1.4"
@@ -87,19 +85,6 @@
                 android:textAlignment="center"
                 android:text="Full name"
                 android:textColor="#000000"/>
-
-            <TextView
-                android:id="@+id/textTwo"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:1.4"
-                app:layout_constraintEnd_toStartOf="@id/textEndGuideline"
-                app:layout_constraintStart_toEndOf="@id/textStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textOne"
-                android:textColor="#000000"
-                app:autoSizeTextType="uniform" />
-
-
 
             <Space
                 android:id="@+id/spaceTwo"
@@ -145,13 +130,13 @@
                 app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textThreeEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textThreeStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textTwo"
+                app:layout_constraintTop_toBottomOf="@id/fullNameText"
                 app:autoSizeTextType="uniform"
                 android:text="ID:"
                 android:textColor="@color/textColor"/>
 
             <TextView
-                android:id="@+id/textFour"
+                android:id="@+id/idText"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintDimensionRatio="10:1.2"
@@ -160,8 +145,6 @@
                 app:layout_constraintTop_toBottomOf="@id/textThree"
                 android:textColor="#000000"
                 app:autoSizeTextType="uniform" />
-
-
 
             <Space
                 android:id="@+id/spaceThree"
@@ -208,13 +191,13 @@
                 app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textFiveEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textFiveStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textFour"
+                app:layout_constraintTop_toBottomOf="@id/idText"
                 app:autoSizeTextType="uniform"
                 android:text="Phone:"
                 android:textColor="@color/textColor"/>
 
             <TextView
-                android:id="@+id/textSix"
+                android:id="@+id/phoneText"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintDimensionRatio="10:1.2"
@@ -270,13 +253,13 @@
                 app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textSevenEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textSevenStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textSix"
+                app:layout_constraintTop_toBottomOf="@id/phoneText"
                 app:autoSizeTextType="uniform"
                 android:text="Residence Region:"
                 android:textColor="@color/textColor"/>
 
             <TextView
-                android:id="@+id/textEight"
+                android:id="@+id/residenceText"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintDimensionRatio="10:1.2"
@@ -333,13 +316,13 @@
                 app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textSevenEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textSevenStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textEight"
+                app:layout_constraintTop_toBottomOf="@id/residenceText"
                 app:autoSizeTextType="uniform"
                 android:text="Date Of Disease:"
                 android:textColor="@color/textColor"/>
 
             <TextView
-                android:id="@+id/textTen"
+                android:id="@+id/dateText"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintDimensionRatio="10:1.2"
@@ -396,13 +379,13 @@
                 app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textElevenEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textElevenStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textTen"
+                app:layout_constraintTop_toBottomOf="@id/dateText"
                 app:autoSizeTextType="uniform"
                 android:text="Gender:"
                 android:textColor="@color/textColor"/>
 
             <TextView
-                android:id="@+id/textTwelve"
+                android:id="@+id/genderText"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintDimensionRatio="10:1.2"
@@ -459,13 +442,13 @@
                 app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textThirteenEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textThirteenStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textTwelve"
+                app:layout_constraintTop_toBottomOf="@id/genderText"
                 app:autoSizeTextType="uniform"
                 android:text="Age:"
                 android:textColor="@color/textColor"/>
 
             <TextView
-                android:id="@+id/textFourteen"
+                android:id="@+id/ageText"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintDimensionRatio="10:1.2"
@@ -522,13 +505,13 @@
                 app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textFifteenEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textFifteenStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textFourteen"
+                app:layout_constraintTop_toBottomOf="@id/ageText"
                 app:autoSizeTextType="uniform"
                 android:text="Susceptible:"
                 android:textColor="@color/textColor"/>
 
             <TextView
-                android:id="@+id/textSixteen"
+                android:id="@+id/susceptibleText"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintDimensionRatio="10:1.2"
@@ -584,13 +567,13 @@
                 app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textSeventeenEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textSeventeenStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/textSixteen"
+                app:layout_constraintTop_toBottomOf="@id/susceptibleText"
                 app:autoSizeTextType="uniform"
                 android:text="Close Contact With:"
                 android:textColor="@color/textColor"/>
 
             <TextView
-                android:id="@+id/textEighteen"
+                android:id="@+id/contactWithText"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintDimensionRatio="10:8"

@@ -40,7 +40,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/firstNameEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/edit_text_text_size"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <Space
@@ -66,7 +67,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/lastNameEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/edit_text_text_size"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <Space
@@ -92,7 +94,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phoneNumberEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/edit_text_text_size" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Space
@@ -118,7 +121,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/residenceRegionEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/edit_text_text_size"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <Space
@@ -144,7 +148,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/dateOfDiseaseEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/edit_text_text_size"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <Space
@@ -170,7 +175,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/closeContactWithEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/edit_text_text_size" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Space
@@ -196,7 +202,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phoneOfCloseContactEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/edit_text_text_size" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Space
@@ -222,7 +229,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/idEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/edit_text_text_size" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Space
@@ -248,7 +256,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/ageEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/edit_text_text_size"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <Space
@@ -274,7 +283,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/genderEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/edit_text_text_size"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <Space
@@ -300,7 +310,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/isSusceptibleEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/edit_text_text_size" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Space
@@ -319,11 +330,13 @@
                 android:layout_height="0dp"
                 app:layout_constraintTop_toBottomOf="@id/spaceEleven"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintDimensionRatio="10:3"
-                app:layout_constraintWidth_percent="0.5"
+                app:layout_constraintDimensionRatio="10:3.25"
+                app:layout_constraintWidth_percent="0.35"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:text="add"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="5sp"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

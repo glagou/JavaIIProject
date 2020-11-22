@@ -44,12 +44,10 @@ public class StartingScreenActivity extends AppCompatActivity {
     }
 
     private void setAnimations() {
-        Animation fromTopAnim = AnimationUtils.loadAnimation(this, R.anim.slide_from_top_anim);
+        Animation fromTopAnim = AnimationUtils.loadAnimation(this, R.anim.slide_from_bottom_anim);
 
         ImageView doctorImage = findViewById(R.id.doctor);
-        TextView covidAppText = findViewById(R.id.covid_app_textView);
 
-        covidAppText.setAnimation(fromTopAnim);
         doctorImage.setAnimation(fromTopAnim);
     }
     
