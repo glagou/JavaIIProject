@@ -25,7 +25,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="10:0.1"/>
+                app:layout_constraintDimensionRatio="10:0.35"/>
 
             <TextView
                 android:id="@+id/intro"
@@ -36,7 +36,7 @@
                 android:textColor="@color/textColor"
                 android:textStyle="bold"
                 app:autoSizeTextType="uniform"
-                app:layout_constraintDimensionRatio="10:0.5"
+                app:layout_constraintDimensionRatio="10:0.65"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/spaceZero"
@@ -49,7 +49,7 @@
                 app:layout_constraintTop_toBottomOf="@id/intro"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="10:0.1"/>
+                app:layout_constraintDimensionRatio="10:0.13"/>
 
             <TextView
                 android:id="@+id/descriptionOne"
@@ -62,7 +62,7 @@
                 app:layout_constraintTop_toBottomOf="@id/spaceOne"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="10:0.5"
+                app:layout_constraintDimensionRatio="10:0.65"
                 app:layout_constraintWidth_percent="0.95"/>
 
             <Space
@@ -72,7 +72,7 @@
                 app:layout_constraintTop_toBottomOf="@id/descriptionOne"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="10:0.1"/>
+                app:layout_constraintDimensionRatio="10:0.2"/>
 
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/firstLineChart"
@@ -92,7 +92,7 @@
                 app:layout_constraintTop_toBottomOf="@id/firstLineChart"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="10:0.1"/>
+                app:layout_constraintDimensionRatio="10:0.3"/>
 
             <TextView
                 android:id="@+id/descriptionTwo"
@@ -104,7 +104,7 @@
                 app:layout_constraintTop_toBottomOf="@id/spaceThree"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="10:0.5"
+                app:layout_constraintDimensionRatio="10:0.65"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintWidth_percent="0.95"/>
 
@@ -115,7 +115,7 @@
                 app:layout_constraintTop_toBottomOf="@id/descriptionTwo"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="10:0.1"/>
+                app:layout_constraintDimensionRatio="10:0.2"/>
 
             <com.github.mikephil.charting.charts.PieChart
                 android:id="@+id/secondPieChart"
@@ -135,7 +135,7 @@
                 app:layout_constraintTop_toBottomOf="@id/secondPieChart"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="10:0.1"/>
+                app:layout_constraintDimensionRatio="10:0.3"/>
 
             <TextView
                 android:id="@+id/descriptionThree"
@@ -148,7 +148,7 @@
                 app:layout_constraintTop_toBottomOf="@id/spaceFive"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="10:0.5"
+                app:layout_constraintDimensionRatio="10:0.65"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintWidth_percent="0.95"/>
 
@@ -159,7 +159,7 @@
                 app:layout_constraintTop_toBottomOf="@id/descriptionThree"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="10:0.1"/>
+                app:layout_constraintDimensionRatio="10:0.2"/>
 
             <com.github.mikephil.charting.charts.BarChart
                 android:id="@+id/topBarChart"

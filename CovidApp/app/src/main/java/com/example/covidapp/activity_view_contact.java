@@ -23,7 +23,7 @@ public class activity_view_contact extends AppCompatActivity {
         TextView genderTextView = findViewById(R.id.genderText);
         TextView ageTextView = findViewById(R.id.ageText);
         TextView susceptibleTextView = findViewById(R.id.susceptibleText);
-        TextView wholeTextTextView = findViewById(R.id.wholeTextText);
+      //  TextView wholeTextTextView = findViewById(R.id.wholeTextText);
 
         fullNameTextView.setText(fullName);
         idTextView.setText(id);
@@ -32,8 +32,8 @@ public class activity_view_contact extends AppCompatActivity {
         dateTextView.setText(dateOfDisease);
         genderTextView.setText(gender);
         ageTextView.setText(age);
-        susceptibleTextView.setText(susceptible);
-        wholeTextTextView.setText(wholeText);
+      //  susceptibleTextView.setText(susceptible);
+        //wholeTextTextView.setText(wholeText);
 
         String wholeText = "";
         for(int i = 0; i < closeContactWith.length; i ++) {

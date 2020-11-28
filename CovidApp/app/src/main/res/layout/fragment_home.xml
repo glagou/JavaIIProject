@@ -75,14 +75,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="1"/>
+                app:layout_constraintGuide_percent="0.9"/>
 
             <ImageView
                 android:id="@+id/coughingPerson"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/coughing_person_with_coronavirus_23_2148485525"
+                android:scaleType="centerCrop"
+                android:src="@drawable/cough_person"
                 app:layout_constraintBottom_toTopOf="@id/coughImageBottomGuideline"
                 app:layout_constraintEnd_toStartOf="@id/coughImageEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/coughImageStartGuideline"
@@ -100,21 +100,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.7"/>
+                app:layout_constraintGuide_percent="0.65"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/coughTextStartGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.2"/>
+                app:layout_constraintGuide_percent="0.12"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/coughTextEndGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="72dp" />
+                app:layout_constraintGuide_percent="0.88" />
             <TextView
                 android:id="@+id/coughingText"
                 android:layout_width="0dp"
@@ -124,7 +124,7 @@
                 app:layout_constraintTop_toBottomOf="@id/coughTextTopGuideline"
                 app:layout_constraintBottom_toTopOf="@id/coughTextBottomGuideline"
                 app:autoSizeTextType="uniform"
-                android:textAlignment="center"
+                android:gravity="center"
                 android:text="Cough"
                 android:textColor="#F4F6FA"
                 android:textStyle="bold"/>
@@ -200,7 +200,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="1"/>
+                app:layout_constraintGuide_percent="0.9"/>
             <ImageView
                 android:id="@+id/girlWithCold"
                 android:layout_width="0dp"
@@ -209,8 +209,8 @@
                 app:layout_constraintEnd_toStartOf="@id/fatigueImageEndGuideline"
                 app:layout_constraintTop_toBottomOf="@id/fatigueImageTopGuideline"
                 app:layout_constraintBottom_toTopOf="@id/fatigueImageBottomGuideline"
-                android:scaleType="fitCenter"
-                android:src="@drawable/illustrated_girl_with_cold_23_2148482191"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/person_with_cold_23_2148481817__1_"/>
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/fatigueTextBottomGuideline"
                 android:layout_width="wrap_content"
@@ -223,21 +223,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.7"/>
+                app:layout_constraintGuide_percent="0.65"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/fatigueTextStartGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.2"/>
+                app:layout_constraintGuide_percent="0.12"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/fatigueTextEndGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.8"/>
+                app:layout_constraintGuide_percent="0.88"/>
             <TextView
                 android:id="@+id/FatigueText"
                 android:layout_width="0dp"
@@ -247,6 +247,7 @@
                 app:layout_constraintTop_toBottomOf="@id/fatigueTextTopGuideline"
                 app:layout_constraintBottom_toTopOf="@id/fatigueTextBottomGuideline"
                 app:autoSizeTextType="uniform"
+                android:gravity="center"
                 android:textAlignment="center"
                 android:text="Fatigue"
                 android:textColor="#F4F6FA"
@@ -331,8 +332,8 @@
                 app:layout_constraintEnd_toStartOf="@id/dryNeckImageEndGuideline"
                 app:layout_constraintTop_toBottomOf="@id/dryNeckImageTopGuideline"
                 app:layout_constraintBottom_toTopOf="@id/dryNeckImageBottomGuideline"
-                android:scaleType="fitCenter"
-                android:src="@drawable/illustration_person_with_cold_23_2148403857"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/young_man_with_expression_pain_holding_his_leg_due_injury_10045_481__1_"/>
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/dryThroatTextBottomGuideline"
                 android:layout_width="wrap_content"
@@ -345,21 +346,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.7"/>
+                app:layout_constraintGuide_percent="0.65"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/dryThroatTextStartGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.15"/>
+                app:layout_constraintGuide_percent="0.12"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/dryThroatTextEndGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.85"/>
+                app:layout_constraintGuide_percent="0.88"/>
             <TextView
                 android:id="@+id/dryThroatText"
                 android:layout_width="0dp"
@@ -369,8 +370,9 @@
                 app:layout_constraintTop_toBottomOf="@id/dryThroatTextTopGuideline"
                 app:layout_constraintBottom_toTopOf="@id/dryThroatTextBottomGuideline"
                 app:autoSizeTextType="uniform"
+                android:gravity="center"
                 android:textAlignment="center"
-                android:text="Dry Throat"
+                android:text="Aches"
                 android:textColor="#F4F6FA"
                 android:textStyle="bold"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -455,7 +457,7 @@
                 app:layout_constraintTop_toBottomOf="@id/rashImageTopGuideline"
                 app:layout_constraintBottom_toTopOf="@id/rashImageBottomGuideline"
                 android:scaleType="fitCenter"
-                android:src="@drawable/person_suffering_from_rush_74855_6623"/>
+                android:src="@drawable/character_faceless_man_itching_hands_white_background_1302_23111"/>
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/rashTextBottomGuideline"
                 android:layout_width="wrap_content"
@@ -468,21 +470,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.7"/>
+                app:layout_constraintGuide_percent="0.65"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/rashTextStartGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.2"/>
+                app:layout_constraintGuide_percent="0.12"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/rashTextEndGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.8"/>
+                app:layout_constraintGuide_percent="0.88"/>
             <TextView
                 android:id="@+id/rashText"
                 android:layout_width="0dp"
@@ -492,6 +494,7 @@
                 app:layout_constraintTop_toBottomOf="@id/rashTextTopGuideline"
                 app:layout_constraintBottom_toTopOf="@id/rashTextBottomGuideline"
                 app:autoSizeTextType="uniform"
+                android:gravity="center"
                 android:textAlignment="center"
                 android:text="Rash"
                 android:textColor="#F4F6FA"
@@ -577,8 +580,8 @@
                 app:layout_constraintEnd_toStartOf="@id/feverImageEndGuideline"
                 app:layout_constraintTop_toBottomOf="@id/feverImageTopGuideline"
                 app:layout_constraintBottom_toTopOf="@id/feverImageBottomGuideline"
-                android:scaleType="fitCenter"
-                android:src="@drawable/person_with_cold_having_fever_23_2148487476"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/person_with_cold_having_fever_23_2148487476__1_"/>
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/feverTextBottomGuideline"
                 android:layout_width="wrap_content"
@@ -591,21 +594,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.7"/>
+                app:layout_constraintGuide_percent="0.65"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/feverTextStartGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.2"/>
+                app:layout_constraintGuide_percent="0.12"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/feverTextEndGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.8"/>
+                app:layout_constraintGuide_percent="0.88"/>
             <TextView
                 android:id="@+id/feverText"
                 android:layout_width="0dp"
@@ -615,6 +618,7 @@
                 app:layout_constraintTop_toBottomOf="@id/feverTextTopGuideline"
                 app:layout_constraintBottom_toTopOf="@id/feverTextBottomGuideline"
                 app:autoSizeTextType="uniform"
+                android:gravity="center"
                 android:textAlignment="center"
                 android:text="Fever"
                 android:textColor="#F4F6FA"
@@ -700,8 +704,8 @@
                 app:layout_constraintEnd_toStartOf="@id/stressImageEndGuideline"
                 app:layout_constraintTop_toBottomOf="@id/stressImageTopGuideline"
                 app:layout_constraintBottom_toTopOf="@id/stressImageBottomGuideline"
-                android:scaleType="fitCenter"
-                android:src="@drawable/stress_concept_illustration_114360_2031"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/young_women_suffer_from_lower_right_abdominal_pain_due_appendicitis_pain_10045_511"/>
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/stressTextBottomGuideline"
                 android:layout_width="wrap_content"
@@ -714,37 +718,37 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.7"/>
+                app:layout_constraintGuide_percent="0.65"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/stressTextStartGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.2"/>
+                app:layout_constraintGuide_percent="0.12"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/stressTextEndGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.8"/>
+                app:layout_constraintGuide_percent="0.88"/>
             <TextView
                 android:id="@+id/stressText"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:gravity="center"
                 app:layout_constraintStart_toEndOf="@id/stressTextStartGuideline"
                 app:layout_constraintEnd_toStartOf="@id/stressTextEndGuideline"
                 app:layout_constraintTop_toBottomOf="@id/stressTextTopGuideline"
                 app:layout_constraintBottom_toTopOf="@id/stressTextBottomGuideline"
                 app:autoSizeTextType="uniform"
                 android:textAlignment="center"
-                android:text="Stress"
+                android:text="Nausea"
                 android:textColor="#F4F6FA"
                 android:textStyle="bold" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-    <androidx.constraintlayout.widget.Guideline
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/coronaTextBottomGuideline"
@@ -794,28 +798,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45" />
+        app:layout_constraintGuide_percent="0.47" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/statusTextTopGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4"/>
+        app:layout_constraintGuide_percent="0.42"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/statusTextStartGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.35"/>
+        app:layout_constraintGuide_percent="0.33"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/statusTextEndGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.65"/>
+        app:layout_constraintGuide_percent="0.67"/>
     <TextView
         android:id="@+id/statusText"
         android:layout_width="0dp"
