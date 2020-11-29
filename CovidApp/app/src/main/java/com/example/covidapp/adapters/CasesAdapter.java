@@ -1,7 +1,9 @@
 package com.example.covidapp.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +12,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.covidapp.R;
+import com.example.covidapp.activity_view_contact;
 import com.example.covidapp.firebase.FirebaseFunctions;
 import com.example.covidapp.fragments.CasesFragment;
 import com.example.covidapp.models.ModelCase;
@@ -25,10 +29,12 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
 
     private Context context;
     private List<ModelCase> cases;
+    private Activity activity;
 
-    public CasesAdapter(Context context, List<ModelCase> cases) {
+    public CasesAdapter(Context context, List<ModelCase> cases, Activity activity) {
         this.context = context;
         this.cases = new ArrayList<>(cases);
+        this.activity = activity;
     }
 
     @NonNull
@@ -45,7 +51,16 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
         TextView nameTextView = holder.nameText;
         TextView idTextView = holder.idText;
         ImageButton deleteButton = holder.deleteButton;
+        CardView card_view = holder.card_view;
 
+        final String fullName = modelCase.getFirstName() + " " + modelCase.getLastName();
+        final String id = modelCase.getId();
+        final String phone = modelCase.getPhone();
+        final String residence = modelCase.getResidenceRegion();
+        final String date = modelCase.getDateOfDisease();
+        final String gender = modelCase.getGender();
+        final String age = String.valueOf(modelCase.getAge());
+        final String isSusceptible = (modelCase.isSusceptible() ? "True" : "False");
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,8 +68,16 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
             }
         });
 
-        idTextView.setText( modelCase.getId());
-        nameTextView.setText( modelCase.getFirstName() + " " + modelCase.getLastName());
+        idTextView.setText(id);
+        nameTextView.setText(fullName);
+
+        card_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadViewCaseActivity(fullName, id, phone, residence,date, gender,
+                        age ,isSusceptible);
+            }
+        });
     }
 
     public void modifyList(List<ModelCase> newList) {
@@ -103,16 +126,32 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
         return cases.size();
     }
 
+    private void loadViewCaseActivity(String fullName, String id, String phone,
+                                      String residence, String date, String gender,String age, String isSusceptible) {
+        activity_view_contact.setFullName(fullName);
+        activity_view_contact.setId(id);
+        activity_view_contact.setPhone(phone);
+        activity_view_contact.setResidenceRegion(residence);
+        activity_view_contact.setDateOfDisease(date);
+        activity_view_contact.setGender(gender);
+        activity_view_contact.setAge(age);
+        activity_view_contact.setSusceptible(isSusceptible);
+        Intent intent = new Intent(activity, activity_view_contact.class);
+        context.startActivity(intent);
+    }
+
     public class CasesViewHolder extends RecyclerView.ViewHolder {
 
         TextView idText, nameText;
         ImageButton deleteButton;
+        CardView card_view;
 
         public CasesViewHolder(@NonNull View itemView) {
             super(itemView);
             idText = itemView.findViewById(R.id.id_text);
             nameText = itemView.findViewById(R.id.name_text);
             deleteButton = itemView.findViewById(R.id.deleteButton);
+            card_view = itemView.findViewById(R.id.card_view);
         }
     }
 }

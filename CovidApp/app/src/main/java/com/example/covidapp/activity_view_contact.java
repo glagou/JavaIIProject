@@ -3,9 +3,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 public class activity_view_contact extends AppCompatActivity {
-    private static String fullName, id, phone, residenceRegion, dateOfDisease, gender, susceptible, contactWith ;
+    private static String fullName, id, phone, residenceRegion, age, dateOfDisease, gender, susceptible, contactWith ;
     private static String[] closeContactWith, phonesOfCloseContact;
-    private static int age;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +21,7 @@ public class activity_view_contact extends AppCompatActivity {
         TextView genderTextView = findViewById(R.id.genderText);
         TextView ageTextView = findViewById(R.id.ageText);
         TextView susceptibleTextView = findViewById(R.id.susceptibleText);
-        TextView contactWithTextView = findViewById(R.id.contactWithText);
+        //TextView contactWithTextView = findViewById(R.id.contactWithText);
         //TextView wholeTextView = findViewById(R.id.wholeText);
 
         fullNameTextView.setText(fullName);
@@ -33,14 +32,14 @@ public class activity_view_contact extends AppCompatActivity {
         genderTextView.setText(gender);
         ageTextView.setText(age);
         susceptibleTextView.setText(susceptible);
-        contactWithTextView.setText(contactWith);
+        //contactWithTextView.setText(contactWith);
         //wholeTextView.setText(whole);
 
-        String contactWith = "";
+        /*String contactWith = "";
         for (int i = 0; i < closeContactWith.length; i++) {
            contactWith = contactWith + closeContactWith[i] + "," + phonesOfCloseContact[i] + "\n";
         }
-        System.out.println(contactWith);
+        System.out.println(contactWith);*/
         
         //System.out.println(whole);
         //String whole = "";
@@ -74,7 +73,7 @@ public class activity_view_contact extends AppCompatActivity {
         activity_view_contact.gender = gender;
     }
 
-    public static void setAge(int age) {
+    public static void setAge(String age) {
         activity_view_contact.age = age;
     }
 

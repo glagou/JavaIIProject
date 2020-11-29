@@ -100,7 +100,7 @@ public class CasesFragment extends Fragment {
         victims_recycler_view.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         victims_recycler_view.setLayoutManager(linearLayoutManager);
-        adapter = new CasesAdapter(getContext(),cases);
+        adapter = new CasesAdapter(getContext(),cases, getActivity());
         victims_recycler_view.setAdapter(adapter);
     }
 
