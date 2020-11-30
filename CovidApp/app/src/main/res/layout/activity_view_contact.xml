@@ -21,7 +21,7 @@
                 android:id="@+id/spaceZero"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:0.1"
+                app:layout_constraintDimensionRatio="10:1.5"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -54,7 +54,7 @@
                 android:id="@+id/spaceOne"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:0.1"
+                app:layout_constraintDimensionRatio="10:0.2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/image" />
@@ -94,6 +94,14 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/image" />
+            <Space
+                android:id="@+id/space0"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="10:0.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fullNameText" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/textThreeStartGuideline"
@@ -130,7 +138,7 @@
                 app:layout_constraintDimensionRatio="10:1.2"
                 app:layout_constraintEnd_toStartOf="@id/textThreeEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textThreeStartGuideline"
-                app:layout_constraintTop_toBottomOf="@id/fullNameText"
+                app:layout_constraintTop_toBottomOf="@id/space0"
                 app:autoSizeTextType="uniform"
                 android:text="ID:"
                 android:textColor="@color/textColor"/>
