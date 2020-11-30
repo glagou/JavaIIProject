@@ -3,8 +3,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 public class activity_view_contact extends AppCompatActivity {
-    private static String fullName, id, phone, residenceRegion, age, dateOfDisease, gender, susceptible, contactWith ;
-    private static String[] closeContactWith, phonesOfCloseContact;
+    private static String fullName, id, phone, residenceRegion, age, dateOfDisease, gender, susceptible, closeContactWith ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +21,8 @@ public class activity_view_contact extends AppCompatActivity {
         TextView genderTextView = findViewById(R.id.genderText);
         TextView ageTextView = findViewById(R.id.ageText);
         TextView susceptibleTextView = findViewById(R.id.susceptibleText);
-        //TextView contactWithTextView = findViewById(R.id.contactWithText);
-        //TextView wholeTextView = findViewById(R.id.wholeText);
+        TextView closeContactWithTextView = findViewById(R.id.contactWithText);
+
 
         fullNameTextView.setText(fullName);
         idTextView.setText(id);
@@ -32,22 +32,8 @@ public class activity_view_contact extends AppCompatActivity {
         genderTextView.setText(gender);
         ageTextView.setText(age);
         susceptibleTextView.setText(susceptible);
-        //contactWithTextView.setText(contactWith);
-        //wholeTextView.setText(whole);
+        closeContactWithTextView.setText(closeContactWith);
 
-        /*String contactWith = "";
-        for (int i = 0; i < closeContactWith.length; i++) {
-           contactWith = contactWith + closeContactWith[i] + "," + phonesOfCloseContact[i] + "\n";
-        }
-        System.out.println(contactWith);*/
-        
-        //System.out.println(whole);
-        //String whole = "";
-        //for (int i = 0; i < closeContactWith.length; i++) {
-        //    whole = whole + closeContactWith[i] + "," + phonesOfCloseContact[i] + "\n";
-        //}
-
-        //System.out.println(whole);
     }
     public static void setFullName(String fullName) {
         activity_view_contact.fullName = fullName;
@@ -81,20 +67,7 @@ public class activity_view_contact extends AppCompatActivity {
         activity_view_contact.susceptible = susceptible;
     }
 
-    public static void setCloseContactWith(String[] closeContactWith) {
+    public static void setCloseContactWith(String closeContactWith) {
         activity_view_contact.closeContactWith = closeContactWith;
     }
-
-    public static void setPhonesOfCloseContact(String[] phonesOfCloseContact) {
-        activity_view_contact.phonesOfCloseContact = phonesOfCloseContact;
-    }
-
-    public static void setContactWith(String contactWith) {
-        activity_view_contact.contactWith = contactWith;
-    }
-
-    //public static void setWhole(String whole){
-    //    activity_view_contact.whole = whole;
-    //}
-
 }
