@@ -4,7 +4,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.example.covidapp.StartingScreenActivity;
+import com.example.covidapp.activities.StartingScreenActivity;
 import com.example.covidapp.fragments.CasesFragment;
 import com.example.covidapp.models.ModelCase;
 import com.example.covidapp.stats.StatsInfoHolder;

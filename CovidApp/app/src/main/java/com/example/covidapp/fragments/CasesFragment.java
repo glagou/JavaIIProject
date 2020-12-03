@@ -4,27 +4,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.covidapp.AddCaseActivity;
-import com.example.covidapp.EditCaseActivity;
+import com.example.covidapp.activities.AddCaseActivity;
 import com.example.covidapp.R;
 import com.example.covidapp.adapters.CasesAdapter;
 import com.example.covidapp.models.ModelCase;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class CasesFragment extends Fragment {

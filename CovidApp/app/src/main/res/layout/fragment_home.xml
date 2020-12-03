@@ -81,7 +81,7 @@
                 android:id="@+id/coughingPerson"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:scaleType="centerCrop"
+                android:scaleType="centerInside"
                 android:src="@drawable/cough_person"
                 app:layout_constraintBottom_toTopOf="@id/coughImageBottomGuideline"
                 app:layout_constraintEnd_toStartOf="@id/coughImageEndGuideline"
@@ -209,7 +209,7 @@
                 app:layout_constraintEnd_toStartOf="@id/fatigueImageEndGuideline"
                 app:layout_constraintTop_toBottomOf="@id/fatigueImageTopGuideline"
                 app:layout_constraintBottom_toTopOf="@id/fatigueImageBottomGuideline"
-                android:scaleType="centerCrop"
+                android:scaleType="centerInside"
                 android:src="@drawable/person_with_cold_23_2148481817__1_"/>
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/fatigueTextBottomGuideline"
@@ -332,7 +332,7 @@
                 app:layout_constraintEnd_toStartOf="@id/dryNeckImageEndGuideline"
                 app:layout_constraintTop_toBottomOf="@id/dryNeckImageTopGuideline"
                 app:layout_constraintBottom_toTopOf="@id/dryNeckImageBottomGuideline"
-                android:scaleType="centerCrop"
+                android:scaleType="centerInside"
                 android:src="@drawable/young_man_with_expression_pain_holding_his_leg_due_injury_10045_481__1_"/>
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/dryThroatTextBottomGuideline"
@@ -456,7 +456,7 @@
                 app:layout_constraintEnd_toStartOf="@id/rashImageEndGuideline"
                 app:layout_constraintTop_toBottomOf="@id/rashImageTopGuideline"
                 app:layout_constraintBottom_toTopOf="@id/rashImageBottomGuideline"
-                android:scaleType="fitCenter"
+                android:scaleType="centerInside"
                 android:src="@drawable/character_faceless_man_itching_hands_white_background_1302_23111"/>
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/rashTextBottomGuideline"
@@ -580,7 +580,7 @@
                 app:layout_constraintEnd_toStartOf="@id/feverImageEndGuideline"
                 app:layout_constraintTop_toBottomOf="@id/feverImageTopGuideline"
                 app:layout_constraintBottom_toTopOf="@id/feverImageBottomGuideline"
-                android:scaleType="centerCrop"
+                android:scaleType="centerInside"
                 android:src="@drawable/person_with_cold_having_fever_23_2148487476__1_"/>
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/feverTextBottomGuideline"
@@ -696,6 +696,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.9"/>
+            
             <ImageView
                 android:id="@+id/stress"
                 android:layout_width="0dp"
@@ -704,7 +705,7 @@
                 app:layout_constraintEnd_toStartOf="@id/stressImageEndGuideline"
                 app:layout_constraintTop_toBottomOf="@id/stressImageTopGuideline"
                 app:layout_constraintBottom_toTopOf="@id/stressImageBottomGuideline"
-                android:scaleType="centerCrop"
+                android:scaleType="centerInside"
                 android:src="@drawable/young_women_suffer_from_lower_right_abdominal_pain_due_appendicitis_pain_10045_511"/>
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/stressTextBottomGuideline"
@@ -733,6 +734,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.88"/>
+
             <TextView
                 android:id="@+id/stressText"
                 android:layout_width="0dp"

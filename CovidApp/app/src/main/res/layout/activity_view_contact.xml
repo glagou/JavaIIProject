@@ -584,12 +584,13 @@
                 android:id="@+id/contactWithText"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="10:8"
+                app:layout_constraintDimensionRatio="10:10"
                 app:layout_constraintEnd_toStartOf="@id/textEighteenEndGuideline"
                 app:layout_constraintStart_toEndOf="@id/textEighteenStartGuideline"
                 app:layout_constraintTop_toBottomOf="@id/textSeventeen"
                 android:textColor="#000000"
-                app:autoSizeTextType="uniform" />
+                app:autoSizeTextType="uniform"
+                app:autoSizeMaxTextSize="@dimen/close_contact_with_max_text_size"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -1,4 +1,4 @@
-package com.example.covidapp;
+package com.example.covidapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.covidapp.R;
 import com.example.covidapp.firebase.FirebaseFunctions;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -30,7 +31,6 @@ public class AddCaseActivity extends AppCompatActivity {
     private String[] phones;
     private boolean noContacts = false;
     private String phoneOfCloseContact;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

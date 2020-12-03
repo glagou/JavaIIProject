@@ -1,4 +1,4 @@
-package com.example.covidapp;
+package com.example.covidapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,8 +9,8 @@ import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.TextView;
 
+import com.example.covidapp.R;
 import com.example.covidapp.firebase.FirebaseDatabaseReadListener;
 import com.example.covidapp.firebase.FirebaseFunctions;
 import com.example.covidapp.stats.StatsInfoHolder;

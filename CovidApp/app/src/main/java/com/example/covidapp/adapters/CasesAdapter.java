@@ -16,12 +16,11 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.covidapp.R;
-import com.example.covidapp.activity_view_contact;
+import com.example.covidapp.activities.ViewContactActivity;
 import com.example.covidapp.firebase.FirebaseFunctions;
 import com.example.covidapp.fragments.CasesFragment;
 import com.example.covidapp.models.ModelCase;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,6 +60,14 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
         final String gender = modelCase.getGender();
         final String age = String.valueOf(modelCase.getAge());
         final String isSusceptible = (modelCase.isSusceptible() ? "True" : "False");
+        final String[] closeContactWith = modelCase.getCloseContactWith();
+        final String[] phonesCloseContactWith = modelCase.getPhonesOfCloseContact();
+        String finalCloseContactWith = "";
+
+        for(int i = 0; i < closeContactWith.length; i++) {
+            finalCloseContactWith = finalCloseContactWith + closeContactWith[i] + "," + phonesCloseContactWith[i] + "\n";
+        }
+
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,11 +78,12 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
         idTextView.setText(id);
         nameTextView.setText(fullName);
 
+        final String finalCloseContactWith1 = finalCloseContactWith;
         card_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loadViewCaseActivity(fullName, id, phone, residence,date, gender,
-                        age ,isSusceptible);
+                        age ,isSusceptible, finalCloseContactWith1);
             }
         });
     }
@@ -127,16 +135,18 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
     }
 
     private void loadViewCaseActivity(String fullName, String id, String phone,
-                                      String residence, String date, String gender,String age, String isSusceptible) {
-        activity_view_contact.setFullName(fullName);
-        activity_view_contact.setId(id);
-        activity_view_contact.setPhone(phone);
-        activity_view_contact.setResidenceRegion(residence);
-        activity_view_contact.setDateOfDisease(date);
-        activity_view_contact.setGender(gender);
-        activity_view_contact.setAge(age);
-        activity_view_contact.setSusceptible(isSusceptible);
-        Intent intent = new Intent(activity, activity_view_contact.class);
+                                      String residence, String date, String gender,
+                                      String age, String isSusceptible, String closeContactWith) {
+        ViewContactActivity.setFullName(fullName);
+        ViewContactActivity.setId(id);
+        ViewContactActivity.setPhone(phone);
+        ViewContactActivity.setResidenceRegion(residence);
+        ViewContactActivity.setDateOfDisease(date);
+        ViewContactActivity.setGender(gender);
+        ViewContactActivity.setAge(age);
+        ViewContactActivity.setSusceptible(isSusceptible);
+        ViewContactActivity.setCloseContactWith(closeContactWith);
+        Intent intent = new Intent(activity, ViewContactActivity.class);
         context.startActivity(intent);
     }
 

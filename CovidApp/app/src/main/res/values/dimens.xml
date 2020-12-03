@@ -4,4 +4,5 @@
     <dimen name="cases_card_size">100dp</dimen>
     <dimen name="tab_icon_size">24dp</dimen>
     <dimen name="edit_text_text_size">15sp</dimen>
+    <dimen name="close_contact_with_max_text_size">21sp</dimen>
 </resources>

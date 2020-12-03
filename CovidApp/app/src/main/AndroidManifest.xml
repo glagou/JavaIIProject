@@ -9,11 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity_view_contact"></activity>
-        <activity android:name=".EditCaseActivity" />
-        <activity android:name=".AddCaseActivity" />
+        <activity android:name=".activities.ViewContactActivity"></activity>
+        <activity android:name=".activities.AddCaseActivity" />
         <activity
-            android:name=".StartingScreenActivity"
+            android:name=".activities.StartingScreenActivity"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

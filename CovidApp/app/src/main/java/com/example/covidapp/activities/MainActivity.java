@@ -1,4 +1,4 @@
-package com.example.covidapp;
+package com.example.covidapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.covidapp.R;
 import com.example.covidapp.fragments.CasesFragment;
 import com.example.covidapp.fragments.HomeFragment;
 import com.example.covidapp.fragments.StatisticsFragment;
