@@ -137,15 +137,22 @@ public class AddCaseActivity extends AppCompatActivity {
             // Checking if phone number is empty
             if (TextUtils.isEmpty(phoneNumber.trim())) {
                 makeToast("Phone Number Is Empty");
-                // Checking if phone number contains 10 digitis
+                // Checking if phone number contains 10 digits
             } else if (phoneNumber.trim().length() != 10) {
                 makeToast("A valid phone number contains 10 digits");
             } else {
                 // Checking if the phone number contains letter
-                try {
-                    Integer.parseInt(phoneNumber.trim());
+                char[] chars = phoneNumber.trim().toCharArray();
+                boolean noLetters = true;
+                for (int i = 0 ; i < chars.length ; i++) {
+                    if(Character.isLetter(chars[i])) {
+                        noLetters = false;
+                        break;
+                    }
+                }
+                if(noLetters) {
                     this.phoneNumber = phoneNumber.trim();
-                } catch (NumberFormatException e) {
+                } else {
                     makeToast("Please fill a valid phone number");
                 }
             }
