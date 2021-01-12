@@ -242,7 +242,7 @@ public class AddCaseActivity extends AppCompatActivity {
                     }
                     // Checking which name of close contacts contains digit
                     if (containsDigit) {
-                        makeToast((i + 1) + " Name  contains number");
+                        makeToast( " Name number" + (i + 1) + " contains number");
                         break;
                     }
                 }
@@ -278,17 +278,18 @@ public class AddCaseActivity extends AppCompatActivity {
                     boolean phoneNoTenDigits = false;
                     for (int i = 0; i < peoplePhones.length; i++) {
                         String phone = peoplePhones[i];
-                        try {
-                            Integer.parseInt(phone.trim());
-                        } catch (NumberFormatException e) {
-                            //Checks if every phone is valid
-                            makeToast((i + 1) + " Phone is invalid");
-                            phoneIsInvalid = true;
-                            break;
+                        // Checking if the phone number contains letter
+                        char[] chars = phoneNumber.trim().toCharArray();
+                        boolean noLetters = true;
+                        for (int y = 0 ; y < chars.length ; y++) {
+                            if(Character.isLetter(chars[y])) {
+                                noLetters = false;
+                                break;
+                            }
                         }
                         // Checks if every phone contains  10 digits
                         if (phone.length() != 10) {
-                            makeToast((i + 1) + " phone does not contain 10 digits");
+                            makeToast( " Phone number " + (i + 1)  + "does not contain 10 digits");
                             phoneNoTenDigits = true;
                             break;
                         }
@@ -329,7 +330,7 @@ public class AddCaseActivity extends AppCompatActivity {
                     // Checks if the  rest of the characters are numbers
                     for (int i = 2; i < characters.length; i++) {
                         if (!Character.isDigit(characters[i])) {
-                            makeToast(i + 1 + " character has to be a Number");
+                            makeToast("Character number " + (i + 1) + " has to be a Number");
                             foundError = true;
                             break;
                         }
@@ -363,7 +364,7 @@ public class AddCaseActivity extends AppCompatActivity {
                     }
                     // Checks if it contains letter
                 } catch (NumberFormatException e) {
-                    makeToast("Please fill a valid age");
+                    makeToast("Please insert a valid age");
                 }
             }
         }
@@ -396,7 +397,7 @@ public class AddCaseActivity extends AppCompatActivity {
             String isSusceptible = isSusceptibleEditText.getText().toString();
             // Checking if the answer is empty
             if (TextUtils.isEmpty(isSusceptible.trim())) {
-                makeToast("is Susceptible Is Empty");
+                makeToast("insert if person is susceptible");
                 // Has to be yes or no
             } else if (!isSusceptible.trim().equalsIgnoreCase("yes")
                     && !isSusceptible.trim().equalsIgnoreCase("no")) {
