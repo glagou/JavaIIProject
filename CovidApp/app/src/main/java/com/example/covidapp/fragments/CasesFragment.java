@@ -28,7 +28,7 @@ public class CasesFragment extends Fragment {
 
     private static List<ModelCase> cases = new ArrayList<>();
 
-    private CasesAdapter adapter;
+    private static CasesAdapter adapter;
 
     private EditText search ;
 

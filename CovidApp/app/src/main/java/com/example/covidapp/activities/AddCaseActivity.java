@@ -2,6 +2,7 @@ package com.example.covidapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -68,7 +69,8 @@ public class AddCaseActivity extends AppCompatActivity {
                     FirebaseFunctions.addVictimToFirestore
                             (firstName, lastName, phoneNumber, residenceRegion,
                                     dateOfDisease, people, phones, id, Integer.parseInt(age), gender,
-                                    isSusceptible.equalsIgnoreCase("yes"));
+                                    isSusceptible.equalsIgnoreCase("yes"), AddCaseActivity.this);
+                    Toast.makeText(AddCaseActivity.this, "Please wait for the process to complete!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

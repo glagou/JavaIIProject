@@ -1,9 +1,13 @@
 package com.example.covidapp.firebase;
 
+import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.covidapp.activities.AddCaseActivity;
 import com.example.covidapp.activities.StartingScreenActivity;
 import com.example.covidapp.fragments.CasesFragment;
 import com.example.covidapp.models.ModelCase;
@@ -155,7 +159,8 @@ public class FirebaseFunctions {
 
     //Adds a new victim to FireStore using the parameters below.
     public static void addVictimToFirestore(final String firstName, final String lastName, final String phone, final String residenceRegion, final String dateOfDisease, final String[] closeContactWith,
-                                            final String[] phonesOfCloseContact, final String id, final int age, final String gender, final boolean isSusceptible) {
+                                            final String[] phonesOfCloseContact, final String id, final int age, final String gender, final boolean isSusceptible,
+                                            final Context context) {
         if(firebaseFirestore == null) {
             firebaseFirestore = FirebaseFirestore.getInstance();
         }
@@ -198,6 +203,9 @@ public class FirebaseFunctions {
                                     CasesFragment.addToCases(new ModelCase(firstName,lastName,phone,residenceRegion,dateOfDisease,
                                             id,gender,closeContactWith,phonesOfCloseContact,age,isSusceptible));
                                     StatsInfoHolder.setTotal_cases(StatsInfoHolder.getTotal_cases() + 1);
+                                    Toast.makeText(context, "Case added successfully!", Toast.LENGTH_SHORT).show();
+                                    Activity activity = (Activity) context;
+                                    activity.finish();
                                     Log.d(DEBUG_TAG, "Victim was added successfully)");
                                 }
                             })
