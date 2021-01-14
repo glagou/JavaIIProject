@@ -64,8 +64,10 @@ public class CasesAdapter extends RecyclerView.Adapter<CasesAdapter.CasesViewHol
         final String[] phonesCloseContactWith = modelCase.getPhonesOfCloseContact();
         String finalCloseContactWith = "";
 
-        for(int i = 0; i < closeContactWith.length; i++) {
-            finalCloseContactWith = finalCloseContactWith + closeContactWith[i] + "," + phonesCloseContactWith[i] + "\n";
+        if(closeContactWith != null) {
+            for(int i = 0; i < closeContactWith.length; i++) {
+                finalCloseContactWith = finalCloseContactWith + closeContactWith[i] + "," + phonesCloseContactWith[i] + "\n";
+            }
         }
 
         deleteButton.setOnClickListener(new View.OnClickListener() {

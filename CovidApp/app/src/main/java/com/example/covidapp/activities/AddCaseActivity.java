@@ -84,7 +84,7 @@ public class AddCaseActivity extends AppCompatActivity {
             String firstName = firstNameEditText.getText().toString();
             // Checking if name is empty
             if (TextUtils.isEmpty(firstName.trim())) {
-                makeToast("First Name Is Empty");
+                makeToast("First name is empty");
             } else {
                 boolean containsDigit = false;
                 for (int i = 0; i < firstName.trim().length(); i++) {
@@ -111,7 +111,7 @@ public class AddCaseActivity extends AppCompatActivity {
             String lastName = lastNameEditText.getText().toString();
             // Checks if last name is  empty
             if (TextUtils.isEmpty(lastName.trim())) {
-                makeToast("Last Name Is Empty");
+                makeToast("Last name is empty");
             } else {
                 boolean containsDigit = false;
                 for (int i = 0; i < lastName.trim().length(); i++) {
@@ -138,7 +138,7 @@ public class AddCaseActivity extends AppCompatActivity {
             String phoneNumber = phoneNumberEditText.getText().toString();
             // Checking if phone number is empty
             if (TextUtils.isEmpty(phoneNumber.trim())) {
-                makeToast("Phone Number Is Empty");
+                makeToast("Phone number is empty");
                 // Checking if phone number contains 10 digits
             } else if (phoneNumber.trim().length() != 10) {
                 makeToast("A valid phone number contains 10 digits");
@@ -169,7 +169,7 @@ public class AddCaseActivity extends AppCompatActivity {
             String residenceRegion = residenceRegionEditText.getText().toString();
             // Checking if residence is empty
             if (TextUtils.isEmpty(residenceRegion.trim())) {
-                makeToast("ResidenceRegion Is Empty");
+                makeToast("ResidenceRegion is empty");
             } else {
                 this.residenceRegion = residenceRegion.trim().toUpperCase();
             }
@@ -184,7 +184,7 @@ public class AddCaseActivity extends AppCompatActivity {
             String dateOfDisease = dateOfDiseaseEditText.getText().toString();
             // Checking if date is empty
             if (TextUtils.isEmpty(dateOfDisease.trim())) {
-                makeToast("Date of Disease Is Empty");
+                makeToast("Date of disease is empty");
             } else {
                 // Splits date in the format  DD/MM/YYYY
                 String[] parts = dateOfDisease.trim().split("/");
@@ -197,13 +197,13 @@ public class AddCaseActivity extends AppCompatActivity {
                     int year = Integer.parseInt(part3);
                     // Checks if user has entered valid day
                     if (day <= 0 || day >= 32) {
-                        makeToast("insert valid day");
+                        makeToast("Insert valid day");
                         // Checks if user has entered valid month
                     } else if (month >= 13 || month <= 0) {
-                        makeToast("insert valid month");
+                        makeToast("Insert valid month");
                         // Checks if user has entered valid year
                     } else if (year < 2019) {
-                        makeToast("insert valid year");
+                        makeToast("Insert valid year");
                     } else {
                         this.dateOfDisease = dateOfDisease.trim();
                     }
@@ -224,7 +224,7 @@ public class AddCaseActivity extends AppCompatActivity {
             noContacts = false;
             // Checking if close contact  is empty
             if (TextUtils.isEmpty(closeContactWith.trim())) {
-                makeToast("Close Contact With Is Empty");
+                makeToast("Close contact with is empty");
                 // If empty there is no close contact
             } else if (closeContactWith.trim().equals("-")) {
                 this.people = null;
@@ -244,7 +244,7 @@ public class AddCaseActivity extends AppCompatActivity {
                     }
                     // Checking which name of close contacts contains digit
                     if (containsDigit) {
-                        makeToast( " Name number" + (i + 1) + " contains number");
+                        makeToast( "Name number " + (i + 1) + " contains number");
                         break;
                     }
                 }
@@ -264,7 +264,7 @@ public class AddCaseActivity extends AppCompatActivity {
             String phoneOfCloseContact = phoneOfCloseContactEditText.getText().toString();
             // Checking if phone number of close contact is empty
             if (TextUtils.isEmpty(phoneOfCloseContact.trim())) {
-                makeToast("Phone of Close Contact Is Empty");
+                makeToast("Phone of close contact is empty");
                 // If user inputs '-' there is no  phone of close contact
             } else if (noContacts && phoneOfCloseContact.trim().equals("-")) {
                 this.phoneOfCloseContact = null;
@@ -291,7 +291,7 @@ public class AddCaseActivity extends AppCompatActivity {
                         }
                         // Checks if every phone contains  10 digits
                         if (phone.length() != 10) {
-                            makeToast( " Phone number " + (i + 1)  + "does not contain 10 digits");
+                            makeToast( "Phone number " + (i + 1)  + " does not contain 10 digits");
                             phoneNoTenDigits = true;
                             break;
                         }
@@ -312,10 +312,10 @@ public class AddCaseActivity extends AppCompatActivity {
             String id = idEditText.getText().toString();
             // Checking if ID is empty
             if (TextUtils.isEmpty(id.trim())) {
-                makeToast("ID Is Empty");
+                makeToast("ID is empty");
                 //Checks if id  contains 8 digits
             } else if (id.trim().length() != 8) {
-                makeToast("A valid ID contains 8 digits");
+                makeToast("A valid ID contains 8 characters");
             } else {
                 char[] characters = new char[8];
                 for (int i = 0; i < characters.length; i++) {
@@ -353,7 +353,7 @@ public class AddCaseActivity extends AppCompatActivity {
             String age = ageEditText.getText().toString();
             // Checking if age is empty
             if (TextUtils.isEmpty(age.trim())) {
-                makeToast("Age Is Empty");
+                makeToast("Age is empty");
             } else {
                 try {
                     // Checks if integer
@@ -380,7 +380,7 @@ public class AddCaseActivity extends AppCompatActivity {
             String gender = genderEditText.getText().toString();
             // Checking if gender is empty
             if (TextUtils.isEmpty(gender.trim())) {
-                makeToast("Gender Is Empty");
+                makeToast("Gender is empty");
                 // Only allows male or female
             } else if (!gender.trim().equalsIgnoreCase("male")
                     && !gender.trim().equalsIgnoreCase("female")) {
@@ -399,7 +399,7 @@ public class AddCaseActivity extends AppCompatActivity {
             String isSusceptible = isSusceptibleEditText.getText().toString();
             // Checking if the answer is empty
             if (TextUtils.isEmpty(isSusceptible.trim())) {
-                makeToast("insert if person is susceptible");
+                makeToast("Insert if person is susceptible");
                 // Has to be yes or no
             } else if (!isSusceptible.trim().equalsIgnoreCase("yes")
                     && !isSusceptible.trim().equalsIgnoreCase("no")) {
